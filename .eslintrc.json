@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "@rushstack/eslint-config/profile/web-app",
+    "@rushstack/eslint-config/mixins/friendly-locals",
+    "prettier"
+  ],
+  "plugins": [
+    "react-hooks",
+    "react-refresh",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": ["./tsconfig.app.json", "./tsconfig.node.json"],
+    "tsconfigRootDir": "./",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-refresh/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ]
+  }
+}
