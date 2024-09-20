@@ -24,15 +24,15 @@
   "rules": {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": "error",
     "react-refresh/only-export-components": [
-      "warn",
+      "error",
       {
         "allowConstantExport": true
       }
     ],
     "@typescript-eslint/naming-convention": [
-      "warn",
+      "error",
       {
         "selector": "variable",
         "format": ["camelCase", "PascalCase", "UPPER_CASE"]
@@ -71,7 +71,7 @@
       }
     ],
     "no-relative-import-paths/no-relative-import-paths": [
-      "warn",
+      "error",
       { "allowSameFolder": true, "rootDir": "src", "prefix": "@" }
     ],
     "prefer-destructuring": [
