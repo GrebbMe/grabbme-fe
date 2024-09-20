@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-const App = (): React.ReactNode => {
+const App = () => {
   return (
     <>
       <h1>grabbme</h1>
