@@ -10,7 +10,8 @@
     "react-hooks",
     "react-refresh",
     "prettier",
-    "no-relative-import-paths"
+    "no-relative-import-paths",
+    "import"
   ],
   "parserOptions": {
     "project": ["./tsconfig.app.json", "./tsconfig.node.json"],
@@ -84,6 +85,14 @@
           "array": false,
           "object": false
         }
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
     ]
   }
