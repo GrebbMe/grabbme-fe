@@ -1,8 +1,13 @@
-const App = () => {
+import { ThemeProvider } from 'styled-components';
+
+import { GlobalStyle, theme } from './styles';
+
+const App = (): React.ReactNode => {
   return (
-    <>
-      <h1>grabbme</h1>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div>그렙미</div>
+    </ThemeProvider>
   );
 };
 
