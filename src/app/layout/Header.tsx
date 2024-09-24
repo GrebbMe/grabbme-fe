@@ -1,7 +1,5 @@
-import { ReactNode } from 'react';
-
 import { HeaderContainer } from '@/app/styles/index';
 
-export const Header = (): ReactNode => {
+export const Header = () => {
   return <HeaderContainer>Header</HeaderContainer>;
 };
