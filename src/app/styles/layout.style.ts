@@ -1,16 +1,16 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 export const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
+  height: 100vh;
 `;
 
 export const MainContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 `;
 
 export const HeaderContainer = styled.div`
@@ -20,7 +20,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   height: 60px;
   background-color: ${({ theme }) => theme.color.primaryBlue};
-  ${({ theme }) => theme.typo.title};
+  ${({ theme }) => theme.typo.subtitleMedium};
   color: ${({ theme }) => theme.color.white};
 `;
 

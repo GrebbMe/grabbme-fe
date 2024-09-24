@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
 
-export const SignUp = (): ReactNode => {
+export const SignUp = () => {
   return <div>SignUp</div>;
 };
