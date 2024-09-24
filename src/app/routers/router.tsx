@@ -2,11 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from '@/app/layout';
 import { GithubLogin, SignUp } from '@/pages/auth/ui';
-
-const enum RouterPath {
-  GithubLogin = 'github-login',
-  SignUp = 'sign-up',
-}
+import { RouterPath } from '@/shared/consts';
 
 export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
   {
