@@ -1,6 +1,10 @@
 import 'styled-components';
-import { ThemeType } from './theme';
+import { ColorType, TypoType, DeviceType } from './theme';
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends ThemeType {}
+  export interface DefaultTheme {
+    color: ColorType;
+    typo: TypoType;
+    device: DeviceType;
+  }
 }
