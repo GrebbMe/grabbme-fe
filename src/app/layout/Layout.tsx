@@ -1,16 +1,20 @@
 import { Outlet } from 'react-router-dom';
 
-import { Header, Footer } from '@/app/layout/index';
-import { LayoutContainer, MainContent } from '@/app/styles/index';
-
+import { Footer } from '@/app/layout/Footer';
+import { Header } from '@/app/layout/Header';
+import { GridContainer, GridItem } from '@/app/layout/layout.style';
 export const Layout = () => {
   return (
-    <LayoutContainer>
+    <>
       <Header />
-      <MainContent>
+      <GridContainer>
+        <GridItem>Item</GridItem> <GridItem>Item</GridItem> <GridItem>Item</GridItem>
+        <GridItem>Item</GridItem> <GridItem>Item</GridItem> <GridItem>Item</GridItem>
+        <GridItem>Item</GridItem> <GridItem>Item</GridItem> <GridItem>Item</GridItem>
+        <GridItem>Item</GridItem> <GridItem>Item</GridItem> <GridItem>Item</GridItem>
         <Outlet />
-      </MainContent>
+      </GridContainer>
       <Footer />
-    </LayoutContainer>
+    </>
   );
 };

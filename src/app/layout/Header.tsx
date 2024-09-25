@@ -1,4 +1,4 @@
-import { HeaderContainer } from '@/app/styles/index';
+import { HeaderContainer } from './layout.style';
 
 export const Header = () => {
   return <HeaderContainer>Header</HeaderContainer>;
