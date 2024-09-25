@@ -4,15 +4,10 @@
     "plugin:@typescript-eslint/recommended",
     "@rushstack/eslint-config/profile/web-app",
     "@rushstack/eslint-config/mixins/friendly-locals",
+
     "prettier"
   ],
-  "plugins": [
-    "react-hooks",
-    "react-refresh",
-    "prettier",
-    "no-relative-import-paths",
-    "import"
-  ],
+  "plugins": ["react-hooks", "react-refresh", "prettier", "no-relative-import-paths", "import"],
   "parserOptions": {
     "project": ["./tsconfig.app.json", "./tsconfig.node.json"],
     "tsconfigRootDir": "./",
@@ -94,6 +89,8 @@
         "newlines-between": "always",
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
-    ]
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/typedef": "off"
   }
 }

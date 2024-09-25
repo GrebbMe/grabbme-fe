@@ -1,65 +1,77 @@
 import { DefaultTheme } from 'styled-components';
 
+interface TypoProperties {
+  fontFamily: string;
+  fontWeight: number;
+  fontSize: number;
+  lineHeight: number;
+}
+
+const typoStyles = ({ fontFamily, fontWeight, fontSize, lineHeight }: TypoProperties): string => {
+  return `
+    fontFamily : "${fontFamily}";
+    fontWeight : ${fontWeight};
+    fontSize : ${fontSize}rem;
+    lineHeight : ${lineHeight}%;
+    `;
+};
+
 export const theme: DefaultTheme = {
   color: {
-    primaryBlue: '#1D3152',
-    pointPink: '#F14F4F',
-    white: '#FFFFFF',
-    black100: '#121212',
-    black80: '#4D4D4DE',
-    gray50: '#8a8888',
-    gray30: '#D9D9D9',
-    blue50: '#8E98A9',
-    blue30: '#EDF0F5',
-    blue10: '#FAFBFD',
+    PRIMARY_BLUE: '#1D3152',
+    POINT_PINK: '#F14F4F',
+    WHITE: '#FFFFFF',
+    BLACK_100: '#121212',
+    BLACK_80: '#4D4D4DE',
+    GRAY_50: '#8a8888',
+    GRAY_30: '#D9D9D9',
+    BLUE_50: '#8E98A9',
+    BLUE_30: '#EDF0F5',
+    BLUE_10: '#FAFBFD',
   },
   typo: {
-    title: {
-      fontFamily: "'Pretendard'",
+    title: typoStyles({ fontFamily: 'Pretendard', fontWeight: 600, fontSize: 24, lineHeight: 140 }),
+    subtitleLarge: typoStyles({
+      fontFamily: 'Pretendard',
       fontWeight: 600,
-      fontSize: '24px',
-      lineHeight: '140%',
-    },
-    subtitleLarge: {
-      fontFamily: "'Pretendard'",
+      fontSize: 20,
+      lineHeight: 140,
+    }),
+    subtitleMedium: typoStyles({
+      fontFamily: 'Pretendard',
       fontWeight: 600,
-      fontSize: '20px',
-      lineHeight: '140%',
-    },
-    subtitleMedium: {
-      fontFamily: "'Pretendard'",
+      fontSize: 14,
+      lineHeight: 140,
+    }),
+    bodySemiBold: typoStyles({
+      fontFamily: 'Pretendard',
       fontWeight: 600,
-      fontSize: '14px',
-      lineHeight: '140%',
-    },
-    bodySemiBold: {
-      fontFamily: "'Pretendard'",
-      fontWeight: 600,
-      fontSize: '16px',
-      lineHeight: '140%',
-    },
-    bodyMedium: {
-      fontFamily: "'Pretendard'",
+      fontSize: 16,
+      lineHeight: 140,
+    }),
+    bodyMedium: typoStyles({
+      fontFamily: 'Pretendard',
       fontWeight: 500,
-      fontSize: '16px',
-      lineHeight: '140%',
-    },
-    captionLarge: {
-      fontFamily: "'Pretendard'",
+      fontSize: 16,
+      lineHeight: 140,
+    }),
+    captionLarge: typoStyles({
+      fontFamily: 'Pretendard',
       fontWeight: 500,
-      fontSize: '14px',
-      lineHeight: '140%',
-    },
-    captionSmall: {
-      fontFamily: "'Pretendard'",
+      fontSize: 14,
+      lineHeight: 140,
+    }),
+    captionSmall: typoStyles({
+      fontFamily: 'Pretendard',
       fontWeight: 500,
-      fontSize: '12px',
-      lineHeight: '140%',
-    },
+      fontSize: 12,
+      lineHeight: 140,
+    }),
   },
-  deviceSize: {
-    mobile: '@media screen and max-width: 599px',
-    tablet: '@media screen and min-width: 600px and max-width: 1023px',
-    desktop: '@media screen and min-width: 1024px',
+  device: {
+    MOBILE: '@media (max-width: 37.5rem)',
+    TABLET: '@media (max-width: 76.5rem)',
+    DESKTOP: '@media (min-width: 76.5rem)',
   },
 };
+export type ThemeType = typeof theme;

@@ -3,13 +3,12 @@ import reset from 'styled-reset';
 
 import Pretendard from '@/shared/assets/font/PretendardVariable.woff2';
 
-const GlobalStyle: ReturnType<typeof createGlobalStyle> = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   ${reset}
 
   @font-face {
     font-family: 'Pretendard';
     src: local('Pretendard'), url(${Pretendard}) format('woff2');
-    font-style: normal;
     font-weight: 100 900;
   }
   html, body, #root {
@@ -19,10 +18,7 @@ const GlobalStyle: ReturnType<typeof createGlobalStyle> = createGlobalStyle`
     padding: 0;
   }
   body {
-    font-family: 'Pretendard', sans-serif;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Pretendard'
   }
   
 `;
-export default GlobalStyle;

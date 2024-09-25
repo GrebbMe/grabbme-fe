@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from '@/app/layout';
 import { GithubLogin, SignUp } from '@/pages/auth/ui';
-import { routerPath } from '@/shared/consts';
+import { routerPath } from '@/shared';
 
 export const router = createBrowserRouter([
   {

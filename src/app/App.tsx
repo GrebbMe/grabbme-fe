@@ -5,7 +5,7 @@ import { GlobalStyle, theme } from './styles';
 
 import { router } from '@/app/routers/index';
 
-const App = (): React.ReactNode => {
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

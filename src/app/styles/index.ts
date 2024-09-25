@@ -1,8 +1,8 @@
-export { default as GlobalStyle } from '@/app/styles/globlaStyle';
+export { GlobalStyle } from '@/app/styles/globlaStyle';
 export { theme } from '@/app/styles/theme';
 export {
-  LayoutContainer,
-  MainContent,
+  GridContainer,
+  GridItem,
   HeaderContainer,
   FooterContainer,
-} from '@/app/styles/layout.style';
+} from '@/app/layout/layout.style';

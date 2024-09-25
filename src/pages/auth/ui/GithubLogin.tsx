@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
-export const GithubLogin = (): ReactNode => {
-  return <div>GithubLogin</div>;
+export const GithubLogin = () => {
+  return <div>로그인</div>;
 };
