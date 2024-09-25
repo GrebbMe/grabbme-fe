@@ -2,19 +2,19 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from '@/app/layout';
 import { GithubLogin, SignUp } from '@/pages/auth/ui';
-import { RouterPath } from '@/shared/consts';
+import { routerPath } from '@/shared/consts';
 
-export const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
       {
-        path: RouterPath.GithubLogin,
+        path: routerPath.LOGIN,
         element: <GithubLogin />,
       },
       {
-        path: RouterPath.SignUp,
+        path: routerPath.SIGNUP,
         element: <SignUp />,
       },
     ],
