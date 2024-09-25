@@ -31,14 +31,13 @@ const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   justify-content: center;
-
-  @media (max-width: 76.5rem) {
+  border: 1px solid black;
+  ${({ theme }) => theme.device.TABLET} {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 1.5rem;
     margin: 1.5rem;
   }
-
-  ${({ theme }) => theme.device} {
+  ${({ theme }) => theme.device.MOBILE} {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
     margin: 1rem;
