@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+
 import { Layout } from '@/app/layout';
 import { GithubLogin, SignUp } from '@/pages/auth/ui';
 import { routerPath } from '@/shared';
