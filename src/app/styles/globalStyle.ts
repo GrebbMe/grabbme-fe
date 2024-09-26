@@ -10,10 +10,14 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Pretendard'), url(${Pretendard}) format('woff2');
     font-weight: 100 900;
   }
-  html, body, #root {
+  html,body,#root {
     width: 100%;
     height: 100%;
   }
+  html{
+    font-size: 62.5%;
+  }
+
   body {
     font-family: 'Pretendard'
   }

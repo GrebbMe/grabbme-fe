@@ -14,56 +14,61 @@ const color = {
 };
 
 const typo = {
-  title: `
+  TITLE: `
     font-family: "Pretendard";
     font-weight: 600;
-    font-size: 1.5rem; 
+    font-size: 2.4rem; 
     line-height: 140%;
   `,
-  subtitleLarge: `
+  SUBTITE_20: `
     font-family: "Pretendard";
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 2.0rem;
     line-height: 140%;
   `,
-  subtitleMedium: `
+  SUBTITLE_14: `
     font-family: "Pretendard";
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     line-height: 140%;
   `,
-  bodySemiBold: `
+  BODY_SEMIBOLD: `
     font-family: "Pretendard";
     font-weight: 600;
-    font-size: 1rem; 
+    font-size: 1.6rem; 
     line-height: 140%;
   `,
-  bodyMedium: `
+  BODY_MEDIUM: `
     font-family: "Pretendard";
     font-weight: 500;
-    font-size: 1rem; 
+    font-size: 1.6rem; 
     line-height: 140%;
   `,
-  captionLarge: `
+  CAPTION_14: `
     font-family: "Pretendard";
     font-weight: 500;
-    font-size: 0.875rem; 
+    font-size: 1.4rem; 
     line-height: 140%;
   `,
-  captionSmall: `
+  CAPTION_12: `
     font-family: "Pretendard";
     font-weight: 500;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
+    line-height: 140%;
+  `,
+  CAPTION_10: `
+    font-family: "Pretendard";
+    font-weight: 500;
+    font-size: 1.0rem;
     line-height: 140%;
   `,
 };
 
 const device = {
-  MOBILE: '@media (max-width: 37.5rem)',
-  TABLET: '@media (max-width: 76.5rem)',
-  DESKTOP: '@media (min-width: 76.5rem)',
+  MOBILE: '(max-width: 60rem)',
+  TABLET: '(min-width: 60rem) and (max-width: 122.3rem)',
+  DESKTOP: '(min-width: 122.4rem)',
 };
-
 export type ColorType = typeof color;
 export type TypoType = typeof typo;
 export type DeviceType = typeof device;
