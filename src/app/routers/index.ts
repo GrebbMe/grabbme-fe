@@ -1,1 +1,1 @@
-// 라우팅 설정 관련 파일
+export { router } from './router';

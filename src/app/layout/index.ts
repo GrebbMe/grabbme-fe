@@ -1,1 +1,3 @@
-// 애플리케이션의 전역 레이아웃 구조를 정의하는 데 사용
+export { Layout } from './Layout';
+export { HeaderContainer, FooterContainer, Container } from '@/app/layout/layout.style';
+
