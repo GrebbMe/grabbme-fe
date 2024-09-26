@@ -1,5 +1,7 @@
 import 'styled-components';
-import { ColorType, TypoType, DeviceType } from './theme';
+import { ColorType } from './color';
+import { DeviceType } from './device';
+import { TypoType } from './typo';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
