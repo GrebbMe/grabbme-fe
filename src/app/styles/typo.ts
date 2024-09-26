@@ -48,5 +48,3 @@ export const typo = {
     line-height: 140%;
   `,
 };
-
-export type TypoType = typeof typo;

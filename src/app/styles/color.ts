@@ -10,5 +10,3 @@ export const color = {
   BLUE_30: '#EDF0F5',
   BLUE_10: '#FAFBFD',
 };
-
-export type ColorType = typeof color;

@@ -1,5 +1,9 @@
 import 'styled-components';
-import { ColorType, DeviceType, TypoType, color, typo, device } from '@/app/styles/index';
+import { color, typo, device } from '@/app/styles/index';
+
+type ColorType = typeof color;
+type TypoType = typeof typo;
+type DeviceType = typeof device;
 
 declare module 'styled-components' {
   export interface DefaultTheme {

@@ -10,8 +10,12 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Pretendard'), url(${Pretendard}) format('woff2');
     font-weight: 100 900;
   }
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+  }
   html{
-    font-size:62.5%;
+    font-size:62.5% !important
   }
   *{
         box-sizing: border-box;

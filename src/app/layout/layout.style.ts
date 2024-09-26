@@ -28,18 +28,15 @@ const Container = styled.div`
   border: 1px solid #000;
   padding-top: 4rem;
   padding-bottom: 4rem;
-
-  ${({ theme }) => theme.device.DESKTOP} {
-    grid-template-columns: repeat(12, 8rem);
-    gap: 2.4rem;
-    max-width: 122.4rem;
-  }
+  grid-template-columns: repeat(12, 8rem);
+  gap: 2.4rem;
+  max-width: 122.4rem;
 
   ${({ theme }) => theme.device.TABLET} {
     grid-template-columns: repeat(6, 1fr);
     gap: 2.4rem;
     margin: 2.4rem;
-    border: 1px solid #3333;
+    border: 1px solid blue;
   }
 
   ${({ theme }) => theme.device.MOBILE} {
