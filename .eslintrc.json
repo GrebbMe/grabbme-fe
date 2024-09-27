@@ -4,12 +4,21 @@
     "plugin:@typescript-eslint/recommended",
     "@rushstack/eslint-config/profile/web-app",
     "@rushstack/eslint-config/mixins/friendly-locals",
-
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
-  "plugins": ["react-hooks", "react-refresh", "prettier", "no-relative-import-paths", "import"],
+  "plugins": [
+    "react-hooks",
+    "react-refresh",
+    "prettier",
+    "no-relative-import-paths",
+    "import"
+  ],
   "parserOptions": {
-    "project": ["./tsconfig.app.json", "./tsconfig.node.json"],
+    "project": [
+      "./tsconfig.app.json",
+      "./tsconfig.node.json"
+    ],
     "tsconfigRootDir": "./",
     "sourceType": "module",
     "ecmaFeatures": {
@@ -30,19 +39,30 @@
       "error",
       {
         "selector": "variable",
-        "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+        "format": [
+          "camelCase",
+          "PascalCase",
+          "UPPER_CASE"
+        ]
       },
       {
         "selector": "function",
-        "format": ["camelCase", "PascalCase"]
+        "format": [
+          "camelCase",
+          "PascalCase"
+        ]
       },
       {
         "selector": "typeLike",
-        "format": ["PascalCase"]
+        "format": [
+          "PascalCase"
+        ]
       },
       {
         "selector": "interface",
-        "format": ["PascalCase"],
+        "format": [
+          "PascalCase"
+        ],
         "custom": {
           "regex": "^I[A-Z]",
           "match": false
@@ -50,7 +70,9 @@
       },
       {
         "selector": "typeAlias",
-        "format": ["PascalCase"],
+        "format": [
+          "PascalCase"
+        ],
         "custom": {
           "regex": "^T[A-Z]",
           "match": false
@@ -58,7 +80,9 @@
       },
       {
         "selector": "typeParameter",
-        "format": ["PascalCase"],
+        "format": [
+          "PascalCase"
+        ],
         "custom": {
           "regex": "^T[A-Z]",
           "match": false
@@ -67,7 +91,11 @@
     ],
     "no-relative-import-paths/no-relative-import-paths": [
       "error",
-      { "allowSameFolder": true, "rootDir": "src", "prefix": "@" }
+      {
+        "allowSameFolder": true,
+        "rootDir": "src",
+        "prefix": "@"
+      }
     ],
     "prefer-destructuring": [
       "error",
@@ -85,9 +113,21 @@
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
         "newlines-between": "always",
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ]
   }
