@@ -10,7 +10,6 @@ const App = () => {
       <GlobalStyle />
       <RouterProvider router={router} />
     </ThemeProvider>
-
   );
 };
 
