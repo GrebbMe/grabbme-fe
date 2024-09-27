@@ -17,7 +17,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: true,
   },
-  staticDirs: ['../src/assets'],
+  staticDirs: ['../src/shared/assets'],
   viteFinal: (config) => {
     config.resolve = config.resolve || { alias: {}, extensions: [] };
 
