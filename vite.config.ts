@@ -11,5 +11,4 @@ export default defineConfig({
     },
     extensions: ['.ts', '.tsx'],
   },
-  assetsInclude: ['**/*.woff2'],
 });
