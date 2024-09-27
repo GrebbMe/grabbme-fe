@@ -14,6 +14,10 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  docs: {
+    autodocs: true,
+  },
+  staticDirs: ['../src/assets'],
   viteFinal: (config) => {
     config.resolve = config.resolve || { alias: {}, extensions: [] };
 
