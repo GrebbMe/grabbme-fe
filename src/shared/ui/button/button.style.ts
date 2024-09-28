@@ -1,54 +1,43 @@
-import { ReactNode } from 'react';
-import { css, styled } from 'styled-components';
-
-interface ButtonProps {
-  type: 'recruitcompleted' | 'default' | 'aplycompleted';
-  isThin?: boolean;
-  children: ReactNode;
-  width: string;
-  onClick?: () => void;
-}
-
-const buttonStyles = {
-  default: css`
-    background-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-    color: white;
-    border: 0.1375rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
-    &:hover {
-      background-color: ${({ theme }) => theme.color.BLUE_30};
-      color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-      border-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-    }
-    &:active {
-      background-color: ${({ theme }) => theme.color.WHITE};
-      color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-      border: 0.1375rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
-    }
-  `,
-  aplycompleted: css`
-    background-color: ${({ theme }) => theme.color.WHITE};
-    color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-    border: 0.1375rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
-  `,
-  recruitcompleted: css`
-    background-color: ${({ theme }) => theme.color.BLUE_30};
-    border: 0.1375rem solid ${({ theme }) => theme.color.BLUE_50};
-    color: ${({ theme }) => theme.color.GRAY_50};
-  `,
-};
+import { styled } from 'styled-components';
+import { ButtonProps } from '@/shared/ui/button/Button';
 
 const StyledButton = styled.button<ButtonProps>`
+  &:hover {
+    background-color: ${({ theme }) => theme.color.BLUE_30};
+    color: ${({ theme }) => theme.color.PRIMARY_BLUE};
+    border: 0.15rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+    img {
+      filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
+        contrast(90%);
+    }
+  }
+
+  &:active {
+    background-color: ${({ theme }) => theme.color.WHITE};
+    color: ${({ theme }) => theme.color.PRIMARY_BLUE};
+    border: 0.15rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+    img {
+      filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
+        contrast(90%);
+    }
+  }
+
+  img {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(134deg) brightness(102%) contrast(101%);
+  }
+  background-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
+  color: white;
+  border: ${({ isThin }) => (isThin ? '0.1rem' : '0.15rem')} solid
+    ${({ theme }) => theme.color.PRIMARY_BLUE};
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.8rem 2.4rem;
+  gap: 0.4rem;
   height: 3.8rem;
   border-radius: 0.8rem;
   white-space: nowrap;
   width: ${({ width }) => width};
   ${({ theme }) => theme.typo.BODY_SEMIBOLD};
-  ${({ type }) => buttonStyles[type]};
-  border-width: ${({ isThin }) => (isThin ? '0.1rem' : '0.1375rem')};
 `;
 
 export { StyledButton };

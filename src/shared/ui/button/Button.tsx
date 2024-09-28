@@ -1,24 +1,18 @@
-import { ReactNode } from 'react';
 import { StyledButton } from '@/shared/ui/button/button.style';
 
 export interface ButtonProps {
-  type: 'recruitcompleted' | 'default' | 'aplycompleted';
   isThin?: boolean;
-  children: ReactNode;
+  img?: string;
   width: string;
-  onClick?: () => void;
+  label: string;
+  onClick: () => void;
 }
 
-export const Button = ({
-  type = 'default',
-  onClick,
-  isThin = false,
-  children,
-  width,
-}: ButtonProps) => {
+export const Button = ({ onClick, isThin = false, img, width, label }: ButtonProps) => {
   return (
-    <StyledButton type={type} onClick={onClick} isThin={isThin} width={width}>
-      {children}
+    <StyledButton onClick={onClick} isThin={isThin} width={width} img={img} label={label}>
+      {img && <img src={img} />}
+      {label}
     </StyledButton>
   );
 };

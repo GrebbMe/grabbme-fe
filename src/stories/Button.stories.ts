@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { Button } from '@/shared/ui';
+import IconImage from '@/shared/assets/ph--list-bold.svg';
+import { Button } from '@/shared/ui/button/Button';
 
 const meta: Meta<typeof Button> = {
   title: 'component/shared/button',
@@ -10,22 +10,25 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    type: {
-      control: 'select',
-      options: ['default', 'recruitcompleted', 'aplycompleted'],
-    },
     onClick: {
       action: 'clicked',
     },
     width: {
       control: 'text',
     },
-    children: {
+    isThin: {
+      control: 'boolean',
+    },
+    label: {
+      control: 'text',
+    },
+    img: {
       control: 'text',
     },
   },
   args: {
-    onClick: fn(),
+    onClick: () => {},
+    label: 'Default Label',
   },
 } satisfies Meta<typeof Button>;
 
@@ -34,24 +37,15 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultButton: Story = {
   args: {
-    type: 'default',
-    width: '10.8rem',
-    children: '신청하기',
+    width: '7.6rem',
+    label: '버튼',
   },
 };
 
-export const RecruitCompletedButton: Story = {
+export const ButtonWithIcon: Story = {
   args: {
-    type: 'recruitcompleted',
-    width: '10.8rem',
-    children: '모집 완료',
-  },
-};
-
-export const AplyCompletedButton: Story = {
-  args: {
-    type: 'aplycompleted',
-    width: '10.8rem',
-    children: '신청 완료',
+    width: '12.6rem',
+    label: '목록으로',
+    img: IconImage,
   },
 };
