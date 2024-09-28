@@ -9,9 +9,8 @@ const meta: Meta<typeof ChatButton> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    type: {
-      control: 'select',
-      options: ['message', 'image', 'github'],
+    isOpen: {
+      control: 'boolean',
     },
     onClick: {
       action: 'clicked',
@@ -22,20 +21,8 @@ const meta: Meta<typeof ChatButton> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const MessageButton: Story = {
+export const FloatingButton: Story = {
   args: {
-    type: 'message',
-  },
-};
-
-export const ImageButton: Story = {
-  args: {
-    type: 'image',
-  },
-};
-
-export const GithubButton: Story = {
-  args: {
-    type: 'github',
+    isOpen: false,
   },
 };
