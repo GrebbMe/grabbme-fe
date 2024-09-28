@@ -16,7 +16,7 @@ export const SelectList = ({ items, width }: SelectListProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
 
-  const widthMap = {
+  const widthMap: { short: string; medium: string; long: string } = {
     short: '28.8rem',
     medium: '49.6rem',
     long: '80.8rem',
