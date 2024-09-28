@@ -5,12 +5,11 @@ export interface ButtonProps {
   img?: string;
   width: string;
   label: string;
-  onClick: () => void;
 }
 
-export const Button = ({ onClick, isThin = false, img, width, label }: ButtonProps) => {
+export const Button = ({ isThin = false, img, width, label }: ButtonProps) => {
   return (
-    <StyledButton onClick={onClick} isThin={isThin} width={width} img={img} label={label}>
+    <StyledButton isThin={isThin} width={width} img={img} label={label}>
       {img && <img src={img} />}
       {label}
     </StyledButton>

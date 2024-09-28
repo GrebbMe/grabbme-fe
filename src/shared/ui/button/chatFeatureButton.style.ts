@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { styled } from 'styled-components';
 
 const StyledChatButton = styled.button`

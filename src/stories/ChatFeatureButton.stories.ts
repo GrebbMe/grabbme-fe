@@ -11,15 +11,9 @@ const meta: Meta<typeof ChatFeatureButton> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    onClick: {
-      action: 'clicked',
-    },
     img: {
       control: 'text',
     },
-  },
-  args: {
-    onClick: () => {},
   },
 } satisfies Meta<typeof ChatFeatureButton>;
 

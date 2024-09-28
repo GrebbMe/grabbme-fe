@@ -10,9 +10,6 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    onClick: {
-      action: 'clicked',
-    },
     width: {
       control: 'text',
     },
@@ -25,10 +22,6 @@ const meta: Meta<typeof Button> = {
     img: {
       control: 'text',
     },
-  },
-  args: {
-    onClick: () => {},
-    label: 'Default Label',
   },
 } satisfies Meta<typeof Button>;
 
