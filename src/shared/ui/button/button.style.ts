@@ -5,6 +5,7 @@ interface ButtonProps {
   type: 'recruitcompleted' | 'default' | 'aplycompleted';
   isThin?: boolean;
   children: ReactNode;
+  width: string;
   onClick?: () => void;
 }
 
@@ -44,6 +45,7 @@ const StyledButton = styled.button<ButtonProps>`
   height: 3.8rem;
   border-radius: 0.8rem;
   white-space: nowrap;
+  width: ${({ width }) => width};
   ${({ theme }) => theme.typo.BODY_SEMIBOLD};
   ${({ type }) => buttonStyles[type]};
   border-width: ${({ isThin }) => (isThin ? '0.1rem' : '0.1375rem')};

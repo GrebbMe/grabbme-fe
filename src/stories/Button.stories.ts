@@ -17,6 +17,9 @@ const meta: Meta<typeof Button> = {
     onClick: {
       action: 'clicked',
     },
+    width: {
+      control: 'text',
+    },
     children: {
       control: 'text',
     },
@@ -32,13 +35,15 @@ type Story = StoryObj<typeof meta>;
 export const DefaultButton: Story = {
   args: {
     type: 'default',
-    children: '신청 하기',
+    width: '10.8rem',
+    children: '신청하기',
   },
 };
 
 export const RecruitCompletedButton: Story = {
   args: {
     type: 'recruitcompleted',
+    width: '10.8rem',
     children: '모집 완료',
   },
 };
@@ -46,6 +51,7 @@ export const RecruitCompletedButton: Story = {
 export const AplyCompletedButton: Story = {
   args: {
     type: 'aplycompleted',
-    children: '지원 완료',
+    width: '10.8rem',
+    children: '신청 완료',
   },
 };
