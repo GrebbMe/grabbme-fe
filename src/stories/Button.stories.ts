@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import { Button } from '@/shared/ui';
 
 const meta: Meta<typeof Button> = {
-  title: 'components/shared/button',
+  title: 'component/shared/button',
   component: Button,
   parameters: {
     layout: 'centered',

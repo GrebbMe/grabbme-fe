@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ChatButton } from '@/shared/ui';
 
 const meta: Meta<typeof ChatButton> = {
-  title: 'components/shared/button',
+  title: 'component/shared/button',
   component: ChatButton,
   parameters: {
     layout: 'centered',

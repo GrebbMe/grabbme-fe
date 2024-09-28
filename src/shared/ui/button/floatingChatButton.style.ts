@@ -37,7 +37,6 @@ const StyledFloatingClose = styled.button`
   &:hover {
     background: ${({ theme }) => theme.color.BLUE_30};
     border: 0.08rem solid ${({ theme }) => theme.color.GRAY_30};
-    filter: drop-shadow(0rem 0rem 0rem rgba(0, 0, 0, 0));
   }
 `;
 

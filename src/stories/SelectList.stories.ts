@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SelectList } from '@/shared/ui';
 
 const meta: Meta<typeof SelectList> = {
-  title: 'Components/Select',
+  title: 'component/shared/select',
   component: SelectList,
   parameters: {
     layout: 'centered',
