@@ -44,7 +44,6 @@ const StyledButton = styled.button<ButtonProps>`
   white-space: nowrap;
   width: ${({ width }) => width};
   ${({ theme }) => theme.typo.BODY_SEMIBOLD};
-  ${({ type }) => buttonType[type]};
 
   &:hover {
     background-color: ${({ theme }) => theme.color.BLUE_30};
@@ -55,6 +54,8 @@ const StyledButton = styled.button<ButtonProps>`
         contrast(90%);
     }
   }
+
+  ${({ state }) => buttonType[state]};
 `;
 
 export { StyledButton };

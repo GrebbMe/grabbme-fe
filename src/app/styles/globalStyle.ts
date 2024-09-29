@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   html{
-    font-size:62.5% !important
+    font-size:10px !important
   }
   *{
         box-sizing: border-box;

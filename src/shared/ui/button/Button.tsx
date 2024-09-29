@@ -2,14 +2,15 @@ import { StyledButton } from '@/shared/ui/button/button.style';
 
 export interface ButtonProps {
   img?: string;
-  type: 'default' | 'clicked';
+  state: 'default' | 'clicked';
   width: string;
   label: string;
+  onClick?: () => void;
 }
 
-export const Button = ({ type, img, width, label }: ButtonProps) => {
+export const Button = ({ state, img, width, label, onClick }: ButtonProps) => {
   return (
-    <StyledButton type={type} width={width} img={img} label={label}>
+    <StyledButton state={state} width={width} img={img} label={label} onClick={onClick}>
       {img && <img src={img} />}
       {label}
     </StyledButton>
