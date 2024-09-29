@@ -19,9 +19,6 @@ const meta: Meta<typeof Button> = {
     width: {
       control: 'text',
     },
-    isThin: {
-      control: 'boolean',
-    },
     label: {
       control: 'text',
     },
