@@ -10,6 +10,12 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    type: {
+      control: {
+        type: 'select',
+        options: ['default', 'clicked'],
+      },
+    },
     width: {
       control: 'text',
     },
@@ -32,11 +38,20 @@ export const DefaultButton: Story = {
   args: {
     width: '7.6rem',
     label: '버튼',
+    type: 'default',
+  },
+};
+export const ClickedButton: Story = {
+  args: {
+    type: 'clicked',
+    width: '7.6rem',
+    label: '버튼',
   },
 };
 
 export const ButtonWithIcon: Story = {
   args: {
+    type: 'default',
     width: '12.6rem',
     label: '목록으로',
     img: IconImage,
