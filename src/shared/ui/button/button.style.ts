@@ -12,7 +12,7 @@ const buttonType = {
     &:active {
       background-color: ${({ theme }) => theme.color.WHITE};
       color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-      border: 0.15rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+      border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
       img {
         filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
           contrast(90%);
@@ -22,7 +22,7 @@ const buttonType = {
   clicked: css`
     background-color: ${({ theme }) => theme.color.WHITE};
     color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-    border: 0.15rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+    border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
     img {
       filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
         contrast(90%);
@@ -34,7 +34,7 @@ const StyledButton = styled.button<ButtonProps>`
   &:hover {
     background-color: ${({ theme }) => theme.color.BLUE_30};
     color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-    border: 0.15rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+    border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
     img {
       filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
         contrast(90%);
@@ -43,8 +43,7 @@ const StyledButton = styled.button<ButtonProps>`
 
   background-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
   color: white;
-  border: ${({ isThin }) => (isThin ? '0.1rem' : '0.15rem')} solid
-    ${({ theme }) => theme.color.PRIMARY_BLUE};
+  ${({ theme }) => theme.color.PRIMARY_BLUE};
   display: flex;
   justify-content: center;
   align-items: center;
