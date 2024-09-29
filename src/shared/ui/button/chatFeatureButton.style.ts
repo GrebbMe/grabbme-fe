@@ -16,7 +16,6 @@ const StyledChatButton = styled.button`
 
   &:hover {
     background: ${({ theme }) => theme.color.BLUE_30};
-    outline: 0.15rem solid ${({ theme }) => theme.color.BLUE_50};
   }
 
   &:active {
