@@ -22,7 +22,7 @@ const buttonType = {
   clicked: css`
     background-color: ${({ theme }) => theme.color.WHITE};
     color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-    border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+
     img {
       filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
         contrast(90%);
@@ -31,16 +31,7 @@ const buttonType = {
 };
 
 const StyledButton = styled.button<ButtonProps>`
-  &:hover {
-    background-color: ${({ theme }) => theme.color.BLUE_30};
-    color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-    border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
-    img {
-      filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
-        contrast(90%);
-    }
-  }
-
+  border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
   background-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
   color: white;
   ${({ theme }) => theme.color.PRIMARY_BLUE};
@@ -54,6 +45,16 @@ const StyledButton = styled.button<ButtonProps>`
   width: ${({ width }) => width};
   ${({ theme }) => theme.typo.BODY_SEMIBOLD};
   ${({ type }) => buttonType[type]};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.BLUE_30};
+    color: ${({ theme }) => theme.color.PRIMARY_BLUE};
+    border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+    img {
+      filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
+        contrast(90%);
+    }
+  }
 `;
 
 export { StyledButton };

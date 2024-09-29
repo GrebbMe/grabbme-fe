@@ -6,13 +6,13 @@ const StyledFloatingChat = styled.button`
   box-sizing: border-box;
   background: ${({ theme }) => theme.color.WHITE};
   border: 0.08rem solid #d9d9d9;
-  box-shadow: 0.08rem 0.08rem 0.64rem 0.16rem rgba(142, 152, 169, 0.25);
-  filter: drop-shadow(0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
   width: 6.4rem;
   height: 6.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0.08rem 0.08rem 0.64rem 0.16rem rgba(142, 152, 169, 0.25);
+  filter: drop-shadow(0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
 
   img {
     filter: invert(16%) sepia(20%) saturate(1785%) hue-rotate(179deg) brightness(95%) contrast(92%);

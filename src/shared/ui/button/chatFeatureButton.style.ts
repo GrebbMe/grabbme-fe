@@ -10,6 +10,7 @@ const StyledChatButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
   img {
     filter: invert(71%) sepia(6%) saturate(753%) hue-rotate(179deg) brightness(84%) contrast(87%);
   }
