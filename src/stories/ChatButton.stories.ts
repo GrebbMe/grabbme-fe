@@ -1,13 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ChatButton } from '@/shared/ui';
+import { ChatButton } from '@/features/chat';
 
 const meta: Meta<typeof ChatButton> = {
   title: 'component/shared/button',
   component: ChatButton,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
   argTypes: {
     isOpen: {
       control: 'boolean',
