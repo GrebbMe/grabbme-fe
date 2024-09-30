@@ -5,17 +5,16 @@ const buttonState = {
   default: css`
     color: white;
 
-    img {
-      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(134deg) brightness(102%) contrast(101%);
+    svg {
+      color: ${({ theme }) => theme.color.WHITE};
     }
 
     &:active {
       background-color: ${({ theme }) => theme.color.WHITE};
       color: ${({ theme }) => theme.color.PRIMARY_BLUE};
       border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
-      img {
-        filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
-          contrast(90%);
+      svg {
+        color: ${({ theme }) => theme.color.PRIMARY_BLUE};
       }
     }
   `,
@@ -23,9 +22,8 @@ const buttonState = {
     background-color: ${({ theme }) => theme.color.WHITE};
     color: ${({ theme }) => theme.color.PRIMARY_BLUE};
 
-    img {
-      filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
-        contrast(90%);
+    svg {
+      color: ${({ theme }) => theme.color.PRIMARY_BLUE};
     }
   `,
 };
@@ -49,9 +47,8 @@ const StyledButton = styled.button<ButtonProps>`
     background-color: ${({ theme }) => theme.color.BLUE_30};
     color: ${({ theme }) => theme.color.PRIMARY_BLUE};
     border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
-    img {
-      filter: invert(15%) sepia(16%) saturate(2513%) hue-rotate(180deg) brightness(99%)
-        contrast(90%);
+    svg {
+      color: ${({ theme }) => theme.color.PRIMARY_BLUE};
     }
   }
 

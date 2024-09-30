@@ -11,8 +11,8 @@ const StyledChatButton = styled.button`
   justify-content: center;
   cursor: pointer;
 
-  img {
-    filter: invert(71%) sepia(6%) saturate(753%) hue-rotate(179deg) brightness(84%) contrast(87%);
+  svg {
+    color: ${({ theme }) => theme.color.BLUE_50};
   }
 
   &:hover {
@@ -22,8 +22,9 @@ const StyledChatButton = styled.button`
   &:active {
     background: ${({ theme }) => theme.color.PRIMARY_BLUE};
     outline: none;
-    img {
-      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(134deg) brightness(102%) contrast(101%);
+
+    svg {
+      color: ${({ theme }) => theme.color.WHITE};
     }
   }
 `;

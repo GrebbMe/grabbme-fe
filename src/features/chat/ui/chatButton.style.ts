@@ -14,8 +14,8 @@ const StyledFloatingChat = styled.button`
   box-shadow: 0.08rem 0.08rem 0.64rem 0.16rem rgba(142, 152, 169, 0.25);
   filter: drop-shadow(0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
 
-  img {
-    filter: invert(16%) sepia(20%) saturate(1785%) hue-rotate(179deg) brightness(95%) contrast(92%);
+  svg {
+    color: ${({ theme }) => theme.color.PRIMARY_BLUE};
   }
 
   &:hover {
@@ -38,8 +38,8 @@ const StyledFloatingClose = styled.button`
   align-items: center;
   justify-content: center;
 
-  img {
-    filter: invert(54%) sepia(6%) saturate(70%) hue-rotate(314deg) brightness(98%) contrast(86%);
+  svg {
+    color: ${({ theme }) => theme.color.BLUE_50};
   }
 
   &:hover {
