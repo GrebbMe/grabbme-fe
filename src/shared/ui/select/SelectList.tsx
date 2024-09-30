@@ -7,31 +7,33 @@ import {
   StyledIcon,
 } from '@/shared/ui/select/selectList.style';
 
-interface SelectListProps {
-  items: string[];
-  width: 'short' | 'medium' | 'long';
+type SelectListSize = 'sm' | 'md' | 'lg';
+
+export interface SelectListItem {
+  value: string;
+  display: string;
 }
 
-export const SelectList = ({ items, width }: SelectListProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+export interface SelectListProps {
+  items: SelectListItem[];
+  size: SelectListSize;
+  selected: SelectListItem | null;
+  onChange: (item: SelectListItem) => void;
+}
 
-  const widthMap: { short: string; medium: string; long: string } = {
-    short: '28.8rem',
-    medium: '49.6rem',
-    long: '80.8rem',
-  };
+export const SelectList = ({ items, size, selected, onChange }: SelectListProps) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
-  const handleItemClick = (item: string) => {
-    setSelectedItem(item);
+  const handleItemClick = (item: SelectListItem) => {
+    onChange(item);
     setIsOpen(false);
   };
 
   return (
-    <DropdownContainer width={widthMap[width]}>
+    <DropdownContainer size={size}>
       <DropdownHeader onClick={toggleDropdown} isOpen={isOpen}>
-        {selectedItem || '선택'}
+        {selected ? selected.display : '선택'}
         <StyledIcon icon={isOpen ? 'iconamoon:arrow-up-2' : 'iconamoon:arrow-down-2'} />
       </DropdownHeader>
       {isOpen && (
@@ -40,9 +42,9 @@ export const SelectList = ({ items, width }: SelectListProps) => {
             <DropdownListItem
               key={index}
               onClick={() => handleItemClick(item)}
-              isSelected={item === selectedItem}
+              isSelected={selected ? item.value === selected.value : false}
             >
-              {item}
+              {item.display}
             </DropdownListItem>
           ))}
         </DropdownListContainer>

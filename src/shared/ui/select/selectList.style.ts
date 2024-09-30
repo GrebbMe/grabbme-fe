@@ -1,8 +1,8 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { styled } from 'styled-components';
 
-const DropdownContainer = styled.div<{ width: string }>`
-  width: ${({ width }) => width};
+const DropdownContainer = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
+  width: ${({ size }) => (size === 'sm' ? '28.8rem' : size === 'md' ? '49.6rem' : '80.8rem')};
   position: relative;
 `;
 
@@ -38,6 +38,7 @@ const DropdownListItem = styled.div<{ isSelected: boolean }>`
   cursor: pointer;
   display: flex;
   align-items: center;
+
   &:hover {
     background: ${({ theme }) => theme.color.BLUE_30};
   }

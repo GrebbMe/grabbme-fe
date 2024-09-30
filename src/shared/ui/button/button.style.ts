@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components';
-import { ButtonProps } from '@/shared/ui/button/Button';
+import { ButtonProps } from '@/shared/types/ButtonProps';
 
-const buttonType = {
+const buttonState = {
   default: css`
     color: white;
 
@@ -42,7 +42,7 @@ const StyledButton = styled.button<ButtonProps>`
   height: 3.8rem;
   border-radius: 0.8rem;
   white-space: nowrap;
-  width: ${({ width }) => width};
+  width: ${({ size }) => size};
   ${({ theme }) => theme.typo.BODY_SEMIBOLD};
 
   &:hover {
@@ -55,7 +55,7 @@ const StyledButton = styled.button<ButtonProps>`
     }
   }
 
-  ${({ state }) => buttonType[state]};
+  ${({ state }) => buttonState[state]};
 `;
 
 export { StyledButton };
