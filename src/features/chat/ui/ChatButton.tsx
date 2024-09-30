@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { StyledFloatingChat, StyledFloatingClose } from '@/features/chat/ui/chatButton.style';
 import Chat from '@/shared/assets/chat-fill.svg?react';
 import Close from '@/shared/assets/close.svg?react';
-// import Close from '@/shared/assets/mingcute_close-fill.svg?react';
 
 export interface ChatButtonProps {
   onClick: () => void;
