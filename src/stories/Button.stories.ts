@@ -1,14 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import IconImage from '@/shared/assets/ph--list-bold.svg';
-import { Button } from '@/shared/ui/button/Button';
+import { Button } from '@/shared/ui';
 
 const meta: Meta<typeof Button> = {
   title: 'component/shared/button',
   component: Button,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
   argTypes: {
     state: {
       control: {
@@ -16,10 +12,10 @@ const meta: Meta<typeof Button> = {
         options: ['default', 'clicked'],
       },
     },
-    width: {
+    size: {
       control: 'text',
     },
-    label: {
+    content: {
       control: 'text',
     },
     img: {
@@ -33,24 +29,24 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultButton: Story = {
   args: {
-    width: '7.6rem',
-    label: '버튼',
+    size: '7.6rem',
+    content: '버튼',
     state: 'default',
   },
 };
 export const ClickedButton: Story = {
   args: {
     state: 'clicked',
-    width: '7.6rem',
-    label: '버튼',
+    size: '7.6rem',
+    content: '버튼',
   },
 };
 
 export const ButtonWithIcon: Story = {
   args: {
     state: 'default',
-    width: '12.6rem',
-    label: '목록으로',
+    size: '12.6rem',
+    content: '목록으로',
     img: IconImage,
   },
 };

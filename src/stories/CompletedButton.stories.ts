@@ -4,10 +4,7 @@ import { CompletedButton } from '@/shared/ui/button/CompletedButton';
 const meta: Meta<typeof CompletedButton> = {
   title: 'component/shared/button',
   component: CompletedButton,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
+
   argTypes: {
     variant: {
       control: {
