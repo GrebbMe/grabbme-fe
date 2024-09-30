@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import ArrowDown from '@/shared/assets/arrow-down.svg?react';
+import ArrowUp from '@/shared/assets/arrow-up.svg?react';
 import {
   DropdownContainer,
   DropdownHeader,
   DropdownListContainer,
   DropdownListItem,
-  StyledIcon,
 } from '@/shared/ui/select/selectList.style';
 
 type SelectListSize = 'sm' | 'md' | 'lg';
@@ -23,7 +24,6 @@ export interface SelectListProps {
 
 export const SelectList = ({ items, size, selected, onChange }: SelectListProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleDropdown = () => setIsOpen((prev) => !prev);
   const handleItemClick = (item: SelectListItem) => {
     onChange(item);
@@ -34,7 +34,7 @@ export const SelectList = ({ items, size, selected, onChange }: SelectListProps)
     <DropdownContainer size={size}>
       <DropdownHeader onClick={toggleDropdown} isOpen={isOpen}>
         {selected ? selected.display : '선택'}
-        <StyledIcon icon={isOpen ? 'iconamoon:arrow-up-2' : 'iconamoon:arrow-down-2'} />
+        {isOpen ? <ArrowUp /> : <ArrowDown />}
       </DropdownHeader>
       {isOpen && (
         <DropdownListContainer>

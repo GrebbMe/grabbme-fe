@@ -40,6 +40,7 @@ const StyledButton = styled.button<ButtonProps>`
   height: 3.8rem;
   border-radius: 0.8rem;
   white-space: nowrap;
+  cursor: pointer;
   width: ${({ size }) => size};
   ${({ theme }) => theme.typo.BODY_SEMIBOLD};
 

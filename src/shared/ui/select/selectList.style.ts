@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { styled } from 'styled-components';
 
 const DropdownContainer = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
@@ -45,10 +44,5 @@ const DropdownListItem = styled.div<{ isSelected: boolean }>`
   color: ${({ isSelected, theme }) => (isSelected ? theme.color.BLACK_100 : theme.color.BLACK_80)};
   ${({ isSelected, theme }) => (isSelected ? theme.typo.SUBTITLE_14 : theme.typo.CAPTION_14)};
 `;
-const StyledIcon = styled(Icon)`
-  width: 2.4rem;
-  height: 2.4rem;
-  color: ${({ theme }) => theme.color.BLUE_50};
-`;
 
-export { DropdownContainer, DropdownHeader, DropdownListContainer, DropdownListItem, StyledIcon };
+export { DropdownContainer, DropdownHeader, DropdownListContainer, DropdownListItem };
