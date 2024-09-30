@@ -1,18 +1,11 @@
+import { ButtonProps } from '@/shared/types/ButtonProps';
 import { StyledButton } from '@/shared/ui/button/button.style';
 
-export interface ButtonProps {
-  img?: string;
-  state: 'default' | 'clicked';
-  width: string;
-  label: string;
-  onClick?: () => void;
-}
-
-export const Button = ({ state, img, width, label, onClick }: ButtonProps) => {
+export const Button = ({ state, img, content, size, onClick }: ButtonProps) => {
   return (
-    <StyledButton state={state} width={width} img={img} label={label} onClick={onClick}>
+    <StyledButton state={state} size={size} img={img} content={content} onClick={onClick}>
       {img && <img src={img} />}
-      {label}
+      {content}
     </StyledButton>
   );
 };
