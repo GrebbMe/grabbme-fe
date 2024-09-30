@@ -1,6 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-
 import { router } from '@/app/routers/index';
 import { GlobalStyle, theme } from '@/app/styles';
 
@@ -10,7 +9,6 @@ const App = () => {
       <GlobalStyle />
       <RouterProvider router={router} />
     </ThemeProvider>
-
   );
 };
 
