@@ -1,1 +1,1 @@
-// post/index.ts
+export { DeadlineCalendar } from '@/features/post/ui/deadlineCalendar';
