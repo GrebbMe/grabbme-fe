@@ -1,16 +1,15 @@
+import { ko } from 'date-fns/locale';
+import { useRef, useState } from 'react';
+import DatePicker from 'react-datepicker';
 import { CustomCalendarContainer } from '@/features/post/ui/deadlineCalendar/CustomCalendarContainer';
 import { CustomHeader, CustomHeaderProps } from '@/features/post/ui/deadlineCalendar/CustomHeader';
 import {
   DatePickerContainer,
   StyledDatePicker,
 } from '@/features/post/ui/deadlineCalendar/DeadlineCalendar.style';
-
 import arrowLeftIcon from '@/shared/assets/arrow-left-2.svg';
 import arrowRightIcon from '@/shared/assets/arrow-right-2.svg';
 import calendarIcon from '@/shared/assets/calendar.svg';
-import { ko } from 'date-fns/locale';
-import { useRef, useState } from 'react';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 interface DeadlineCalendarProps {
