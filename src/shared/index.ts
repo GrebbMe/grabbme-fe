@@ -1,1 +1,1 @@
-export { routerPath } from '@/shared/consts/rotuerPath';
+export { routerPath } from '@/shared/consts/routerPath';
