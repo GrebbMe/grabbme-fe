@@ -1,2 +1,2 @@
-export { GithubLogin } from './GithubLogin';
-export { SignUp } from './SignUp';
+export { GithubLogin } from '@/pages/auth/ui/GithubLogin';
+export { SignUp } from '@/pages/auth/ui/SignUp';
