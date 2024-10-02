@@ -1,5 +1,5 @@
 import { ko } from 'date-fns/locale';
-import { useRef, useState } from 'react';
+import React, { useState, forwardRef, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import { CustomCalendarContainer } from '@/features/post/ui/deadlineCalendar/CustomCalendarContainer';
 import { CustomHeader, CustomHeaderProps } from '@/features/post/ui/deadlineCalendar/CustomHeader';
@@ -21,66 +21,68 @@ interface DeadlineCalendarProps {
   setSelectedDate: (date: Date | null) => void;
 }
 
-export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCalendarProps) => {
-  const [tempDate, setTempDate] = useState<Date | null>(null);
-  const datePickerRef = useRef<DatePicker>(null);
+export const DeadlineCalendar = forwardRef<DatePicker, DeadlineCalendarProps>(
+  ({ selectedDate, setSelectedDate }, ref) => {
+    const [tempDate, setTempDate] = useState<Date | null>(null);
+    const datePickerRef = useRef<DatePicker>(null);
 
-  const handleDateChange = (date: Date | null) => {
-    setTempDate(date);
-  };
+    const handleDateChange = (date: Date | null) => {
+      setTempDate(date);
+    };
 
-  const handleOnClick = () => {
-    if (datePickerRef.current) {
-      datePickerRef.current.setFocus();
-    }
-  };
+    const handleOnClick = () => {
+      if (ref && typeof ref !== 'function' && ref.current) {
+        ref.current.setFocus();
+      }
+    };
 
-  return (
-    <DatePickerContainer>
-      <DatePickerWrapper>
-        <DatePickerLayout>
-          <StyledDatePicker
-            locale={ko}
-            ref={datePickerRef}
-            selected={tempDate}
-            onChange={handleDateChange}
-            dateFormat="yyyy/MM/dd"
-            placeholderText="선택"
-            minDate={new Date()}
-            shouldCloseOnSelect={false}
-            calendarContainer={(props: any) => (
-              <CustomCalendarContainer
-                {...props}
-                selectedDate={selectedDate}
-                setSelectedDate={setSelectedDate}
-                tempDate={tempDate}
-                setTempDate={setTempDate}
-                datePickerRef={datePickerRef}
-              />
-            )}
-            renderCustomHeader={({
-              date,
-              decreaseMonth,
-              increaseMonth,
-              prevMonthButtonDisabled,
-              nextMonthButtonDisabled,
-            }: CustomHeaderProps) => (
-              <CustomHeader
-                date={date}
-                decreaseMonth={decreaseMonth}
-                increaseMonth={increaseMonth}
-                prevMonthButtonDisabled={prevMonthButtonDisabled}
-                nextMonthButtonDisabled={nextMonthButtonDisabled}
-                arrowLeftIcon={<IcArrowLeft2 />}
-                arrowRightIcon={<IcArrowRight2 />}
-              />
-            )}
-          />
-        </DatePickerLayout>
-        <DatePickerIconStyle onClick={handleOnClick}>
-          <IcCalendar />
-        </DatePickerIconStyle>
-      </DatePickerWrapper>
-    </DatePickerContainer>
-  );
-};
+    return (
+      <DatePickerContainer>
+        <DatePickerWrapper>
+          <DatePickerLayout>
+            <StyledDatePicker
+              locale={ko}
+              ref={datePickerRef}
+              selected={tempDate}
+              onChange={handleDateChange}
+              dateFormat="yyyy/MM/dd"
+              placeholderText="선택"
+              minDate={new Date()}
+              shouldCloseOnSelect={false}
+              calendarContainer={(props: any) => (
+                <CustomCalendarContainer
+                  {...props}
+                  datePickerRef={datePickerRef}
+                  selectedDate={selectedDate}
+                  setSelectedDate={setSelectedDate}
+                  tempDate={tempDate}
+                  setTempDate={setTempDate}
+                />
+              )}
+              renderCustomHeader={({
+                date,
+                decreaseMonth,
+                increaseMonth,
+                prevMonthButtonDisabled,
+                nextMonthButtonDisabled,
+              }: CustomHeaderProps) => (
+                <CustomHeader
+                  date={date}
+                  decreaseMonth={decreaseMonth}
+                  increaseMonth={increaseMonth}
+                  prevMonthButtonDisabled={prevMonthButtonDisabled}
+                  nextMonthButtonDisabled={nextMonthButtonDisabled}
+                  arrowLeftIcon={<IcArrowLeft2 />}
+                  arrowRightIcon={<IcArrowRight2 />}
+                />
+              )}
+            />
+          </DatePickerLayout>
+          <DatePickerIconStyle onClick={handleOnClick}>
+            <IcCalendar />
+          </DatePickerIconStyle>
+        </DatePickerWrapper>
+      </DatePickerContainer>
+    );
+  },
+);
