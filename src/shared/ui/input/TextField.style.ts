@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { TextFieldSize } from '@/shared/ui/input/TextFiled.types';
+import { TextFieldSize } from '@/shared/ui/input/TextFieled.types';
 
 export const Container = styled.div<{ size: TextFieldSize }>`
   ${({ size }) => `

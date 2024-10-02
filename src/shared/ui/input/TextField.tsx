@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { CharCount, Container, Header, Input, Label } from '@/shared/ui/input/TextFiled.style';
-import { TextFieldProps, TextFieldSize } from '@/shared/ui/input/TextFiled.types';
+import { CharCount, Container, Header, Input, Label } from '@/shared/ui/input/TextField.style';
+import { TextFieldProps, TextFieldSize } from '@/shared/ui/input/TextFieled.types';
 
 const MAX_LENGTHS: { [key in TextFieldSize]: number } = {
   sm: 20,
