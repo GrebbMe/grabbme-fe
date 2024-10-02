@@ -21,7 +21,7 @@ export const CustomHeader = ({
 }: CustomHeaderProps) => {
   return (
     <HeaderContainer>
-      <>
+      <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled} className="prev-button">
         <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled} className="prev-button">
           <img src={arrowLeftIcon} alt="Previous-month" />
         </button>
@@ -31,7 +31,6 @@ export const CustomHeader = ({
         <button onClick={increaseMonth} disabled={nextMonthButtonDisabled} className="next-button">
           <img src={arrowRightIcon} alt="Next-month" />
         </button>
-      </>
     </HeaderContainer>
   );
 };

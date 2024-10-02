@@ -32,7 +32,7 @@ export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCale
   };
 
   return (
-    <>
+    <DatePickerContainer>
       <DatePickerContainer>
         <div className="box">
           <div className="date-input">
@@ -80,6 +80,5 @@ export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCale
           </div>
         </div>
       </DatePickerContainer>
-    </>
   );
 };
