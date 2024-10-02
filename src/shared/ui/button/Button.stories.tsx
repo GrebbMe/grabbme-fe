@@ -1,56 +1,51 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import List from '@/shared/assets/list-color.svg?react';
-import { ButtonProps } from '@/shared/types/ButtonProps';
-import { Button } from '@/shared/ui';
+import { Meta, StoryObj } from '@storybook/react';
+import IcBookmark from '@/shared/assets/svg/IcBookmark.svg?react';
+import IcList from '@/shared/assets/svg/IcList.svg?react';
+import Button from '@/shared/ui/button/Button';
 
 const meta: Meta<typeof Button> = {
-  title: 'component/shared/button',
+  title: 'shared/Button',
   component: Button,
+  parameters: {
+    layout: 'centered',
+  },
   argTypes: {
-    state: {
-      control: {
-        state: 'select',
-        options: ['default', 'clicked'],
-      },
-    },
-    size: {
-      control: 'text',
-    },
-    content: {
-      control: 'text',
-    },
-    icon: {
-      control: 'object',
-    },
+    children: { control: 'text' },
     onClick: { action: 'clicked' },
   },
-} satisfies Meta<typeof Button>;
+  args: {
+    children: '버튼',
+  },
+};
 
 export default meta;
-type Story = StoryObj<ButtonProps>;
+type Story = StoryObj<typeof meta>;
 
-export const ClickedButton: Story = {
+export const Default: Story = {
   args: {
-    state: 'clicked',
-    size: '7.6rem',
-    content: '버튼',
+    children: '버튼',
   },
 };
 
-export const DefaultButton: Story = {
-  args: {
-    state: 'default',
-    size: '7.6rem',
-    content: '버튼',
-  },
+export const All: Story = {
+  render: (args) => (
+    <div>
+      <h3>모든 버튼</h3>
+      <div style={{ marginBottom: '1rem' }}>
+        <Button {...args} icon={<IcBookmark />} iconType="bookmark">
+          북마크
+        </Button>
+      </div>
+      <div style={{ marginBottom: '1rem' }}>
+        <Button {...args} icon={<IcList />} iconType="list">
+          목록으로
+        </Button>
+      </div>
+      <div style={{ marginBottom: '1rem' }}>
+        <Button {...args} disabled>
+          모집 완료
+        </Button>
+      </div>
+    </div>
+  ),
 };
-
-export const ButtonWithIcon: Story = {
-  args: {
-    state: 'default',
-    size: '12.6rem',
-    content: '목록으로',
-    icon: <List />,
-  },
-};
-
