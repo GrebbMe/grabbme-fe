@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 
   @font-face {
     font-family: 'Pretendard';
-    src: url('/assets/font/Pretendard-Semibold.woff2') format('woff2');
+    src: url('/assets/font/Pretendard-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
   }
