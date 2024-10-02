@@ -4,7 +4,7 @@ import TextField from '@/shared/ui/input/TextField';
 import { TextFieldProps } from '@/shared/ui/input/TextFieled.types';
 
 export default {
-  title: 'Components/TextField',
+  title: 'component/shared/textfield',
   component: TextField,
 } as Meta;
 
