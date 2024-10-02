@@ -12,24 +12,22 @@ const HeaderContainer = styled.div`
 `;
 
 const FooterContainer = styled.div`
-  background-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-  color: ${({ theme }) => theme.color.WHITE};
+  background-color: ${({ theme }) => theme.color.BLUE_10};
+  border-top: 1px solid ${({ theme }) => theme.color.BLUE_30};
   ${({ theme }) => theme.typo.TITLE};
-  padding: 1rem;
-  text-align: center;
+  width: 100%;
+  height: 20.1rem;
   position: fixed;
   bottom: 0;
-  width: 100%;
 `;
 
-const Container = styled.div`
+const GridContainer = styled.div`
   display: grid;
   margin: 0 auto;
   border: 1px solid #000;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+
   grid-template-columns: repeat(12, 8rem);
-  gap: 2.4rem;
+  column-gap: 2.4rem;
   max-width: 122.4rem;
 
   ${({ theme }) => theme.device.TABLET} {
@@ -47,4 +45,4 @@ const Container = styled.div`
   }
 `;
 
-export { HeaderContainer, FooterContainer, Container };
+export { HeaderContainer, FooterContainer, GridContainer };
