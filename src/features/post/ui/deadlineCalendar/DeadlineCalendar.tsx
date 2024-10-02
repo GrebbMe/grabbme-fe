@@ -1,3 +1,6 @@
+import { ko } from 'date-fns/locale';
+import { useRef, useState } from 'react';
+import DatePicker from 'react-datepicker';
 import { CustomCalendarContainer } from '@/features/post/ui/deadlineCalendar/CustomCalendarContainer';
 import { CustomHeader, CustomHeaderProps } from '@/features/post/ui/deadlineCalendar/CustomHeader';
 import {
@@ -10,9 +13,6 @@ import {
 import { IcArrowLeft2 } from '@/shared/assets/icon/IcArrowLeft2';
 import { IcArrowRight2 } from '@/shared/assets/icon/IcArrowRight2';
 import { IcCalendar } from '@/shared/assets/icon/IcCalendar';
-import { ko } from 'date-fns/locale';
-import { useRef, useState } from 'react';
-import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
