@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
-import Modal from './Modal';
-import { ModalProps } from './Modal.types';
+import Modal from '@/shared/ui/modal/Modal';
+import { ModalProps } from '@/shared/ui/modal/Modal.types';
 
 export default {
   title: 'component/shared/modal',

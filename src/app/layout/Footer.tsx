@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
-import { GridContainer } from './layout.style';
+import { GridContainer } from '@/app/layout';
 import { FooterContainer } from '@/app/layout';
 import github from '@/shared/assets/githublong.png';
 import logo from '@/shared/assets/logo.png';
