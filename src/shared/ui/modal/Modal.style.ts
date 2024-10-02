@@ -28,14 +28,10 @@ export const Description = styled.p`
   ${({ theme }) => theme.typo.SUBTITLE_14};
   text-align: center;
 `;
-export const ButtonWrapper = styled.div`
+export const ButtonWrapper = styled.div<{ type: ModalType }>`
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-`;
-export const ButtonBox = styled.div<{ type: ModalType }>`
-  display: flex;
   flex-direction: row;
+  margin-top: 1.4rem;
   justify-content: ${({ type }) => (type === 'confirm' ? 'space-between' : 'center')};
 `;

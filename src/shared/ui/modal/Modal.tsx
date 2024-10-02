@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { Button } from '@/shared/ui/button/Button';
 import {
-  ButtonBox,
   ButtonWrapper,
   Description,
   ModalBackground,
@@ -23,9 +22,9 @@ const Modal = ({ isModalOpen, handleModal, description, type, onConfirm }: Modal
         >
           <ModalContainer>
             <Description>{description}</Description>
-            <ButtonWrapper>
+            <ButtonWrapper type={type}>
               {type === 'confirm' ? (
-                <ButtonBox type={type}>
+                <>
                   <Button
                     state="default"
                     content="취소"
@@ -42,7 +41,7 @@ const Modal = ({ isModalOpen, handleModal, description, type, onConfirm }: Modal
                       handleModal(false);
                     }}
                   />
-                </ButtonBox>
+                </>
               ) : (
                 <Button
                   state="default"
