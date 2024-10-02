@@ -1,15 +1,18 @@
-import { ko } from 'date-fns/locale';
-import { useRef, useState } from 'react';
-import DatePicker from 'react-datepicker';
 import { CustomCalendarContainer } from '@/features/post/ui/deadlineCalendar/CustomCalendarContainer';
 import { CustomHeader, CustomHeaderProps } from '@/features/post/ui/deadlineCalendar/CustomHeader';
 import {
   DatePickerContainer,
+  DatePickerIconStyle,
+  DatePickerLayout,
+  DatePickerWrapper,
   StyledDatePicker,
 } from '@/features/post/ui/deadlineCalendar/DeadlineCalendar.style';
 import { IcArrowLeft2 } from '@/shared/assets/icon/IcArrowLeft2';
 import { IcArrowRight2 } from '@/shared/assets/icon/IcArrowRight2';
 import { IcCalendar } from '@/shared/assets/icon/IcCalendar';
+import { ko } from 'date-fns/locale';
+import { useRef, useState } from 'react';
+import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -34,8 +37,8 @@ export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCale
 
   return (
     <DatePickerContainer>
-      <div className="box">
-        <div className="date-input">
+      <DatePickerWrapper>
+        <DatePickerLayout>
           <StyledDatePicker
             locale={ko}
             ref={datePickerRef}
@@ -43,9 +46,8 @@ export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCale
             onChange={handleDateChange}
             dateFormat="yyyy/MM/dd"
             placeholderText="선택"
-            minDate={new Date()} // 오늘 이전의 날짜 선택 불가
-            shouldCloseOnSelect={false} // 날짜를 선택해도 캘린더 모달이 닫히지 않도록 설정
-            // 커스텀 캘린더 컨테이너 사용. 취소, 적용 버튼
+            minDate={new Date()}
+            shouldCloseOnSelect={false}
             calendarContainer={(props: any) => (
               <CustomCalendarContainer
                 {...props}
@@ -74,11 +76,11 @@ export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCale
               />
             )}
           />
-        </div>
-        <div className="date-icon" onClick={handleOnClick}>
+        </DatePickerLayout>
+        <DatePickerIconStyle onClick={handleOnClick}>
           <IcCalendar />
-        </div>
-      </div>
+        </DatePickerIconStyle>
+      </DatePickerWrapper>
     </DatePickerContainer>
   );
 };
