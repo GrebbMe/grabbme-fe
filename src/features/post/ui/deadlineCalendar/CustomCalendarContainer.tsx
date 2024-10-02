@@ -21,7 +21,7 @@ export const CustomCalendarContainer = ({
   setTempDate,
   tempDate,
 }: CustomCalendarContainerProps) => {
-  const handleCancle = () => {
+  const handleCancel = () => {
     if (datePickerRef.current) {
       setTempDate(selectedDate);
       datePickerRef.current.setOpen(false);
@@ -39,7 +39,7 @@ export const CustomCalendarContainer = ({
     <div className={className}>
       {children}
       <ButtonBoxStyle>
-        <Button state={'default'} content={'취소'} size={'76px'} onClick={handleCancle} />
+        <Button state={'default'} content={'취소'} size={'76px'} onClick={handleCancel} />
         <Button state={'default'} content={'적용'} size={'76px'} onClick={handleAccept} />
       </ButtonBoxStyle>
     </div>
