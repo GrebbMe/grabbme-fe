@@ -21,7 +21,7 @@ export const CustomCalendarContainer = ({
   setTempDate,
   tempDate,
 }: CustomCalendarContainerProps) => {
-  const handleCancle = () => {
+  const handleCancel = () => {
     if (datePickerRef.current) {
       setTempDate(selectedDate);
       datePickerRef.current.setOpen(false);
