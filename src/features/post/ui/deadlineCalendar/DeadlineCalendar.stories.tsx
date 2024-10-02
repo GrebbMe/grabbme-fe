@@ -5,7 +5,6 @@ import { DeadlineCalendar } from './DeadlineCalendar';
 const meta: Meta<typeof DeadlineCalendar> = {
   title: 'component/features/DeadlineCalendar',
   component: DeadlineCalendar,
-  tags: ['autodocs'],
 };
 
 export default meta;
