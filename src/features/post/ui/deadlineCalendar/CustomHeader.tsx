@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { HeaderContainer } from '@/features/post/ui/deadlineCalendar/CustomHeader.style';
 
 export interface CustomHeaderProps {
@@ -6,8 +7,8 @@ export interface CustomHeaderProps {
   increaseMonth: () => void;
   prevMonthButtonDisabled: boolean;
   nextMonthButtonDisabled: boolean;
-  arrowLeftIcon: string;
-  arrowRightIcon: string;
+  arrowLeftIcon: ReactNode;
+  arrowRightIcon: ReactNode;
 }
 
 export const CustomHeader = ({
@@ -22,15 +23,14 @@ export const CustomHeader = ({
   return (
     <HeaderContainer>
       <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled} className="prev-button">
-        <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled} className="prev-button">
-          <img src={arrowLeftIcon} alt="Previous-month" />
-        </button>
-        <div className="year-month">
-          {date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' })}
-        </div>
-        <button onClick={increaseMonth} disabled={nextMonthButtonDisabled} className="next-button">
-          <img src={arrowRightIcon} alt="Next-month" />
-        </button>
+        {arrowLeftIcon}
+      </button>
+      <div className="year-month">
+        {date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' })}
+      </div>
+      <button onClick={increaseMonth} disabled={nextMonthButtonDisabled} className="next-button">
+        {arrowRightIcon}
+      </button>
     </HeaderContainer>
   );
 };

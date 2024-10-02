@@ -17,8 +17,9 @@ const HeaderContainer = styled.div`
     border: none;
     cursor: pointer;
     color: ${({ theme }) => theme.color.BLUE_50};
-    img {
+    svg {
       width: 24px;
+      height: 24px;
     }
     &:disabled {
       cursor: not-allowed;

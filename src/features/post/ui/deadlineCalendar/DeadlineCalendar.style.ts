@@ -164,7 +164,7 @@ const DatePickerContainer = styled.div`
     width: 24px;
     height: 24px;
 
-    img {
+    svg {
       width: 24px;
       height: 24px;
       color: ${({ theme }) => theme.color.BLUE_50};
