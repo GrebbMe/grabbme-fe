@@ -1,7 +1,6 @@
 import DatePicker from 'react-datepicker';
 import { css, styled } from 'styled-components';
 
-// 스타일드 컴포넌트 정의
 const DatePickerContainer = styled.div`
   display: flex;
   align-items: center;

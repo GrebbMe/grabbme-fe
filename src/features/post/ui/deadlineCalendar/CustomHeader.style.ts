@@ -1,6 +1,5 @@
 import { css, styled } from 'styled-components';
 
-// 스타일 정의
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
