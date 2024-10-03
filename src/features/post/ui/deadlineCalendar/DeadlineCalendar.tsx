@@ -10,8 +10,8 @@ import {
   DatePickerWrapper,
   StyledDatePicker,
 } from '@/features/post/ui/deadlineCalendar/DeadlineCalendar.style';
-import { IcArrowLeft2 } from '@/shared/assets/icon/IcArrowLeft2';
-import { IcArrowRight2 } from '@/shared/assets/icon/IcArrowRight2';
+import { IcArrowLeft } from '@/shared/assets/icon/IcArrowLeft';
+import { IcArrowRight } from '@/shared/assets/icon/IcArrowRight';
 import { IcCalendar } from '@/shared/assets/icon/IcCalendar';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -71,8 +71,8 @@ export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCale
                 increaseMonth={increaseMonth}
                 prevMonthButtonDisabled={prevMonthButtonDisabled}
                 nextMonthButtonDisabled={nextMonthButtonDisabled}
-                arrowLeftIcon={<IcArrowLeft2 />}
-                arrowRightIcon={<IcArrowRight2 />}
+                arrowLeftIcon={<IcArrowLeft />}
+                arrowRightIcon={<IcArrowRight />}
               />
             )}
           />
