@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { GridContainer, HeaderContainer } from '@/app/layout';
 import * as S from '@/app/layout/Header.style';
+import { ProfileIcon } from '@/shared/assets';
 import logo from '@/shared/assets/image/logo.png';
-import ProfileIcon from '@/shared/assets/svg/IcProfile.svg?react';
 import { Button } from '@/shared/ui';
 const USER_NAME = '그랩미';
 
