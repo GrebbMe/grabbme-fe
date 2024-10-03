@@ -3,7 +3,6 @@ import { create } from 'zustand';
 export type ToastSize = 'sm' | 'lg';
 
 export interface ToastProps {
-  id: number;
   content: string;
   size: ToastSize;
 }

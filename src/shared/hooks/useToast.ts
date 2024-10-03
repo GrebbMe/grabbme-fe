@@ -8,9 +8,7 @@ export const useToast = () => {
   const { toast, setToast, clearToast } = useToastStore();
 
   const showToast = (content: string, size: ToastSize) => {
-    const id: number = new Date().getTime();
     const toast: ToastProps = {
-      id,
       content,
       size,
     };
