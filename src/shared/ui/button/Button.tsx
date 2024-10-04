@@ -1,11 +1,19 @@
-import { ButtonProps } from '@/shared/types/ButtonProps';
-import { StyledButton } from '@/shared/ui/button/button.style';
+import { ReactElement } from 'react';
+import * as S from './Button.style';
 
-export const Button = ({ state, content, size, onClick, icon }: ButtonProps) => {
-  return (
-    <StyledButton state={state} size={size} content={content} onClick={onClick}>
-      {icon}
-      {content}
-    </StyledButton>
-  );
-};
+interface ButtonProps {
+  children: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  icon?: ReactElement;
+  iconType?: 'bookmark' | 'list';
+}
+
+const Button = ({ children, onClick, disabled = false, icon, iconType }: ButtonProps) => (
+  <S.StyledButton onClick={onClick} disabled={disabled} icon={icon}>
+    {icon && <S.IconWrapper iconType={iconType}>{icon}</S.IconWrapper>}
+    {children}
+  </S.StyledButton>
+);
+
+export default Button;
