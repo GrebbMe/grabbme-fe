@@ -38,9 +38,7 @@ export const PeriodModal = ({
   handleCancel,
   handleAccept,
   tempStartDate2,
-  setTempStartDate2,
   tempEndDate2,
-  setTempEndDate2,
 }: PeriodModalProps) => {
   return (
     <Modal>
@@ -65,8 +63,7 @@ export const PeriodModal = ({
               key={month}
               isSelected={
                 activeInput === 'start'
-                  ? //? !!tempStartDate && Number(format(new Date(tempStartDate), 'MM')) === idx + 1
-                    format(new Date(tempStartDate), 'yyyyMM') ===
+                  ? format(new Date(tempStartDate), 'yyyyMM') ===
                       format(new Date(tempStartDate2), 'yyyyMM') &&
                     Number(format(new Date(tempStartDate), 'MM')) === idx + 1
                   : format(new Date(tempEndDate), 'yyyyMM') ===
