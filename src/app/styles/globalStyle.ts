@@ -3,26 +3,6 @@ import reset from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  @font-face {
-    font-family: 'Pretendard';  
-    src: url('/assets/font/Pretendard-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Pretendard';
-    src: url('/assets/font/Pretendard-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Pretendard';
-    src: url('/assets/font/Pretendard-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-  }
   html, body, #root {
     width: 100%;
     height: 100%;
