@@ -32,6 +32,7 @@ export const Container = styled.div`
   flex-direction: column;
   width: 80.8rem;
   height: 100%;
+
   & > .stack-box {
     background-color: ${({ theme }) => theme.color.WHITE};
     border-radius: 0 0 0.8rem 0.8rem;
