@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 import * as S from '@/shared/ui/textfield/TextField.style';
 import { TextFieldProps, TextFieldSize } from '@/shared/ui/textfield/Textfield.types';
 
-const MAX_LENGTHS = 50;
+const MAX_LENGTH = 50;
 
 const TextField = ({ value, onChange, size = 'lg', placeholder = '' }: TextFieldProps) => {
-  const [text, setText] = useState(value);
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue: string = event.target.value;
-    if (newValue.length <= MAX_LENGTHS) {
-      setText(newValue);
-      if (onChange) {
-        onChange(newValue);
-      }
+    if (newValue.length <= MAX_LENGTH) {
+      onChange(newValue);
     }
   };
 
@@ -24,15 +19,15 @@ const TextField = ({ value, onChange, size = 'lg', placeholder = '' }: TextField
           게시글 제목<S.StarWrapper>*</S.StarWrapper>
         </S.Label>
         <S.CharCount>
-          {text.length} / {MAX_LENGTHS}
+          {value.length} / {MAX_LENGTH}
         </S.CharCount>
       </S.Header>
       <S.Input
         type="text"
-        value={text}
+        value={value}
         onChange={handleChange}
-        maxLength={MAX_LENGTHS}
-        hasValue={text.length > 0}
+        maxLength={MAX_LENGTH}
+        $hasValue={value.length > 0}
         placeholder={placeholder}
       />
     </S.Container>

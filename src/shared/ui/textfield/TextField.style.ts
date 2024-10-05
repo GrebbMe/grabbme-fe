@@ -30,7 +30,7 @@ export const StarWrapper = styled.span`
   ${({ theme }) => theme.typo.BODY_SEMIBOLD};
 `;
 
-export const Input = styled.input<{ hasValue: boolean }>`
+export const Input = styled.input<{ $hasValue: boolean }>`
   width: 100%;
   height: 4.8rem;
   outline: none;
@@ -40,8 +40,8 @@ export const Input = styled.input<{ hasValue: boolean }>`
   color: ${({ theme }) => theme.color.GRAY_50};
   ${({ theme }) => theme.typo.CAPTION_14};
 
-  ${({ hasValue, theme }) =>
-    hasValue &&
+  ${({ $hasValue, theme }) =>
+    $hasValue &&
     `
       border-color: ${theme.color.BLUE_50};
       color: ${theme.color.BLACK_80};
