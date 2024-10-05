@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import { ModalType } from '@/shared/ui/modal/Modal.types';
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -27,7 +26,7 @@ export const Content = styled.p`
   ${({ theme }) => theme.typo.SUBTITLE_14};
   text-align: center;
 `;
-export const ButtonWrapper = styled.div<{ type: ModalType }>`
+export const ButtonWrapper = styled.div<{ type: 'confirm' | 'alert' }>`
   display: flex;
   flex-direction: row;
   margin-top: 1.4rem;
