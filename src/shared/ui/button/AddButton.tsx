@@ -7,7 +7,7 @@ interface AddButtonProps {
 }
 
 export const AddButton = ({ children, onClick }: AddButtonProps) => (
-  <StyledButton onClick={onClick}>
+  <StyledButton type="button" onClick={onClick}>
     {children}
     <PlusIcon />
   </StyledButton>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import ArrowDownIcon from '@/shared/assets/arrow-down.svg?react';
 import ArrowUpIcon from '@/shared/assets/arrow-up.svg?react';
+import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
 import { RemoveButton, AddButton } from '@/shared/ui';
 import * as S from '@/shared/ui/select/MultipleSelectList.style';
 
@@ -27,17 +28,7 @@ export const MultipleSelectList = ({
   const [isOpen, setIsOpen] = useState(false);
   const containerRef: React.RefObject<HTMLDivElement> = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  useOutsideClick({ ref: containerRef, handler: () => setIsOpen(false) });
 
   const handleAddItem = (item: { id: number; item: string }) => {
     if (selectedItems.length < selectLimit && !selectedItems.includes(item)) {

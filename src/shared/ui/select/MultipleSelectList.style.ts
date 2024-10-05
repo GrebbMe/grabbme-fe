@@ -46,7 +46,7 @@ export const Container = styled.div`
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 10;
+    z-index: 100;
   }
 `;
 
