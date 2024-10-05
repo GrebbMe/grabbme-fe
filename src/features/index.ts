@@ -1,1 +1,1 @@
-//임시 feature 파일 생성
+export { DeadlineCalendar } from '@/features/post';
