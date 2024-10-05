@@ -39,8 +39,12 @@ export const All = () => {
     showModal({ content, type });
   };
 
-  const handleShowConfirmModal = (content: string, type: 'confirm' | 'alert') => {
-    showModal({ content, type });
+  const handleShowConfirmModal = (
+    content: string,
+    type: 'confirm' | 'alert',
+    onConfirm: () => void,
+  ) => {
+    showModal({ content, type, onConfirm });
   };
 
   return (
@@ -50,14 +54,18 @@ export const All = () => {
           handleShowAlertModal('선택하지 않은 내용이 있어요. 모든 내용을 선택해주세요', 'alert')
         }
       >
-        짧은 토스트 알림
+        alert
       </button>
       <button
         onClick={() =>
-          handleShowConfirmModal('회원가입을 그만 하시겠어요? 내용은 저장되지 않아요.', 'confirm')
+          handleShowConfirmModal(
+            '회원가입을 그만 하시겠어요? 내용은 저장되지 않아요.',
+            'confirm',
+            () => alert('confirmed'),
+          )
         }
       >
-        긴 토스트 알림
+        confirm
       </button>
     </div>
   );

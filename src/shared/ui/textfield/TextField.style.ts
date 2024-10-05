@@ -25,6 +25,11 @@ export const CharCount = styled.span`
   ${({ theme }) => theme.typo.CAPTION_12};
 `;
 
+export const StarWrapper = styled.span`
+  color: ${({ theme }) => theme.color.POINT_PINK};
+  ${({ theme }) => theme.typo.BODY_SEMIBOLD};
+`;
+
 export const Input = styled.input<{ hasValue: boolean }>`
   width: 100%;
   height: 4.8rem;

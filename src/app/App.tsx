@@ -1,6 +1,6 @@
 import { RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { router } from '@/app/routers/index';
+import { router } from '@/app/routers';
 import { GlobalStyle, theme } from '@/app/styles';
 import { Modal, Toast } from '@/shared';
 
