@@ -2,7 +2,7 @@ import { RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { router } from '@/app/routers/index';
 import { GlobalStyle, theme } from '@/app/styles';
-import { Toast } from '@/shared/ui/toast/Toast';
+import { Toast } from '@/shared';
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { useToast } from '@/shared/hooks/useToast';
-import { ToastProps, ToastSize } from '@/shared/stores/toastStore';
+import { ToastMessage, ToastSize } from '@/shared/stores/toastStore';
 import { Toast } from '@/shared/ui/toast/Toast';
 export default {
   title: 'shared/Toast',
@@ -11,17 +11,16 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<ToastProps> = (args: { content: string; size: ToastSize }) => {
+const Template: StoryFn<ToastMessage> = (args: { content: string; size: ToastSize }) => {
   const { showToast } = useToast();
 
   const handleShowToast = () => {
-    showToast(args.content, args.size);
+    showToast(args);
   };
 
   return (
     <div>
       <button onClick={handleShowToast}>토스트 버튼</button>
-      <Toast />
     </div>
   );
 };
@@ -36,14 +35,13 @@ export const All = () => {
   const { showToast } = useToast();
 
   const handleShowToast = (content: string, size: 'sm' | 'lg') => {
-    showToast(content, size);
+    showToast({ content, size });
   };
 
   return (
     <div>
       <button onClick={() => handleShowToast('짧은 토스트', 'sm')}>짧은 토스트 알림</button>
       <button onClick={() => handleShowToast('긴 토스트 알림', 'lg')}>긴 토스트 알림</button>
-      <Toast />
     </div>
   );
 };

@@ -1,19 +1,16 @@
 import { useEffect } from 'react';
-import { ToastSize, useToastStore } from '@/shared/stores/toastStore';
-import { ToastProps } from '@/shared/stores/toastStore';
+import { ToastMessage, useToastStore } from '@/shared/stores/toastStore';
 
 const DURATION = 3000;
 
 export const useToast = () => {
   const { toast, setToast, clearToast } = useToastStore();
 
-  const showToast = (content: string, size: ToastSize) => {
-    const toast: ToastProps = {
+  const showToast = ({ content, size }: ToastMessage) => {
+    setToast({
       content,
       size,
-    };
-
-    setToast(toast);
+    });
   };
 
   useEffect(() => {
