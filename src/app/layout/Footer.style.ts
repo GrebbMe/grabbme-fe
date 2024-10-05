@@ -31,10 +31,14 @@ export const GithubLink = styled(Link)`
   grid-row: 2;
   grid-column: 12 / span 1;
   justify-self: end;
+  display: flex;
+  align-items: center;
 `;
 export const ProgrammersLink = styled(Link)`
   margin-top: 3.2rem;
   grid-row: 2;
+  display: flex;
+  align-items: center;
   grid-column: 10 / span 2;
   justify-self: end;
 `;

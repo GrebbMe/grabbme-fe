@@ -26,7 +26,7 @@ export const Header = () => {
 
         {isLoggendIn ? (
           <S.ProfileBox>
-            {<ProfileIcon /> || <img src={profileImage} alt="Profile" />}
+            {profileImage ? <img src={profileImage} /> : <ProfileIcon />}
             <div>{USER_NAME} 님</div>
           </S.ProfileBox>
         ) : (
