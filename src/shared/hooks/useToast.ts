@@ -1,21 +1,16 @@
 import { useEffect } from 'react';
-import { useToastStore } from '@/shared/stores/toastStore';
-import { ToastProps } from '@/shared/stores/toastStore';
+import { ToastMessage, useToastStore } from '@/shared/stores/toastStore';
 
-const DURATION = 2500;
+const DURATION = 3000;
 
 export const useToast = () => {
   const { toast, setToast, clearToast } = useToastStore();
 
-  const showToast = (content: string, size: 'lg' | 'md' | 'sm') => {
-    const id: number = new Date().getTime();
-    const toast: ToastProps = {
-      id,
+  const showToast = ({ content, size }: ToastMessage) => {
+    setToast({
       content,
       size,
-    };
-
-    setToast(toast);
+    });
   };
 
   useEffect(() => {
