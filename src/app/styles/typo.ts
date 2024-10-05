@@ -1,50 +1,52 @@
+import { css } from 'styled-components';
+
 export const typo = {
-  TITLE: `
-    font-family:  "Pretendard";
+  TITLE: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 600;
-    font-size: 2.4rem; 
+    font-size: 2.4rem;
     line-height: 140%;
   `,
-  SUBTITLE_20: `
-    font-family: "Pretendard";
+  SUBTITLE_20: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 600;
-    font-size: 2.0rem;
+    font-size: 2rem;
     line-height: 140%;
   `,
-  SUBTITLE_14: `
-    font-family:  "Pretendard";
+  SUBTITLE_14: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 140%;
   `,
-  BODY_SEMIBOLD: `
-    font-family:  "Pretendard";
+  BODY_SEMIBOLD: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 600;
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
     line-height: 140%;
   `,
-  BODY_MEDIUM: `
-    font-family: "Pretendard";
+  BODY_MEDIUM: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 500;
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
     line-height: 140%;
   `,
-  CAPTION_14: `
-    font-family:  "Pretendard";
+  CAPTION_14: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 500;
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
     line-height: 140%;
   `,
-  CAPTION_12: `
-    font-family:  "Pretendard";
+  CAPTION_12: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
     line-height: 140%;
   `,
-  CAPTION_10: `
-    font-family:  "Pretendard";
+  CAPTION_10: css`
+    font-family: 'Pretendard', sans-serif;
     font-weight: 500;
-    font-size: 1.0rem;
+    font-size: 1rem;
     line-height: 140%;
   `,
 };

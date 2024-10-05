@@ -1,5 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import path from 'path';
+import svgr from 'vite-plugin-svgr';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -20,8 +20,9 @@ const config: StorybookConfig = {
   staticDirs: ['../src/shared/assets'],
   viteFinal: (config) => {
     config.resolve = config.resolve || { alias: {}, extensions: [] };
-
     config.resolve.extensions = ['.js', '.jsx', '.ts', '.tsx'];
+
+    config.plugins.push(svgr());
 
     return config;
   },
