@@ -1,17 +1,10 @@
 import { styled } from 'styled-components';
 
-export const ModalBackground = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const ModalContainer = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
   padding: 2.4rem 6.4rem;
   width: 29.6rem;
@@ -26,7 +19,7 @@ export const Content = styled.p`
   ${({ theme }) => theme.typo.SUBTITLE_14};
   text-align: center;
 `;
-export const ButtonWrapper = styled.div<{ type: 'confirm' | 'alert' }>`
+export const ButtonWrapper = styled.div<{ type: 'confirm' | 'alert' | '' }>`
   display: flex;
   flex-direction: row;
   margin-top: 1.4rem;

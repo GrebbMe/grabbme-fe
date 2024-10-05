@@ -1,23 +1,21 @@
 import { create } from 'zustand';
 
+export type ModalType = 'confirm' | 'alert' | '';
+
 interface ModalState {
-  isModalOpen: boolean;
+  isOpen: boolean;
   content: string;
-  type: 'confirm' | 'alert';
+  type: ModalType;
   onConfirm?: () => void;
-  handleModal: (
-    isOpen: boolean,
-    content?: string,
-    type?: 'confirm' | 'alert',
-    onConfirm?: () => void,
-  ) => void;
+  openModal: (content: string, type: ModalType, onConfirm?: () => void) => void;
+  closeModal: () => void;
 }
 
 export const useModalStore = create<ModalState>((set) => ({
-  isModalOpen: false,
+  isOpen: false,
   content: '',
-  type: 'alert',
-  onConfirm: undefined,
-  handleModal: (isOpen, content = '', type = 'alert', onConfirm) =>
-    set({ isModalOpen: isOpen, content, type, onConfirm }),
+  type: '',
+  onConfirm: () => {},
+  openModal: (content, type, onConfirm) => set({ isOpen: true, content, type, onConfirm }),
+  closeModal: () => set({ isOpen: false, content: '', type: '', onConfirm: () => {} }),
 }));

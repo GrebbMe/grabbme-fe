@@ -1,6 +1,4 @@
-import { useModalStore } from '@/shared/stores/modalStore';
-
-type ModalType = 'confirm' | 'alert';
+import { ModalType, useModalStore } from '@/shared/stores/modalStore';
 
 interface ModalMessage {
   content: string;
@@ -9,10 +7,10 @@ interface ModalMessage {
 }
 
 export const useModal = () => {
-  const { handleModal } = useModalStore();
+  const { openModal } = useModalStore();
 
   const showModal = ({ content, type, onConfirm }: ModalMessage) => {
-    handleModal(true, content, type, onConfirm);
+    openModal(content, type, onConfirm);
   };
 
   return {
