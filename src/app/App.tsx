@@ -7,7 +7,9 @@ import { Modal, Toast } from '@/shared';
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle /> <Toast /> <Modal />
+      <GlobalStyle />
+      <Toast />
+      <Modal />
       <RouterProvider router={router} />
     </ThemeProvider>
   );

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { GridContainer, HeaderContainer } from '@/app/layout';
 import * as S from '@/app/layout/Header.style';
 import { ProfileIcon } from '@/shared/assets';
 import logo from '@/shared/assets/image/logo.png';
 import { Button } from '@/shared/ui';
+
 const USER_NAME = '그랩미';
 
 export const Header = () => {
@@ -16,8 +16,8 @@ export const Header = () => {
   };
 
   return (
-    <HeaderContainer>
-      <GridContainer>
+    <S.HeaderContainer>
+      <S.GridContainer>
         <S.Logo to="#">
           <img src={logo} alt="Logo" />
         </S.Logo>
@@ -34,7 +34,7 @@ export const Header = () => {
             <Button onClick={handleLoginClick}>로그인</Button>
           </S.LoginBox>
         )}
-      </GridContainer>
-    </HeaderContainer>
+      </S.GridContainer>
+    </S.HeaderContainer>
   );
 };

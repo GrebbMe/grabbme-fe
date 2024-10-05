@@ -1,24 +1,5 @@
 import styled from 'styled-components';
 
-const HeaderContainer = styled.header`
-  background-color: ${({ theme }) => theme.color.WHITE};
-  color: ${({ theme }) => theme.color.WHITE};
-  ${({ theme }) => theme.typo.SUBTITLE_20};
-  border-bottom: 1px solid ${({ theme }) => theme.color.GRAY_30};
-
-  width: 100%;
-  height: 7.2rem;
-  padding: 1.7rem 0;
-`;
-
-const FooterContainer = styled.footer`
-  background-color: ${({ theme }) => theme.color.BLUE_10};
-  border-top: 1px solid ${({ theme }) => theme.color.BLUE_30};
-  ${({ theme }) => theme.typo.TITLE};
-  width: 100%;
-  height: 20.1rem;
-`;
-
 const Container = styled.div`
   display: grid;
   margin: 0 auto;
@@ -41,7 +22,7 @@ const Container = styled.div`
   }
 `;
 
-export const Margin = styled.div`
+export const SideBackground = styled.div`
   background-color: ${({ theme }) => theme.color.BLUE_10};
 `;
 
@@ -67,4 +48,4 @@ const GridContainer = styled.div`
   }
 `;
 
-export { HeaderContainer, FooterContainer, GridContainer, Container };
+export { GridContainer, Container };
