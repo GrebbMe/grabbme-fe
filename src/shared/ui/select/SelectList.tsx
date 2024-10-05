@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import ArrowDown from '@/shared/assets/arrow-down.svg?react';
-import ArrowUp from '@/shared/assets/arrow-up.svg?react';
+import { ArrowUpIcon, ArrowDownIcon } from '@/shared/assets';
 import {
   DropdownContainer,
   DropdownHeader,
@@ -34,7 +33,7 @@ export const SelectList = ({ items, size, selected, onChange }: SelectListProps)
     <DropdownContainer size={size}>
       <DropdownHeader onClick={toggleDropdown} isOpen={isOpen}>
         {selected ? selected.display : '선택'}
-        {isOpen ? <ArrowUp /> : <ArrowDown />}
+        {isOpen ? <ArrowUpIcon /> : <ArrowDownIcon />}
       </DropdownHeader>
       {isOpen && (
         <DropdownListContainer>
