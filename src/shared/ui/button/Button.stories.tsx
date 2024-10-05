@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import IcBookmark from '@/shared/assets/svg/IcBookmark.svg?react';
 import IcList from '@/shared/assets/svg/IcList.svg?react';
-import Button from '@/shared/ui/button/Button';
+import { Button } from '@/shared/ui/button/Button';
 
 const meta: Meta<typeof Button> = {
   title: 'shared/Button',

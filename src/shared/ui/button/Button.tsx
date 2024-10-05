@@ -9,11 +9,10 @@ interface ButtonProps {
   iconType?: 'bookmark' | 'list';
 }
 
-const Button = ({ children, onClick, disabled = false, icon, iconType }: ButtonProps) => (
+
+export const Button = ({ children, onClick, disabled = false, icon, iconType }: ButtonProps) => (
   <S.StyledButton onClick={onClick} disabled={disabled} icon={icon}>
     {icon && <S.IconWrapper iconType={iconType}>{icon}</S.IconWrapper>}
     {children}
   </S.StyledButton>
 );
-
-export default Button;
