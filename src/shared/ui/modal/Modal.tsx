@@ -1,14 +1,15 @@
 import React, { useRef } from 'react';
+import { useModalStore } from '@/shared/stores/modalStore';
 import { Button } from '@/shared/ui/button/Button';
 import {
   ButtonWrapper,
-  Description,
+  Content,
   ModalBackground,
   ModalContainer,
 } from '@/shared/ui/modal/Modal.style';
-import { ModalProps } from '@/shared/ui/modal/Modal.types';
 
-const Modal = ({ isModalOpen, handleModal, description, type, onConfirm }: ModalProps) => {
+export const Modal = () => {
+  const { isModalOpen, handleModal, content, type, onConfirm } = useModalStore();
   const modalBackground: React.MutableRefObject<HTMLDivElement | null> = useRef(null);
 
   return (
@@ -21,12 +22,11 @@ const Modal = ({ isModalOpen, handleModal, description, type, onConfirm }: Modal
           }}
         >
           <ModalContainer>
-            <Description>{description}</Description>
+            <Content>{content}</Content>
             <ButtonWrapper type={type}>
               {type === 'confirm' ? (
                 <>
                   <Button onClick={() => handleModal(false)}>취소</Button>
-
                   <Button
                     onClick={() => {
                       if (onConfirm) onConfirm();
@@ -46,5 +46,3 @@ const Modal = ({ isModalOpen, handleModal, description, type, onConfirm }: Modal
     </div>
   );
 };
-
-export default Modal;
