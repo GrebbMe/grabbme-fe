@@ -1,9 +1,8 @@
 import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme, GlobalStyle } from '@/app/styles';
-import '@/index.css';
 import { Toast } from '@/shared';
-
+import '@/index.css';
 
 const preview: Preview = {
   decorators: [

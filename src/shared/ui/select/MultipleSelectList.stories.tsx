@@ -49,7 +49,7 @@ export const Default = () => {
       placeholder="선택"
       items={example}
       selectedItems={selectedItems}
-      setSelectedItems={setSelectedItems}
+      onSelect={setSelectedItems}
       selectLimit={5}
     />
   );
@@ -65,7 +65,7 @@ export const All = () => {
         placeholder="기술 스택 선택"
         items={example}
         selectedItems={selectedItems}
-        setSelectedItems={setSelectedItems}
+        onSelect={setSelectedItems}
         selectLimit={5}
       />
       <br />
@@ -76,7 +76,7 @@ export const All = () => {
         placeholder="카테고리 선택"
         items={example}
         selectedItems={selectedItems2}
-        setSelectedItems={setSelectedItems2}
+        onSelect={setSelectedItems2}
         selectLimit={3}
       />
     </div>

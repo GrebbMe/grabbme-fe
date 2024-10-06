@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import ArrowDownIcon from '@/shared/assets/arrow-down.svg?react';
 import ArrowUpIcon from '@/shared/assets/arrow-up.svg?react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
@@ -13,7 +13,7 @@ export interface SelectItem {
 export interface MultipleSelectListProps {
   items: SelectItem[];
   selectedItems: { id: number; item: string }[];
-  setSelectedItems: React.Dispatch<React.SetStateAction<SelectItem[]>>;
+  onSelect: React.Dispatch<React.SetStateAction<SelectItem[]>>;
   selectLimit: number;
   placeholder: string;
 }
@@ -21,7 +21,7 @@ export interface MultipleSelectListProps {
 export const MultipleSelectList = ({
   items,
   selectedItems,
-  setSelectedItems,
+  onSelect,
   selectLimit,
   placeholder,
 }: MultipleSelectListProps) => {
@@ -32,11 +32,11 @@ export const MultipleSelectList = ({
 
   const handleAddItem = (item: { id: number; item: string }) => {
     if (selectedItems.length < selectLimit && !selectedItems.includes(item)) {
-      setSelectedItems((prev) => [...prev, item]);
+      onSelect((prev) => [...prev, item]);
     }
   };
   const handleRemoveItem = (itemId: number) => {
-    setSelectedItems((prev) => prev.filter((item) => item.id !== itemId));
+    onSelect((prev) => prev.filter((item) => item.id !== itemId));
   };
 
   const isDefaultInput: boolean = selectedItems.length === 0 && isOpen === false;
