@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import * as S from '@/shared/ui/textfield/TextField.style';
-import { TextFieldProps, TextFieldSize } from '@/shared/ui/textfield/Textfield.types';
+
+export type TextFieldSize = 'sm' | 'md' | 'lg';
+
+export interface TextFieldProps {
+  placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
+  size: TextFieldSize;
+}
 
 const MAX_LENGTH = 50;
 
-const TextField = ({ value, onChange, size = 'lg', placeholder = '' }: TextFieldProps) => {
+const TextField = ({ value, onChange, size, placeholder }: TextFieldProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue: string = event.target.value;
     if (newValue.length <= MAX_LENGTH) {
