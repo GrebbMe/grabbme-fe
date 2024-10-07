@@ -4,12 +4,10 @@ import ArrowUpIcon from '@/shared/assets/arrow-up.svg?react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
 import { RemoveButton, AddButton } from '@/shared/ui';
 import * as S from '@/shared/ui/select/MultipleSelectList.style';
-
 export interface SelectItem {
   id: number;
   item: string;
 }
-
 export interface MultipleSelectListProps {
   items: SelectItem[];
   selectedItems: { id: number; item: string }[];
@@ -17,7 +15,6 @@ export interface MultipleSelectListProps {
   selectLimit: number;
   placeholder: string;
 }
-
 export const MultipleSelectList = ({
   items,
   selectedItems,
@@ -35,34 +32,34 @@ export const MultipleSelectList = ({
       onSelect((prev) => [...prev, item]);
     }
   };
-  const handleRemoveItem = (itemId: number) => {
+  const handleRemoveItem = (itemId: number, event: React.MouseEvent) => {
     onSelect((prev) => prev.filter((item) => item.id !== itemId));
+    event.stopPropagation();
   };
 
-  const isDefaultInput: boolean = selectedItems.length === 0 && isOpen === false;
-  const isNotEmpty: boolean = selectedItems.length > 0 && isOpen === false;
+  const handleIconClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <S.Container ref={containerRef}>
-      <S.ItemInput
-        className={isDefaultInput ? 'default-input' : isNotEmpty ? 'not-empty-input' : undefined}
-        onClick={isDefaultInput ? () => setIsOpen(true) : undefined}
-      >
-        {isDefaultInput && <span>{placeholder}</span>}
+      <S.ItemInput $isOpen={isOpen} onClick={() => setIsOpen(true)}>
+        {selectedItems.length === 0 && <span>{placeholder}</span>}
         <S.InputButtonBox>
           {selectedItems.map((item) => (
-            <RemoveButton key={item.id} onClick={() => handleRemoveItem(item.id)}>
+            <RemoveButton key={item.id} onClick={(e) => handleRemoveItem(item.id, e)}>
               {item.item}
             </RemoveButton>
           ))}
         </S.InputButtonBox>
         {isOpen ? (
-          <S.IconWrapper onClick={() => setIsOpen(false)}>
-            <ArrowUpIcon />
+          <S.IconWrapper onClick={handleIconClick}>
+            <ArrowDownIcon />
           </S.IconWrapper>
         ) : (
-          <S.IconWrapper onClick={() => setIsOpen(true)}>
-            <ArrowDownIcon />
+          <S.IconWrapper onClick={handleIconClick}>
+            <ArrowUpIcon />
           </S.IconWrapper>
         )}
       </S.ItemInput>

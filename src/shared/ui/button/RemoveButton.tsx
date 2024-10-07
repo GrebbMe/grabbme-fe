@@ -3,7 +3,7 @@ import { StyledButton } from '@/shared/ui/button/RemoveButton.style';
 
 interface RemoveButtonProps {
   children: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
 export const RemoveButton = ({ children, onClick }: RemoveButtonProps) => (
