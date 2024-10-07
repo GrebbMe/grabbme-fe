@@ -22,10 +22,10 @@ interface PeriodModalProps {
   handleNextYear: (activeInput: string | null) => void;
   handleCancel: () => void;
   handleAccept: (activeInput: string | null) => void;
-  tempStartDate2: Date;
-  setTempStartDate2: (date: Date) => void;
-  tempEndDate2: Date;
-  setTempEndDate2: (date: Date) => void;
+  tempSyncStartDate: Date;
+  setTempSyncStartDate: (date: Date) => void;
+  tempSyncEndDate: Date;
+  setTempSyncEndDate: (date: Date) => void;
 }
 
 export const PeriodModal = ({
@@ -37,8 +37,8 @@ export const PeriodModal = ({
   handleNextYear,
   handleCancel,
   handleAccept,
-  tempStartDate2,
-  tempEndDate2,
+  tempSyncStartDate,
+  tempSyncEndDate,
 }: PeriodModalProps) => {
   return (
     <Modal>
@@ -64,10 +64,10 @@ export const PeriodModal = ({
               isSelected={
                 activeInput === 'start'
                   ? format(new Date(tempStartDate), 'yyyyMM') ===
-                      format(new Date(tempStartDate2), 'yyyyMM') &&
+                      format(new Date(tempSyncStartDate), 'yyyyMM') &&
                     Number(format(new Date(tempStartDate), 'MM')) === idx + 1
                   : format(new Date(tempEndDate), 'yyyyMM') ===
-                      format(new Date(tempEndDate2), 'yyyyMM') &&
+                      format(new Date(tempSyncEndDate), 'yyyyMM') &&
                     Number(format(new Date(tempEndDate), 'MM')) === idx + 1
               }
               onClick={() => handleMonthSelect(idx + 1)}

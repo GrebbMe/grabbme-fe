@@ -22,8 +22,8 @@ export const ProjectPeriod = ({
   const [tempStartDate, setTempStartDate] = useState<Date>(new Date());
   const [tempEndDate, setTempEndDate] = useState<Date>(new Date());
 
-  const [tempStartDate2, setTempStartDate2] = useState<Date>(new Date());
-  const [tempEndDate2, setTempEndDate2] = useState<Date>(new Date());
+  const [tempSyncStartDate, setTempSyncStartDate] = useState<Date>(new Date());
+  const [tempSyncEndDate, setTempSyncEndDate] = useState<Date>(new Date());
 
   const handleInputClick = (inputType: 'start' | 'end') => {
     setActiveInput(inputType);
@@ -33,10 +33,10 @@ export const ProjectPeriod = ({
   const handleMonthSelect = (month: number) => {
     if (activeInput === 'start') {
       setTempStartDate((prev) => new Date(`${prev.getFullYear()}/${month}`));
-      setTempStartDate2(new Date(`${tempStartDate.getFullYear()}/${month}`));
+      setTempSyncStartDate(new Date(`${tempStartDate.getFullYear()}/${month}`));
     } else if (activeInput === 'end') {
       setTempEndDate((prev) => new Date(`${prev.getFullYear()}/${month}`));
-      setTempEndDate2(new Date(`${tempEndDate.getFullYear()}/${month}`));
+      setTempSyncEndDate(new Date(`${tempEndDate.getFullYear()}/${month}`));
     }
   };
 
@@ -95,10 +95,10 @@ export const ProjectPeriod = ({
           handleNextYear={handleNextYear}
           handleCancel={handleCancel}
           handleAccept={handleAccept}
-          tempStartDate2={tempStartDate2}
-          setTempStartDate2={setTempStartDate2}
-          tempEndDate2={tempEndDate2}
-          setTempEndDate2={setTempEndDate2}
+          tempSyncStartDate={tempSyncStartDate}
+          setTempSyncStartDate={setTempSyncStartDate}
+          tempSyncEndDate={tempSyncEndDate}
+          setTempSyncEndDate={setTempSyncEndDate}
         />
       )}
     </Container>
