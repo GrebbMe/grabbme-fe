@@ -11,6 +11,8 @@ export interface ProjectPeriodProps {
   setEndDate: (date: Date | null) => void;
 }
 
+export type ActiveInputType = 'start' | 'end' | null;
+
 export const ProjectPeriod = ({
   startDate,
   endDate,
@@ -18,7 +20,7 @@ export const ProjectPeriod = ({
   setEndDate,
 }: ProjectPeriodProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [activeInput, setActiveInput] = useState<'start' | 'end' | null>(null);
+  const [activeInput, setActiveInput] = useState<ActiveInputType>(null);
   const [tempStartDate, setTempStartDate] = useState<Date>(new Date());
   const [tempEndDate, setTempEndDate] = useState<Date>(new Date());
 
@@ -40,7 +42,7 @@ export const ProjectPeriod = ({
     }
   };
 
-  const handleAccept = (activeInput: string | null) => {
+  const handleAccept = (activeInput: ActiveInputType) => {
     if (activeInput === 'start') {
       setStartDate(tempStartDate);
     } else if (activeInput === 'end') {
@@ -58,7 +60,7 @@ export const ProjectPeriod = ({
     setIsModalOpen(false);
   };
 
-  const handlePrevYear = (activeInput: string | null) => {
+  const handlePrevYear = (activeInput: ActiveInputType) => {
     if (activeInput === 'start') {
       setTempStartDate((prev) => subYears(prev, 1));
     } else if (activeInput === 'end') {
@@ -66,7 +68,7 @@ export const ProjectPeriod = ({
     }
   };
 
-  const handleNextYear = (activeInput: string | null) => {
+  const handleNextYear = (activeInput: ActiveInputType) => {
     if (activeInput === 'start') {
       setTempStartDate((prev) => addYears(prev, 1));
     } else if (activeInput === 'end') {

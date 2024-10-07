@@ -8,9 +8,10 @@ import {
   MonthGrid,
   YearStyle,
 } from '@/features/post/projectPeriod/PeriodModal.style';
+import { ActiveInputType } from '@/features/post/projectPeriod/ProjectPeriod';
 import { IcArrowLeft } from '@/shared/assets/icon/IcArrowLeft';
 import { IcArrowRight } from '@/shared/assets/icon/IcArrowRight';
-import { months } from '@/shared/consts';
+import { MONTHS } from '@/shared/consts/months';
 import { Button } from '@/shared/ui';
 
 interface PeriodModalProps {
@@ -18,10 +19,10 @@ interface PeriodModalProps {
   tempStartDate: Date;
   tempEndDate: Date;
   handleMonthSelect: (month: number) => void;
-  handlePrevYear: (activeInput: string | null) => void;
-  handleNextYear: (activeInput: string | null) => void;
+  handlePrevYear: (activeInput: ActiveInputType) => void;
+  handleNextYear: (activeInput: ActiveInputType) => void;
   handleCancel: () => void;
-  handleAccept: (activeInput: string | null) => void;
+  handleAccept: (activeInput: ActiveInputType) => void;
   tempSyncStartDate: Date;
   setTempSyncStartDate: (date: Date) => void;
   tempSyncEndDate: Date;
@@ -54,10 +55,10 @@ export const PeriodModal = ({
         </IconBox>
       </ModalHeader>
       <MonthGrid>
-        {months.map((month, idx) => {
+        {MONTHS.map((v, idx) => {
           return (
             <MonthButton
-              key={month}
+              key={v}
               isSelected={
                 activeInput === 'start'
                   ? format(new Date(tempStartDate), 'yyyyMM') ===
@@ -69,7 +70,7 @@ export const PeriodModal = ({
               }
               onClick={() => handleMonthSelect(idx + 1)}
             >
-              {month}
+              {v}월
             </MonthButton>
           );
         })}
