@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
 import TextField from '@/shared/ui/textfield/TextField';
-import { TextFieldProps } from '@/shared/ui/textfield/Textfield.types';
+import { TextFieldProps } from '@/shared/ui/textfield/TextField';
 
 export default {
   title: 'shared/Textfield',

@@ -1,7 +1,7 @@
 import { ModalType, useModalStore } from '@/shared/stores/modalStore';
 
 interface ModalMessage {
-  content: string;
+  content: React.ReactNode;
   type: ModalType;
   onConfirm?: () => void;
 }

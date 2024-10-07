@@ -11,7 +11,9 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<{ content: string; type: 'alert' | 'confirm' }> = (args) => {
+const DefaultTemplate: StoryFn<{ content: React.ReactNode; type: 'alert' | 'confirm' }> = (
+  args,
+) => {
   const { showModal } = useModal();
 
   const handleShowModal = () => {
@@ -26,21 +28,27 @@ const Template: StoryFn<{ content: string; type: 'alert' | 'confirm' }> = (args)
   );
 };
 
-export const Default = Template.bind({});
+export const Default = DefaultTemplate.bind({});
 Default.args = {
-  content: '이것은 기본 모달입니다.',
+  content: (
+    <>
+      <span>모달 정보를 </span>
+      <br />
+      <span>입력하세요.</span>
+    </>
+  ),
   type: 'alert',
 };
 
 export const All = () => {
   const { showModal } = useModal();
 
-  const handleShowAlertModal = (content: string, type: 'confirm' | 'alert') => {
+  const handleShowAlertModal = (content: React.ReactNode, type: 'confirm' | 'alert') => {
     showModal({ content, type });
   };
 
   const handleShowConfirmModal = (
-    content: string,
+    content: React.ReactNode,
     type: 'confirm' | 'alert',
     onConfirm: () => void,
   ) => {
@@ -59,7 +67,33 @@ export const All = () => {
       <button
         onClick={() =>
           handleShowConfirmModal(
+            <>
+              <span>선택 모달에 들어갈 내용을</span>
+              <br />
+              <span>2줄 정도로 작성해주세요</span>
+            </>,
+            'confirm',
+            () => alert('confirmed'),
+          )
+        }
+      >
+        confirm
+      </button>
+      <button
+        onClick={() =>
+          handleShowConfirmModal(
             '회원가입을 그만 하시겠어요? 내용은 저장되지 않아요.',
+            'confirm',
+            () => alert('confirmed'),
+          )
+        }
+      >
+        confirm
+      </button>
+      <button
+        onClick={() =>
+          handleShowConfirmModal(
+            '정보 수정을 그만 하시겠어요? 내용은 저장되지 않아요.',
             'confirm',
             () => alert('confirmed'),
           )

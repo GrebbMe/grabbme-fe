@@ -1,13 +1,14 @@
+import React from 'react';
 import { create } from 'zustand';
 
 export type ModalType = 'confirm' | 'alert' | '';
 
 interface ModalState {
   isOpen: boolean;
-  content: string;
+  content: React.ReactNode;
   type: ModalType;
   onConfirm?: () => void;
-  openModal: (content: string, type: ModalType, onConfirm?: () => void) => void;
+  openModal: (content: React.ReactNode, type: ModalType, onConfirm?: () => void) => void;
   closeModal: () => void;
 }
 
