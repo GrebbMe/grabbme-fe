@@ -16,7 +16,7 @@ export const LogoBox = styled.div`
   align-items: center;
   margin-top: 4.1rem;
 `;
-export const TextLinkWrapper = styled.div`
+export const TextLinkBox = styled.div`
   grid-row: 2;
   grid-column: 1 / span 3;
   display: flex;
@@ -60,7 +60,7 @@ export const CopyrightBox = styled.div`
   ${({ theme }) => theme.typo.CAPTION_12};
 `;
 
-export const GridContainer = styled.div`
+export const FooterWrapper = styled.div`
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(12, 8rem);

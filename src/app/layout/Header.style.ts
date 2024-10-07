@@ -52,7 +52,7 @@ export const ProfileBox = styled.div`
   color: ${({ theme }) => theme.color.PRIMARY_BLUE};
 `;
 
-export const GridContainer = styled.div`
+export const GridWrapper = styled.div`
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(12, 8rem);
