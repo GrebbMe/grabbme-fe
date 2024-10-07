@@ -4,7 +4,7 @@ export const Container = styled.div`
   user-select: none;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80.8rem;
   height: 100%;
   & > .stack-box {
     background-color: ${({ theme }) => theme.color.WHITE};
