@@ -47,10 +47,7 @@ export const PeriodModal = ({
           <IcArrowLeft />
         </IconBox>
         <YearStyle>
-          {format(
-            activeInput === 'start' ? (tempStartDate ?? new Date()) : (tempEndDate ?? new Date()),
-            'yyyy년',
-          )}
+          {format(activeInput === 'start' ? tempStartDate : tempEndDate, 'yyyy년')}
         </YearStyle>
         <IconBox onClick={() => handleNextYear(activeInput)}>
           <IcArrowRight />
