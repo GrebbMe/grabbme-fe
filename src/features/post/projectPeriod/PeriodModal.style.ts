@@ -41,24 +41,24 @@ const MonthGrid = styled.div`
   gap: 0.8rem;
 `;
 
-const MonthButton = styled.button<{ isSelected: boolean }>`
+const MonthButton = styled.button<{ $isSelected: boolean }>`
   ${({ theme }) => theme.typo.BODY_MEDIUM};
   width: 5.4rem;
   height: 3.8rem;
   margin-bottom: 0.8rem;
   border-radius: 0.8rem;
   border: 1px solid
-    ${({ isSelected, theme }) => (isSelected ? theme.color.PRIMARY_BLUE : theme.color.GRAY_30)};
-  background-color: ${({ isSelected, theme }) =>
-    isSelected ? theme.color.PRIMARY_BLUE : 'transparent'};
-  color: ${({ isSelected, theme }) => (isSelected ? theme.color.WHITE : theme.color.BLACK_100)};
+    ${({ $isSelected, theme }) => ($isSelected ? theme.color.PRIMARY_BLUE : theme.color.GRAY_30)};
+  background-color: ${({ $isSelected, theme }) =>
+    $isSelected ? theme.color.PRIMARY_BLUE : 'transparent'};
+  color: ${({ $isSelected, theme }) => ($isSelected ? theme.color.WHITE : theme.color.BLACK_100)};
   cursor: pointer;
   &:hover {
     border: 1px solid
-      ${({ isSelected, theme }) => (isSelected ? theme.color.PRIMARY_BLUE : theme.color.BLUE_50)};
-    background-color: ${({ isSelected, theme }) =>
-      isSelected ? theme.color.PRIMARY_BLUE : theme.color.BLUE_30};
-    color: ${({ isSelected, theme }) => (isSelected ? theme.color.WHITE : theme.color.BLACK_100)};
+      ${({ $isSelected, theme }) => ($isSelected ? theme.color.PRIMARY_BLUE : theme.color.BLUE_50)};
+    background-color: ${({ $isSelected, theme }) =>
+      $isSelected ? theme.color.PRIMARY_BLUE : theme.color.BLUE_30};
+    color: ${({ $isSelected, theme }) => ($isSelected ? theme.color.WHITE : theme.color.BLACK_100)};
   }
 `;
 

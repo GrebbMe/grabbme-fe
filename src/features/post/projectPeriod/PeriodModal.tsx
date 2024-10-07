@@ -59,7 +59,7 @@ export const PeriodModal = ({
           return (
             <MonthButton
               key={v}
-              isSelected={
+              $isSelected={
                 activeInput === 'start'
                   ? format(new Date(tempStartDate), 'yyyyMM') ===
                       format(new Date(tempSyncStartDate), 'yyyyMM') &&
