@@ -18,7 +18,7 @@ interface PeriodModalProps {
   tempStartDate: Date;
   tempEndDate: Date;
   handleMonthSelect: (month: number) => void;
-  handlePreYear: (activeInput: string | null) => void;
+  handlePrevYear: (activeInput: string | null) => void;
   handleNextYear: (activeInput: string | null) => void;
   handleCancel: () => void;
   handleAccept: (activeInput: string | null) => void;
@@ -33,7 +33,7 @@ export const PeriodModal = ({
   tempStartDate,
   tempEndDate,
   handleMonthSelect,
-  handlePreYear,
+  handlePrevYear,
   handleNextYear,
   handleCancel,
   handleAccept,
@@ -43,7 +43,7 @@ export const PeriodModal = ({
   return (
     <Modal>
       <ModalHeader>
-        <IconBox onClick={() => handlePreYear(activeInput)}>
+        <IconBox onClick={() => handlePrevYear(activeInput)}>
           <IcArrowLeft />
         </IconBox>
         <YearStyle>

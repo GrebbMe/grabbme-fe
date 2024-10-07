@@ -58,7 +58,7 @@ export const ProjectPeriod = ({
     setIsModalOpen(false);
   };
 
-  const handlePreYear = (activeInput: string | null) => {
+  const handlePrevYear = (activeInput: string | null) => {
     if (activeInput === 'start') {
       setTempStartDate((prev) => subYears(prev, 1));
     } else if (activeInput === 'end') {
@@ -91,7 +91,7 @@ export const ProjectPeriod = ({
           tempStartDate={tempStartDate}
           tempEndDate={tempEndDate}
           handleMonthSelect={handleMonthSelect}
-          handlePreYear={handlePreYear}
+          handlePrevYear={handlePrevYear}
           handleNextYear={handleNextYear}
           handleCancel={handleCancel}
           handleAccept={handleAccept}
