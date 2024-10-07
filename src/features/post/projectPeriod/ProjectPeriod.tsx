@@ -79,12 +79,12 @@ export const ProjectPeriod = ({
   return (
     <Container>
       <InputBox onClick={() => handleInputClick('start')}>
-        {(startDate && format(startDate, 'yyyy/MM')) || '선택'}
+        {startDate ? format(startDate, 'yyyy/MM') : '선택'}
         <IcCalendar />
       </InputBox>
       -
       <InputBox onClick={() => handleInputClick('end')}>
-        {(endDate && format(endDate, 'yyyy/MM')) || '선택'}
+        {endDate ? format(endDate, 'yyyy/MM') : '선택'}
         <IcCalendar />
       </InputBox>
       {isModalOpen && (
