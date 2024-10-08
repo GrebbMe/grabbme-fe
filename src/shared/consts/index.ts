@@ -1,1 +1,1 @@
-// const/index.ts
+export { months } from '@/shared/consts/CalendarMonths';
