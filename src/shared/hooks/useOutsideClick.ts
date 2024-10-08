@@ -1,5 +1,6 @@
 import { RefObject, useEffect } from 'react';
 
+
 interface UseOutsideClickParams {
   ref: RefObject<HTMLElement>;
   handler: (event: MouseEvent) => void;

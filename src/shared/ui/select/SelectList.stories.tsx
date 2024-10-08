@@ -4,7 +4,7 @@ import { SelectList } from '@/shared/ui';
 import { SelectListItem, SelectListProps } from '@/shared/ui/select/SelectList';
 
 const meta: Meta<SelectListProps> = {
-  title: 'shared/select',
+  title: 'shared/Select',
   component: SelectList,
   argTypes: {
     items: {
