@@ -21,7 +21,7 @@ const commonActiveStyles = css`
   }
 `;
 
-export const buttonStyling = css`
+export const buttonStyles = css`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,7 +141,7 @@ export const sizeByVariantStyles = (
 };
 
 export const StyledButton = styled.button<ButtonProps>`
-  ${buttonStyling};
+  ${buttonStyles};
   ${({ variant }) => variantStyles(variant)};
   ${({ variant, size }) => sizeByVariantStyles(variant, size)};
 `;
