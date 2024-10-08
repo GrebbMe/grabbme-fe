@@ -15,7 +15,7 @@ import { MONTHS } from '@/shared/consts/months';
 import { Button } from '@/shared/ui';
 
 interface PeriodModalProps {
-  activeInput: 'start' | 'end' | null;
+  activeInput: ActiveInputType;
   tempStartDate: Date;
   tempEndDate: Date;
   onSelectMonth: (month: number) => void;
@@ -41,6 +41,13 @@ export const PeriodModal = ({
   tempSyncStartDate,
   tempSyncEndDate,
 }: PeriodModalProps) => {
+  const isSameMonthAndYear = (date1: Date, date2: Date, month: number): boolean => {
+    return (
+      format(new Date(date1), 'yyyyMM') === format(new Date(date2), 'yyyyMM') &&
+      Number(format(new Date(date1), 'MM')) === month
+    );
+  };
+
   return (
     <Modal>
       <ModalHeader>
@@ -61,12 +68,8 @@ export const PeriodModal = ({
               key={month}
               $isSelected={
                 activeInput === 'start'
-                  ? format(new Date(tempStartDate), 'yyyyMM') ===
-                      format(new Date(tempSyncStartDate), 'yyyyMM') &&
-                    Number(format(new Date(tempStartDate), 'MM')) === month
-                  : format(new Date(tempEndDate), 'yyyyMM') ===
-                      format(new Date(tempSyncEndDate), 'yyyyMM') &&
-                    Number(format(new Date(tempEndDate), 'MM')) === month
+                  ? isSameMonthAndYear(tempStartDate, tempSyncStartDate, month)
+                  : isSameMonthAndYear(tempEndDate, tempSyncEndDate, month)
               }
               onClick={() => onSelectMonth(month)}
             >
