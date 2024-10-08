@@ -29,68 +29,75 @@ const meta: Meta<typeof StackSelectButton> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Stack: Story[] = [
-  {
-    args: {
-      children: 'React',
-      src: IcReact,
-    },
+const React: Story = {
+  args: {
+    children: 'React',
+    src: IcReact,
   },
-  {
-    args: {
-      children: 'Node.js',
-      src: IcNodejs,
-    },
+};
+
+const NodeJS: Story = {
+  args: {
+    children: 'Node.js',
+    src: IcNodejs,
   },
-  {
-    args: {
-      children: 'NestJS.js',
-      src: IcNestjs,
-    },
+};
+
+const NestJS: Story = {
+  args: {
+    children: 'NestJS.js',
+    src: IcNestjs,
   },
-  {
-    args: {
-      children: 'Spring',
-      src: IcSpring,
-    },
+};
+
+const Spring: Story = {
+  args: {
+    children: 'Spring',
+    src: IcSpring,
   },
-  {
-    args: {
-      children: 'Django',
-      src: IcDjango,
-    },
+};
+
+const Django: Story = {
+  args: {
+    children: 'Django',
+    src: IcDjango,
   },
-  {
-    args: {
-      children: 'Flutter',
-      src: IcFlutter,
-    },
+};
+
+const Flutter: Story = {
+  args: {
+    children: 'Flutter',
+    src: IcFlutter,
   },
-  {
-    args: {
-      children: 'Vue',
-      src: IcVue,
-    },
+};
+
+const Vue: Story = {
+  args: {
+    children: 'Vue',
+    src: IcVue,
   },
-  {
-    args: {
-      children: 'Rust',
-      src: IcRust,
-    },
+};
+
+const Rust: Story = {
+  args: {
+    children: 'Rust',
+    src: IcRust,
   },
-  {
-    args: {
-      children: 'Swift',
-      src: IcSwift,
-    },
+};
+
+const Swift: Story = {
+  args: {
+    children: 'Swift',
+    src: IcSwift,
   },
-  {
-    args: {
-      children: 'Kotlin',
-      src: IcKotlin,
-    },
+};
+
+const Kotlin: Story = {
+  args: {
+    children: 'Kotlin',
+    src: IcKotlin,
   },
-];
+};
 
 export const Default: Story = {
   args: {
@@ -102,9 +109,16 @@ export const Default: Story = {
 export const All: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '1rem' }}>
-      {Stack.map((item) => (
-        <StackSelectButton {...item.args}>React</StackSelectButton>
-      ))}
+      <StackSelectButton {...React.args}>React</StackSelectButton>
+      <StackSelectButton {...NodeJS.args}>Node.js</StackSelectButton>
+      <StackSelectButton {...NestJS.args}>NestJS</StackSelectButton>
+      <StackSelectButton {...Spring.args}>Spring</StackSelectButton>
+      <StackSelectButton {...Django.args}>Django</StackSelectButton>
+      <StackSelectButton {...Flutter.args}>Flutter</StackSelectButton>
+      <StackSelectButton {...Vue.args}>Vue</StackSelectButton>
+      <StackSelectButton {...Rust.args}>Rust</StackSelectButton>
+      <StackSelectButton {...Swift.args}>Swift</StackSelectButton>
+      <StackSelectButton {...Kotlin.args}>Kotlin</StackSelectButton>
     </div>
   ),
 };
