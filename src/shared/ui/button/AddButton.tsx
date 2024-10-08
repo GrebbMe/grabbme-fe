@@ -3,7 +3,7 @@ import { StyledButton } from '@/shared/ui/button/AddButton.style';
 
 interface AddButtonProps {
   children: string;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 export const AddButton = ({ children, onClick }: AddButtonProps) => (

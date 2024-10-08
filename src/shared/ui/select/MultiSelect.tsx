@@ -3,37 +3,46 @@ import ArrowDownIcon from '@/shared/assets/arrow-down.svg?react';
 import ArrowUpIcon from '@/shared/assets/arrow-up.svg?react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
 import { RemoveButton, AddButton } from '@/shared/ui';
-import * as S from '@/shared/ui/select/MultipleSelectList.style';
+import * as S from '@/shared/ui/select/MultiSelect.style';
+
 export interface SelectItem {
   id: number;
   item: string;
 }
-export interface MultipleSelectListProps {
+
+export interface MultiSelectProps {
   items: SelectItem[];
-  selectedItems: { id: number; item: string }[];
-  onSelect: React.Dispatch<React.SetStateAction<SelectItem[]>>;
+  selectedItems: SelectItem[];
+  onClickSelectedItems: (selectedItems: SelectItem[]) => void;
   selectLimit: number;
   placeholder: string;
 }
-export const MultipleSelectList = ({
+
+export const MultiSelect = ({
   items,
   selectedItems,
-  onSelect,
+  onClickSelectedItems,
   selectLimit,
   placeholder,
-}: MultipleSelectListProps) => {
+}: MultiSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const containerRef: React.RefObject<HTMLDivElement> = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  useOutsideClick({ ref: containerRef, handler: () => setIsOpen(false) });
+  const closeSelectOption = () => setIsOpen(false);
 
-  const handleAddItem = (item: { id: number; item: string }) => {
-    if (selectedItems.length < selectLimit && !selectedItems.includes(item)) {
-      onSelect((prev) => [...prev, item]);
+  useOutsideClick({ ref: containerRef, handler: closeSelectOption });
+
+  const handleAddItem = (item: SelectItem) => {
+    if (
+      selectedItems.length < selectLimit &&
+      !selectedItems.some((selectedItem) => selectedItem.id === item.id)
+    ) {
+      onClickSelectedItems([...selectedItems, item]);
     }
   };
+
   const handleRemoveItem = (itemId: number, event: React.MouseEvent) => {
-    onSelect((prev) => prev.filter((item) => item.id !== itemId));
+    onClickSelectedItems(selectedItems.filter((item) => item.id !== itemId));
     event.stopPropagation();
   };
 

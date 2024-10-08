@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
-import React, { useState } from 'react';
-import { MultipleSelectList, SelectItem } from './MultipleSelectList';
+import { useState } from 'react';
+import { MultiSelect, SelectItem } from './MultiSelect';
 
 const example = [
   { id: 1, item: 'Svelte' },
@@ -22,9 +22,9 @@ const example = [
   { id: 17, item: 'GraphQL' },
 ];
 
-const meta: Meta<typeof MultipleSelectList> = {
-  title: 'shared/MultipleSelectList',
-  component: MultipleSelectList,
+const meta: Meta<typeof MultiSelect> = {
+  title: 'shared/MultiSelect',
+  component: MultiSelect,
   parameters: {
     layout: 'centered',
   },
@@ -44,39 +44,51 @@ export default meta;
 
 export const Default = () => {
   const [selectedItems, setSelectedItems] = useState<SelectItem[]>([]);
+  const handleSelect = (selectedItems: SelectItem[]) => {
+    setSelectedItems(selectedItems);
+  };
+
   return (
-    <MultipleSelectList
+    <MultiSelect
       placeholder="선택"
       items={example}
       selectedItems={selectedItems}
-      onSelect={setSelectedItems}
+      onClickSelectedItems={handleSelect}
       selectLimit={5}
     />
   );
 };
 
 export const All = () => {
-  const [selectedItems, setSelectedItems] = useState<SelectItem[]>([]);
-  const [selectedItems2, setSelectedItems2] = useState<SelectItem[]>([]);
+  const [selectedCategoryItems, setSelectedCategoryItems] = useState<SelectItem[]>([]);
+  const [selectedStackItems, setSelectedStackItems] = useState<SelectItem[]>([]);
+
+  const handleCategorySelect = (selectedItems: SelectItem[]) => {
+    setSelectedCategoryItems(selectedItems);
+  };
+  const handleStackSelect = (selectedItems: SelectItem[]) => {
+    setSelectedStackItems(selectedItems);
+  };
+
   return (
     <div>
       스택선택
-      <MultipleSelectList
+      <MultiSelect
         placeholder="기술 스택 선택"
         items={example}
-        selectedItems={selectedItems}
-        onSelect={setSelectedItems}
+        selectedItems={selectedStackItems}
+        onClickSelectedItems={handleStackSelect}
         selectLimit={5}
       />
       <br />
       <br />
       <br />
       카테고리선택
-      <MultipleSelectList
+      <MultiSelect
         placeholder="카테고리 선택"
         items={example}
-        selectedItems={selectedItems2}
-        onSelect={setSelectedItems2}
+        selectedItems={selectedCategoryItems}
+        onClickSelectedItems={handleCategorySelect}
         selectLimit={3}
       />
     </div>
