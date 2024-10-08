@@ -1,6 +1,6 @@
 import * as S from './stackSelectButton.style';
 
-export interface ButtonProps {
+interface ButtonProps {
   children: string;
   src?: string;
   onClick?: () => void;
