@@ -1,1 +1,1 @@
-// types/index.ts
+export type Size = 'sm' | 'md' | 'lg';
