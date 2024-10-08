@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import Button from './Button';
 import IcBookmark from '@/shared/assets/svg/IcBookmark.svg?react';
-import IcChat from '@/shared/assets/svg/Icchat.svg?react';
+import IcChat from '@/shared/assets/svg/IcChat.svg?react';
 import IcChatGithub from '@/shared/assets/svg/IcChatGithub.svg?react';
 import IcChatStart from '@/shared/assets/svg/IcChatStart.svg?react';
 import IcClose from '@/shared/assets/svg/Icclose.svg?react';
