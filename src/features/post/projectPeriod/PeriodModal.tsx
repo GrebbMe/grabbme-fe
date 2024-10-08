@@ -55,22 +55,22 @@ export const PeriodModal = ({
         </IconBox>
       </ModalHeader>
       <MonthGrid>
-        {MONTHS.map((v, idx) => {
+        {MONTHS.map((month) => {
           return (
             <MonthButton
-              key={v}
+              key={month}
               $isSelected={
                 activeInput === 'start'
                   ? format(new Date(tempStartDate), 'yyyyMM') ===
                       format(new Date(tempSyncStartDate), 'yyyyMM') &&
-                    Number(format(new Date(tempStartDate), 'MM')) === idx + 1
+                    Number(format(new Date(tempStartDate), 'MM')) === month
                   : format(new Date(tempEndDate), 'yyyyMM') ===
                       format(new Date(tempSyncEndDate), 'yyyyMM') &&
-                    Number(format(new Date(tempEndDate), 'MM')) === idx + 1
+                    Number(format(new Date(tempEndDate), 'MM')) === month
               }
-              onClick={() => onSelectMonth(idx + 1)}
+              onClick={() => onSelectMonth(month)}
             >
-              {v}월
+              {month}월
             </MonthButton>
           );
         })}
