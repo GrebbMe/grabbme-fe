@@ -1,18 +1,23 @@
-import { ReactElement } from 'react';
-import * as S from './Button.style';
+import { ComponentPropsWithRef, ForwardedRef, forwardRef, ReactElement } from 'react';
+import { StyledButton } from './Button.style';
+import { Size } from '@/shared/types';
 
-interface ButtonProps {
-  children: string;
-  onClick?: () => void;
-  disabled?: boolean;
+export interface ButtonProps extends ComponentPropsWithRef<'button'> {
+  variant?: 'primary' | 'circle' | 'inactivePrimary' | 'inactiveSecondary';
+  size?: Extract<Size, 'lg' | 'sm'>;
   icon?: ReactElement;
-  iconType?: 'bookmark' | 'list';
 }
 
+const Button = (
+  { variant = 'primary', size = 'sm', icon, children, ...props }: ButtonProps,
+  ref: ForwardedRef<HTMLButtonElement>,
+) => {
+  return (
+    <StyledButton variant={variant} size={size} icon={icon} {...props} ref={ref}>
+      {icon}
+      {children}
+    </StyledButton>
+  );
+};
 
-export const Button = ({ children, onClick, disabled = false, icon, iconType }: ButtonProps) => (
-  <S.StyledButton onClick={onClick} disabled={disabled} icon={icon}>
-    {icon && <S.IconWrapper iconType={iconType}>{icon}</S.IconWrapper>}
-    {children}
-  </S.StyledButton>
-);
+export default forwardRef(Button);
