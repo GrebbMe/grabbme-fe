@@ -18,11 +18,11 @@ interface PeriodModalProps {
   activeInput: 'start' | 'end' | null;
   tempStartDate: Date;
   tempEndDate: Date;
-  handleMonthSelect: (month: number) => void;
-  handlePrevYear: (activeInput: ActiveInputType) => void;
-  handleNextYear: (activeInput: ActiveInputType) => void;
-  handleCancel: () => void;
-  handleAccept: (activeInput: ActiveInputType) => void;
+  onSelectMonth: (month: number) => void;
+  onPrevYear: (activeInput: ActiveInputType) => void;
+  onNextYear: (activeInput: ActiveInputType) => void;
+  onCancel: () => void;
+  onAccept: (activeInput: ActiveInputType) => void;
   tempSyncStartDate: Date;
   setTempSyncStartDate: (date: Date) => void;
   tempSyncEndDate: Date;
@@ -33,24 +33,24 @@ export const PeriodModal = ({
   activeInput,
   tempStartDate,
   tempEndDate,
-  handleMonthSelect,
-  handlePrevYear,
-  handleNextYear,
-  handleCancel,
-  handleAccept,
+  onSelectMonth,
+  onPrevYear,
+  onNextYear,
+  onCancel,
+  onAccept,
   tempSyncStartDate,
   tempSyncEndDate,
 }: PeriodModalProps) => {
   return (
     <Modal>
       <ModalHeader>
-        <IconBox onClick={() => handlePrevYear(activeInput)}>
+        <IconBox onClick={() => onPrevYear(activeInput)}>
           <IcArrowLeft />
         </IconBox>
         <YearStyle>
           {format(activeInput === 'start' ? tempStartDate : tempEndDate, 'yyyy년')}
         </YearStyle>
-        <IconBox onClick={() => handleNextYear(activeInput)}>
+        <IconBox onClick={() => onNextYear(activeInput)}>
           <IcArrowRight />
         </IconBox>
       </ModalHeader>
@@ -68,7 +68,7 @@ export const PeriodModal = ({
                       format(new Date(tempSyncEndDate), 'yyyyMM') &&
                     Number(format(new Date(tempEndDate), 'MM')) === idx + 1
               }
-              onClick={() => handleMonthSelect(idx + 1)}
+              onClick={() => onSelectMonth(idx + 1)}
             >
               {v}월
             </MonthButton>
@@ -76,12 +76,12 @@ export const PeriodModal = ({
         })}
       </MonthGrid>
       <ModalActions>
-        <Button state={'default'} content={'취소'} size={'7.6rem'} onClick={handleCancel} />
+        <Button state={'default'} content={'취소'} size={'7.6rem'} onClick={onCancel} />
         <Button
           state={'default'}
           content={'적용'}
           size={'7.6rem'}
-          onClick={() => handleAccept(activeInput)}
+          onClick={() => onAccept(activeInput)}
         />
       </ModalActions>
     </Modal>

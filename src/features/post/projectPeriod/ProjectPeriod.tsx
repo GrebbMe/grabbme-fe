@@ -32,7 +32,7 @@ export const ProjectPeriod = ({
     setIsModalOpen(true);
   };
 
-  const handleMonthSelect = (month: number) => {
+  const handleSelectMonth = (month: number) => {
     if (activeInput === 'start') {
       setTempStartDate((prev) => new Date(`${prev.getFullYear()}/${month}`));
       setTempSyncStartDate(new Date(`${tempStartDate.getFullYear()}/${month}`));
@@ -92,11 +92,11 @@ export const ProjectPeriod = ({
           activeInput={activeInput}
           tempStartDate={tempStartDate}
           tempEndDate={tempEndDate}
-          handleMonthSelect={handleMonthSelect}
-          handlePrevYear={handlePrevYear}
-          handleNextYear={handleNextYear}
-          handleCancel={handleCancel}
-          handleAccept={handleAccept}
+          onSelectMonth={handleSelectMonth}
+          onPrevYear={handlePrevYear}
+          onNextYear={handleNextYear}
+          onCancel={handleCancel}
+          onAccept={handleAccept}
           tempSyncStartDate={tempSyncStartDate}
           setTempSyncStartDate={setTempSyncStartDate}
           tempSyncEndDate={tempSyncEndDate}
