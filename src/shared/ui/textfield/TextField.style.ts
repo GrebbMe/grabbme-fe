@@ -43,7 +43,6 @@ export const Input = styled.input<{ $hasValue: boolean }>`
   ${({ $hasValue, theme }) =>
     $hasValue &&
     `
-      border-color: ${theme.color.BLUE_50};
       color: ${theme.color.BLACK_80};
     `}
 

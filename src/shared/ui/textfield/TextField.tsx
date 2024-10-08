@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from '@/shared/ui/textfield/TextField.style';
 
 export type TextFieldSize = 'sm' | 'md' | 'lg';

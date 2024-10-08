@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import ArrowDownIcon from '@/shared/assets/arrow-down.svg?react';
-import ArrowUpIcon from '@/shared/assets/arrow-up.svg?react';
+import ArrowDownIcon from '@/shared/assets/svg/IcArrowDown.svg?react';
+import ArrowUpIcon from '@/shared/assets/svg/IcArrowUp.svg?react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
 import { RemoveButton, AddButton } from '@/shared/ui';
 import * as S from '@/shared/ui/select/MultiSelect.style';

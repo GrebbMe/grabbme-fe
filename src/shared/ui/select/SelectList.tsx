@@ -1,9 +1,8 @@
 import { useRef, useState } from 'react';
-import ArrowDown from '@/shared/assets/arrow-down.svg?react';
-import ArrowUp from '@/shared/assets/arrow-up.svg?react';
+import ArrowDown from '@/shared/assets/svg/IcArrowDown.svg?react';
+import ArrowUp from '@/shared/assets/svg/IcArrowUp.svg?react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
 import * as S from '@/shared/ui/select/selectList.style';
-
 
 type SelectListSize = 'sm' | 'md' | 'lg';
 
