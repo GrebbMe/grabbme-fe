@@ -1,7 +1,8 @@
 import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme, GlobalStyle } from '@/app/styles';
-import { Toast } from '@/shared';
+import { Toast, Modal } from '@/shared';
+import '@/index.css';
 
 const preview: Preview = {
   decorators: [
@@ -10,6 +11,7 @@ const preview: Preview = {
         <GlobalStyle />
         <Story />
         <Toast />
+        <Modal />
       </ThemeProvider>
     ),
   ],

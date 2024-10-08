@@ -1,11 +1,11 @@
 import { styled } from 'styled-components';
 
-const DropdownContainer = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
+export const DropdownContainer = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
   width: ${({ size }) => (size === 'sm' ? '28.8rem' : size === 'md' ? '49.6rem' : '80.8rem')};
   position: relative;
 `;
 
-const DropdownHeader = styled.div<{ isOpen: boolean }>`
+export const DropdownHeader = styled.div<{ isOpen: boolean }>`
   padding: 1.6rem;
   border: 0.1rem solid ${({ theme }) => theme.color.GRAY_30};
   background: #fff;
@@ -20,7 +20,11 @@ const DropdownHeader = styled.div<{ isOpen: boolean }>`
   color: ${({ theme }) => theme.color.BLACK_80};
 `;
 
-const DropdownListContainer = styled.div`
+export const Placeholder = styled.span`
+  color: ${({ theme }) => theme.color.GRAY_50};
+`;
+
+export const DropdownListContainer = styled.div`
   position: absolute;
   width: 100%;
   border: 0.1rem solid ${({ theme }) => theme.color.BLUE_50};
@@ -31,7 +35,7 @@ const DropdownListContainer = styled.div`
   overflow: hidden;
 `;
 
-const DropdownListItem = styled.div<{ isSelected: boolean }>`
+export const DropdownListItem = styled.div<{ isSelected: boolean }>`
   padding: 1.6rem;
   height: 4.8rem;
   cursor: pointer;
@@ -44,5 +48,3 @@ const DropdownListItem = styled.div<{ isSelected: boolean }>`
   color: ${({ isSelected, theme }) => (isSelected ? theme.color.BLACK_100 : theme.color.BLACK_80)};
   ${({ isSelected, theme }) => (isSelected ? theme.typo.SUBTITLE_14 : theme.typo.CAPTION_14)};
 `;
-
-export { DropdownContainer, DropdownHeader, DropdownListContainer, DropdownListItem };
