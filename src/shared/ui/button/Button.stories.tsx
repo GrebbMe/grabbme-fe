@@ -1,14 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import IcBookmark from '@/shared/assets/svg/IcBookmark.svg?react';
-import IcChat from '@/shared/assets/svg/IcChat.svg?react';
-import IcChatGithub from '@/shared/assets/svg/IcChatGithub.svg?react';
-import IcChatStart from '@/shared/assets/svg/IcChatStart.svg?react';
-import IcClose from '@/shared/assets/svg/IcClose.svg?react';
-import IcList from '@/shared/assets/svg/IcList.svg?react';
-import IcLoginGithub from '@/shared/assets/svg/IcLoginGithub.svg?react';
-import IcPhoto from '@/shared/assets/svg/IcPhoto.svg?react';
-import IcSend from '@/shared/assets/svg/IcSend.svg?react';
+import {
+  IcBookmark,
+  IcChat,
+  IcChatGithub,
+  IcChatStart,
+  IcClose,
+  IcList,
+  IcLoginGithub,
+  IcPhoto,
+  IcSend,
+} from '@/shared/assets';
 import { Button } from '@/shared/ui';
 import { StoryContainer, SectionContainer, RowContainer } from '@/shared/ui/storybook/story.style';
 
