@@ -43,7 +43,7 @@ export const Default: Story = {
 };
 
 export const All: Story = {
-  render: (args) => (
+  render: () => (
     <StoryContainer>
       <SectionContainer>
         <h3>기본 버튼</h3>
