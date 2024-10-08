@@ -19,7 +19,7 @@ const InputBox = styled.div`
   align-items: center;
   justify-content: space-between;
   border-radius: 0.8rem;
-  border: 1px solid #ddd;
+  border: 0.1rem solid #ddd;
   cursor: pointer;
 
   svg {

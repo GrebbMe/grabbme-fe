@@ -8,12 +8,12 @@ const Modal = styled.div`
   background-color: white;
   padding: 2rem;
   border-radius: 0.8rem;
-  border: 1px solid ${({ theme }) => theme.color.GRAY_30};
+  border: 0.1rem solid ${({ theme }) => theme.color.GRAY_30};
   z-index: 1000;
   width: 28.8rem;
   box-shadow:
-    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    rgba(0, 0, 0, 0.1) 0rem 0.4rem 0.6rem -0.1rem,
+    rgba(0, 0, 0, 0.06) 0rem 0.2rem 0.4rem -0.1rem;
 `;
 
 const ModalHeader = styled.div`
@@ -47,14 +47,14 @@ const MonthButton = styled.button<{ $isSelected: boolean }>`
   height: 3.8rem;
   margin-bottom: 0.8rem;
   border-radius: 0.8rem;
-  border: 1px solid
+  border: 0.1rem solid
     ${({ $isSelected, theme }) => ($isSelected ? theme.color.PRIMARY_BLUE : theme.color.GRAY_30)};
   background-color: ${({ $isSelected, theme }) =>
     $isSelected ? theme.color.PRIMARY_BLUE : 'transparent'};
   color: ${({ $isSelected, theme }) => ($isSelected ? theme.color.WHITE : theme.color.BLACK_100)};
   cursor: pointer;
   &:hover {
-    border: 1px solid
+    border: 0.1rem solid
       ${({ $isSelected, theme }) => ($isSelected ? theme.color.PRIMARY_BLUE : theme.color.BLUE_50)};
     background-color: ${({ $isSelected, theme }) =>
       $isSelected ? theme.color.PRIMARY_BLUE : theme.color.BLUE_30};
@@ -76,4 +76,5 @@ const IconBox = styled.div`
   place-items: center;
   cursor: pointer;
 `;
+
 export { Modal, ModalHeader, YearStyle, MonthGrid, MonthButton, ModalActions, IconBox };
