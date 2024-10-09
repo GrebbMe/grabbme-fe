@@ -50,13 +50,13 @@ export const variantStyles = (variant: Required<ButtonProps>['variant']) => {
       &:hover {
         background-color: ${({ theme }) => theme.color.BLUE_30};
         color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-        border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+        border-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
       }
 
       &:active {
         background-color: ${({ theme }) => theme.color.WHITE};
         color: ${({ theme }) => theme.color.PRIMARY_BLUE};
-        border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
+        border-color: ${({ theme }) => theme.color.PRIMARY_BLUE};
       }
     `,
     circle: css`
