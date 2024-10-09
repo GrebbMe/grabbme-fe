@@ -37,7 +37,7 @@ export const buttonStyles = css`
   }
 `;
 
-export const variantStyles = (variant: Required<ButtonProps>['variant']) => {
+export const variantStyles = (variant: ButtonProps['variant']) => {
   const style = {
     primary: css<{ icon?: React.ReactElement }>`
       ${typo.BODY_SEMIBOLD};
@@ -86,10 +86,7 @@ export const variantStyles = (variant: Required<ButtonProps>['variant']) => {
   return style[variant];
 };
 
-export const sizeByVariantStyles = (
-  variant: Required<ButtonProps>['variant'],
-  size: Required<ButtonProps>['size'],
-) => {
+export const sizeByVariantStyles = (variant: ButtonProps['variant'], size: ButtonProps['size']) => {
   const style = {
     primary: {
       sm: css``,
