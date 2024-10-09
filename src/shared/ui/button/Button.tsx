@@ -1,10 +1,9 @@
 import { ComponentPropsWithoutRef, ForwardedRef, forwardRef, ReactElement } from 'react';
 import { StyledButton } from './Button.style';
-import { Size } from '@/shared/types';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   variant?: 'primary' | 'circle' | 'inactivePrimary' | 'inactiveSecondary';
-  size?: Extract<Size, 'lg' | 'sm'>;
+  size?: 'sm' | 'lg';
   icon?: ReactElement;
 }
 
