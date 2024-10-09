@@ -14,7 +14,7 @@ import { Button } from '@/shared/ui';
 import { StoryContainer, SectionContainer, RowContainer } from '@/shared/ui/storybook/story.style';
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: 'components/shared/Button',
   component: Button,
   argTypes: {
     variant: {
