@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { StackSelectButton } from './index';
+import { StackSelectButton } from './StackSelectButton';
 import {
   IcNodejs,
   IcReact,
