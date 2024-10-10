@@ -29,11 +29,11 @@ const InputHeader = ({
             </>
           )}
         </S.Text>
-        {isCountable ? (
+        {isCountable && (
           <S.Count>
             {count} / {limit}
           </S.Count>
-        ) : null}
+        )}
       </S.Header>
     </>
   );
