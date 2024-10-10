@@ -1,16 +1,17 @@
+import { FC, SVGProps } from 'react';
 import * as S from './stackBadge.style';
 
-interface StackBadgeProps {
-  children: string;
-  src?: string;
-  onClick?: () => void;
+export interface StackBadgeProps {
+  stackName: string;
+  stackImg: string;
+  onClick: () => void;
 }
 
-export const StackBadge = ({ children, src, onClick }: StackBadgeProps) => {
+export const StackBadge = ({ stackName, stackImg, onClick }: StackBadgeProps) => {
   return (
     <S.Container onClick={onClick}>
-      <S.StackImg src={src} alt="stack-button" />
-      <S.StackName>{children}</S.StackName>
+      <S.StackImg src={stackImg} alt="stack-button" />
+      <S.StackName>{stackName}</S.StackName>
     </S.Container>
   );
 };

@@ -11,7 +11,7 @@ import {
   IcRust,
   IcSwift,
   IcKotlin,
-} from '@/shared/assets/svg/stack';
+} from '@/shared/assets/svg/stack/index';
 
 const meta: Meta<typeof StackBadge> = {
   title: 'component/home/StackSelectButton',
@@ -20,8 +20,8 @@ const meta: Meta<typeof StackBadge> = {
     layout: 'centered',
   },
   argTypes: {
-    children: { control: 'text' },
-    src: { control: 'text' },
+    stackName: { type: 'string' },
+    stackImg: { type: 'string' },
     onClick: { action: 'clicked' },
   },
 };
@@ -29,96 +29,26 @@ const meta: Meta<typeof StackBadge> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const React: Story = {
-  args: {
-    children: 'React',
-    src: IcReact,
-  },
-};
-
-const NodeJS: Story = {
-  args: {
-    children: 'Node.js',
-    src: IcNodejs,
-  },
-};
-
-const NestJS: Story = {
-  args: {
-    children: 'NestJS.js',
-    src: IcNestjs,
-  },
-};
-
-const Spring: Story = {
-  args: {
-    children: 'Spring',
-    src: IcSpring,
-  },
-};
-
-const Django: Story = {
-  args: {
-    children: 'Django',
-    src: IcDjango,
-  },
-};
-
-const Flutter: Story = {
-  args: {
-    children: 'Flutter',
-    src: IcFlutter,
-  },
-};
-
-const Vue: Story = {
-  args: {
-    children: 'Vue',
-    src: IcVue,
-  },
-};
-
-const Rust: Story = {
-  args: {
-    children: 'Rust',
-    src: IcRust,
-  },
-};
-
-const Swift: Story = {
-  args: {
-    children: 'Swift',
-    src: IcSwift,
-  },
-};
-
-const Kotlin: Story = {
-  args: {
-    children: 'Kotlin',
-    src: IcKotlin,
-  },
-};
-
 export const Default: Story = {
   args: {
-    children: 'Default',
-    src: IcReact,
+    stackName: 'Default',
+    stackImg: `${IcReact}`,
   },
 };
 
 export const All: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '1rem' }}>
-      <StackBadge {...React.args}>React</StackBadge>
-      <StackBadge {...NodeJS.args}>Node.js</StackBadge>
-      <StackBadge {...NestJS.args}>NestJS</StackBadge>
-      <StackBadge {...Spring.args}>Spring</StackBadge>
-      <StackBadge {...Django.args}>Django</StackBadge>
-      <StackBadge {...Flutter.args}>Flutter</StackBadge>
-      <StackBadge {...Vue.args}>Vue</StackBadge>
-      <StackBadge {...Rust.args}>Rust</StackBadge>
-      <StackBadge {...Swift.args}>Swift</StackBadge>
-      <StackBadge {...Kotlin.args}>Kotlin</StackBadge>
+      <StackBadge stackImg={`${IcReact}`} stackName={`React`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcNodejs}`} stackName={`Node.js`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcNestjs}`} stackName={`NestJS`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcSpring}`} stackName={`Spring`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcDjango}`} stackName={`Django`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcFlutter}`} stackName={`Flutter`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcVue}`} stackName={`Vue`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcRust}`} stackName={`Rust`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcSwift}`} stackName={`Swift`} onClick={() => {}} />
+      <StackBadge stackImg={`${IcKotlin}`} stackName={`Kotlin`} onClick={() => {}} />
     </div>
   ),
 };
