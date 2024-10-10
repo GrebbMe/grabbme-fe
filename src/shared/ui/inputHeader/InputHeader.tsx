@@ -6,7 +6,7 @@ export interface InputHeaderProps {
   limit?: number;
   count?: number;
   isDetail?: boolean;
-  isCountable: boolean;
+  isCountable?: boolean;
 }
 
 const InputHeader = ({
