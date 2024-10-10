@@ -1,1 +1,1 @@
-export { StackSelectButton } from './StackSelectButton';
+export { StackBadge } from './StackBadge';
