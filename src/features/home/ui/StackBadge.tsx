@@ -1,12 +1,12 @@
-import * as S from './stackSelectButton.style';
+import * as S from './stackBadge.style';
 
-interface ButtonProps {
+interface StackBadgeProps {
   children: string;
   src?: string;
   onClick?: () => void;
 }
 
-export const StackSelectButton = ({ children, src, onClick }: ButtonProps) => {
+export const StackBadge = ({ children, src, onClick }: StackBadgeProps) => {
   return (
     <S.Container onClick={onClick}>
       <S.StackImg src={src} alt="stack-button" />

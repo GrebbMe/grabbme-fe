@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { StackSelectButton } from './StackSelectButton';
+import { StackBadge } from './StackBadge';
 import {
   IcNodejs,
   IcReact,
@@ -13,9 +13,9 @@ import {
   IcKotlin,
 } from '@/shared/assets/svg/stack';
 
-const meta: Meta<typeof StackSelectButton> = {
+const meta: Meta<typeof StackBadge> = {
   title: 'component/home/StackSelectButton',
-  component: StackSelectButton,
+  component: StackBadge,
   parameters: {
     layout: 'centered',
   },
@@ -109,16 +109,16 @@ export const Default: Story = {
 export const All: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '1rem' }}>
-      <StackSelectButton {...React.args}>React</StackSelectButton>
-      <StackSelectButton {...NodeJS.args}>Node.js</StackSelectButton>
-      <StackSelectButton {...NestJS.args}>NestJS</StackSelectButton>
-      <StackSelectButton {...Spring.args}>Spring</StackSelectButton>
-      <StackSelectButton {...Django.args}>Django</StackSelectButton>
-      <StackSelectButton {...Flutter.args}>Flutter</StackSelectButton>
-      <StackSelectButton {...Vue.args}>Vue</StackSelectButton>
-      <StackSelectButton {...Rust.args}>Rust</StackSelectButton>
-      <StackSelectButton {...Swift.args}>Swift</StackSelectButton>
-      <StackSelectButton {...Kotlin.args}>Kotlin</StackSelectButton>
+      <StackBadge {...React.args}>React</StackBadge>
+      <StackBadge {...NodeJS.args}>Node.js</StackBadge>
+      <StackBadge {...NestJS.args}>NestJS</StackBadge>
+      <StackBadge {...Spring.args}>Spring</StackBadge>
+      <StackBadge {...Django.args}>Django</StackBadge>
+      <StackBadge {...Flutter.args}>Flutter</StackBadge>
+      <StackBadge {...Vue.args}>Vue</StackBadge>
+      <StackBadge {...Rust.args}>Rust</StackBadge>
+      <StackBadge {...Swift.args}>Swift</StackBadge>
+      <StackBadge {...Kotlin.args}>Kotlin</StackBadge>
     </div>
   ),
 };
