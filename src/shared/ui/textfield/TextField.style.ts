@@ -5,29 +5,6 @@ export const Container = styled.div<{ size: TextFieldSize }>`
   ${({ size }) => `
     width: ${size === 'sm' ? '28.8rem' : size === 'md' ? '49.6rem' : '80.8rem'};
   `}
-  margin-bottom: 1.6rem;
-`;
-
-export const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-`;
-
-export const Label = styled.label`
-  color: ${({ theme }) => theme.color.BLACK_80};
-  ${({ theme }) => theme.typo.BODY_SEMIBOLD};
-`;
-
-export const CharCount = styled.span`
-  color: ${({ theme }) => theme.color.GRAY_50};
-  ${({ theme }) => theme.typo.CAPTION_12};
-`;
-
-export const StarWrapper = styled.span`
-  color: ${({ theme }) => theme.color.POINT_PINK};
-  ${({ theme }) => theme.typo.BODY_SEMIBOLD};
 `;
 
 export const Input = styled.input<{ $hasValue: boolean }>`
