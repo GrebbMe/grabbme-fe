@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import ArrowDown from '@/shared/assets/svg/IcArrowDown.svg?react';
 import ArrowUp from '@/shared/assets/svg/IcArrowUp.svg?react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
-import * as S from '@/shared/ui/select/selectList.style';
+import * as S from '@/shared/ui/select/Select.style';
 
 type SelectListSize = 'sm' | 'md' | 'lg';
 
@@ -19,7 +19,7 @@ export interface SelectListProps {
   onChangeSelected: (item: SelectListItem) => void;
 }
 
-export const SelectList = ({
+export const Select = ({
   items,
   size,
   placeholder,

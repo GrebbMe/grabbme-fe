@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { SelectList } from '@/shared/ui';
-import { SelectListItem, SelectListProps } from '@/shared/ui/select/SelectList';
+import { Select } from '@/shared/ui';
+import { SelectListItem, SelectListProps } from '@/shared/ui/select/Select';
 
 const meta: Meta<SelectListProps> = {
   title: 'shared/Select',
-  component: SelectList,
+  component: Select,
   argTypes: {
     items: {
       control: 'object',
@@ -41,7 +41,7 @@ export const Default: Story = {
       setSelected(item);
     };
 
-    return <SelectList {...args} selected={selected} onChangeSelected={handleItemClick} />;
+    return <Select {...args} selected={selected} onChangeSelected={handleItemClick} />;
   },
 };
 
@@ -72,21 +72,21 @@ export const All: Story = {
 
     return (
       <>
-        <SelectList
+        <Select
           {...args}
           size={'sm'}
           selected={smallSelected}
           onChangeSelected={handleSmallSelect}
         />
         <br />
-        <SelectList
+        <Select
           {...args}
           size={'md'}
           selected={mediumSelected}
           onChangeSelected={handleMediumSelect}
         />
         <br />
-        <SelectList
+        <Select
           {...args}
           size={'lg'}
           selected={LargeSelected}
