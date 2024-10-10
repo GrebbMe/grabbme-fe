@@ -42,6 +42,7 @@ const meta: Meta<typeof InputHeader> = {
     isDetail: { control: 'boolean' },
     isCountable: { control: 'boolean' },
     limit: { control: 'number' },
+    size: { control: 'select', options: ['sm', 'lg'] },
   },
 };
 
@@ -62,6 +63,7 @@ Default.args = {
   isDetail: true,
   isCountable: true,
   limit: 10,
+  size: 'lg',
 };
 
 export const All = () => {
@@ -75,40 +77,34 @@ export const All = () => {
   return (
     <>
       <InputHeader text="개발 경력" isCountable={false} isDetail={false} />
-
+      <br />
       <InputHeader text="개발 경력" isCountable={false} />
       <Select items={SELECT_ITEM} size={'lg'} selected={select} onChangeSelected={setSelect} />
 
       <br />
-      <div style={{ width: '80.8rem' }}>
-        <InputHeader
-          text="카테고리"
-          description="카테고리를 최대 3개 선택하세요."
-          isDetail={true}
-          isCountable={true}
-          limit={3}
-          count={value.length}
-        />
-        <MultiSelect
-          placeholder="선택"
-          items={MULTI_SELECT}
-          selectedItems={selectedItems}
-          onClickSelectedItems={handleSelect}
-          selectLimit={5}
-        />
-      </div>
-
+      <InputHeader
+        text="기술스택"
+        description="기술스택을 최대 5개 선택하세요."
+        isDetail={true}
+        isCountable={true}
+        limit={5}
+        count={selectedItems.length}
+      />
+      <MultiSelect
+        placeholder="선택"
+        items={MULTI_SELECT}
+        selectedItems={selectedItems}
+        onClickSelectedItems={handleSelect}
+        selectLimit={5}
+      />
       <br />
-
-      <div style={{ width: '80.8rem' }}>
-        <InputHeader
-          text="제목"
-          description="글 작성하세요."
-          isCountable={true}
-          limit={50}
-          count={value.length}
-        />
-      </div>
+      <InputHeader
+        text="제목"
+        description="글 작성하세요."
+        isCountable={true}
+        limit={50}
+        count={value.length}
+      />
       <TextField
         value={value}
         size="lg"

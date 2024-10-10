@@ -1,10 +1,12 @@
 import { styled } from 'styled-components';
+import type { InputHeaderSize } from '@/shared/ui/inputHeader/InputHeader';
 
-export const Header = styled.div`
+export const Header = styled.div<{ $size: InputHeaderSize }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.8rem;
+  width: ${({ $size }) => ($size === 'lg' ? '80.8rem' : '27.9rem')};
 `;
 
 export const Text = styled.label`

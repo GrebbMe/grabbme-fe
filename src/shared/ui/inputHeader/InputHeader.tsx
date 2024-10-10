@@ -1,5 +1,7 @@
 import * as S from '@/shared/ui/inputHeader/InputHeader.style';
 
+export type InputHeaderSize = 'sm' | 'lg';
+
 export interface InputHeaderProps {
   text: string;
   description?: string;
@@ -7,6 +9,7 @@ export interface InputHeaderProps {
   count?: number;
   isDetail?: boolean;
   isCountable?: boolean;
+  size?: InputHeaderSize;
 }
 
 const InputHeader = ({
@@ -16,10 +19,11 @@ const InputHeader = ({
   count,
   isDetail = true,
   isCountable,
+  size = 'lg',
 }: InputHeaderProps) => {
   return (
     <>
-      <S.Header>
+      <S.Header $size={size}>
         <S.Text>
           {text}
           {isDetail && (
