@@ -1,10 +1,23 @@
-export { default as IcFlutter } from './IcFlutter.svg';
-export { default as IcKotlin } from './IcKotlin.svg';
-export { default as IcNestjs } from './IcNestjs.svg';
-export { default as IcNodejs } from './IcNodejs.svg';
-export { default as IcReact } from './IcReact.svg';
-export { default as IcRust } from './IcRust.svg';
-export { default as IcSpring } from './IcSpring.svg';
-export { default as IcSwift } from './IcSwift.svg';
-export { default as IcVue } from './IcVue.svg';
-export { default as IcDjango } from './IcDjango.svg';
+import IcDjango from './IcDjango.svg';
+import IcFlutter from './IcFlutter.svg';
+import IcKotlin from './IcKotlin.svg';
+import IcNestjs from './IcNestjs.svg';
+import IcNodejs from './IcNodejs.svg';
+import IcReact from './IcReact.svg';
+import IcRust from './IcRust.svg';
+import IcSpring from './IcSpring.svg';
+import IcSwift from './IcSwift.svg';
+import IcVue from './IcVue.svg';
+
+export {
+  IcFlutter,
+  IcKotlin,
+  IcNestjs,
+  IcNodejs,
+  IcReact,
+  IcRust,
+  IcSpring,
+  IcSwift,
+  IcVue,
+  IcDjango,
+};
