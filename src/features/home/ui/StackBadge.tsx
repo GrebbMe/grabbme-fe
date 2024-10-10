@@ -10,7 +10,7 @@ export interface StackBadgeProps {
 export const StackBadge = ({ stackName, stackImg, onClick }: StackBadgeProps) => {
   return (
     <S.Container onClick={onClick}>
-      <S.StackImg src={stackImg} alt="stack-button" />
+      <S.StackImg src={stackImg} alt={`${stackName} image`} />
       <S.StackName>{stackName}</S.StackName>
     </S.Container>
   );
