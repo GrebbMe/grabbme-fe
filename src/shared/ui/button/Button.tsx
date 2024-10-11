@@ -1,17 +1,21 @@
-import { ReactElement } from 'react';
-import * as S from './Button.style';
+import { ComponentPropsWithoutRef, forwardRef, ReactElement } from 'react';
+import { StyledButton } from './Button.style';
 
-interface ButtonProps {
-  children: string;
-  onClick?: () => void;
-  disabled?: boolean;
+export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+  variant: 'primary' | 'circle' | 'inactivePrimary' | 'inactiveSecondary';
+  size: 'sm' | 'lg';
   icon?: ReactElement;
-  iconType?: 'bookmark' | 'list';
 }
 
-export const Button = ({ children, onClick, disabled = false, icon, iconType }: ButtonProps) => (
-  <S.StyledButton onClick={onClick} disabled={disabled} icon={icon}>
-    {icon && <S.IconWrapper iconType={iconType}>{icon}</S.IconWrapper>}
-    {children}
-  </S.StyledButton>
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant, size, icon, children, ...props }, ref) => {
+    return (
+      <StyledButton variant={variant} size={size} icon={icon} {...props} ref={ref}>
+        {icon}
+        {children}
+      </StyledButton>
+    );
+  },
 );
+
+export default Button;

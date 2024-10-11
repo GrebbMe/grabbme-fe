@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
 import { useModalStore } from '@/shared/stores/modalStore';
-import { Button } from '@/shared/ui/button/Button';
+import { Button } from '@/shared/ui';
 import * as S from '@/shared/ui/modal/Modal.style';
 
 export const Modal = () => {
