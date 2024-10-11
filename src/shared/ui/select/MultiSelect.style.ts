@@ -27,10 +27,12 @@ export const ItemInput = styled.div<{ $isOpen: boolean }>`
   ${({ theme }) => theme.typo.CAPTION_14};
   color: ${({ theme }) => theme.color.GRAY_50};
   align-items: center;
-  height: 5.2rem;
+  height: 4.8rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  background-color: ${({ theme }) => theme.color.WHITE};
+
   border-radius: ${({ $isOpen }) => ($isOpen ? '0.8rem 0.8rem 0 0' : '0.8rem')};
   border: 0.1rem solid
     ${({ theme, $isOpen }) => ($isOpen ? theme.color.BLUE_50 : theme.color.GRAY_30)};
