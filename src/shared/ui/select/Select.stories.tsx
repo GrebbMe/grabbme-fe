@@ -28,9 +28,9 @@ type Story = StoryObj<SelectListProps>;
 export const Default: Story = {
   args: {
     items: [
-      { value: '1', label: '1-2년차' },
-      { value: '2', label: '3-5년차' },
-      { value: '3', label: '5-7년차' },
+      { id: 1, label: '1-2년차' },
+      { id: 2, label: '3-5년차' },
+      { id: 3, label: '5-7년차' },
     ],
     size: 'lg',
     placeholder: '선택',
@@ -48,9 +48,9 @@ export const Default: Story = {
 export const All: Story = {
   args: {
     items: [
-      { value: '1', label: '1-2년차' },
-      { value: '2', label: '3-5년차' },
-      { value: '3', label: '5-7년차' },
+      { id: 1, label: '1-2년차' },
+      { id: 2, label: '3-5년차' },
+      { id: 3, label: '5-7년차' },
     ],
     size: 'md',
     placeholder: '선택',

@@ -6,9 +6,9 @@ import { Select, SelectListItem } from '@/shared/ui/select/Select';
 import TextField from '@/shared/ui/textfield/TextField';
 
 const SELECT_ITEM = [
-  { value: '1', label: '1-2년차' },
-  { value: '2', label: '3-5년차' },
-  { value: '3', label: '5-7년차' },
+  { id: 1, label: '1-2년차' },
+  { id: 2, label: '3-5년차' },
+  { id: 3, label: '5-7년차' },
 ];
 const MULTI_SELECT = [
   { id: 1, item: 'Svelte' },
@@ -79,7 +79,13 @@ export const All = () => {
       <InputHeader text="개발 경력" isCountable={false} isDetail={false} />
       <br />
       <InputHeader text="개발 경력" isCountable={false} />
-      <Select items={SELECT_ITEM} size={'lg'} selected={select} onChangeSelected={setSelect} />
+      <Select
+        items={SELECT_ITEM}
+        size={'lg'}
+        selected={select}
+        placeholder="선택"
+        onChangeSelected={setSelect}
+      />
 
       <br />
       <InputHeader

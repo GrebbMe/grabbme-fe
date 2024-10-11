@@ -7,7 +7,7 @@ import * as S from '@/shared/ui/select/Select.style';
 type SelectListSize = 'sm' | 'md' | 'lg';
 
 export interface SelectListItem {
-  value: string;
+  id: number;
   label: string;
 }
 
@@ -50,9 +50,9 @@ export const Select = ({
         <S.DropdownListContainer>
           {items.map((item) => (
             <S.DropdownListItem
-              key={item.value}
+              key={item.id}
               onClick={() => handleItemClick(item)}
-              isSelected={selected ? item.value === selected.value : false}
+              isSelected={selected ? item.id === selected.id : false}
             >
               {item.label}
             </S.DropdownListItem>
