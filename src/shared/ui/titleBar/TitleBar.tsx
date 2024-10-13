@@ -7,7 +7,7 @@ export interface TitleBarProps {
   description?: string;
   limit?: number;
   count?: number;
-  size: TitleBarSize;
+  size?: TitleBarSize;
 }
 
 const TitleBar = ({ label, description, limit, count, size = 'lg' }: TitleBarProps) => {
