@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Editor } from '@/features/post/ui/editor/Editor';
 import * as S from '@/pages/post/grabbzone/RegisterGrabbzone.style';
-import { TextField, Button, InputHeader, Select } from '@/shared/ui';
+import { TextField, Button, TitleBar, Select } from '@/shared/ui';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { SelectListItem } from '@/shared/ui/select/Select';
 
@@ -87,32 +87,24 @@ const RegisterGrabbzone = () => {
         <span>나의 차별점을 작성해보세요!</span>
       </S.Header>
       <S.TitleInput>
-        <InputHeader
-          text="게시글 제목"
-          isDetail={true}
-          count={title.length}
-          limit={50}
-          isCountable={true}
-        />
+        <TitleBar size="lg" label="게시글 제목" count={title.length} limit={50} />
         <TextField size="lg" value={title} onChange={handleTitleChange} placeholder={''} />
       </S.TitleInput>
       <S.EditorContainer>
-        <InputHeader
-          text="자기 소개"
-          isDetail={true}
-          description="자기 소개를 어떤식으로 적으면 좋을지 설명을 적어줍니다."
+        <TitleBar
+          label="자기 소개"
+          description="나의 차별점을 작성해보세요."
           count={getContentLength(content)}
           limit={500}
-          isCountable={true}
         />
         <Editor value={content} onChange={handleContentChange} />
       </S.EditorContainer>
       <S.JobContainer>
-        <InputHeader text="희망 직군" />
+        <TitleBar size="lg" label="희망 직군" />
         <Select items={JOB} placeholder="선택" size="sm" selected={job} onChangeSelected={setJob} />
       </S.JobContainer>
       <S.CareerContainer>
-        <InputHeader text="개발 경력" />
+        <TitleBar label="개발 경력" />
         <Select
           items={CAREER}
           placeholder="선택"
@@ -122,9 +114,8 @@ const RegisterGrabbzone = () => {
         />
       </S.CareerContainer>
       <S.CategorySelectContainer>
-        <InputHeader
-          text={'선호 카테고리'}
-          isDetail={true}
+        <TitleBar
+          label={'선호 카테고리'}
           description="카테고리는 최대 3개까지 선택할 수 있어요."
           limit={3}
           count={category.length}
@@ -138,9 +129,8 @@ const RegisterGrabbzone = () => {
         />
       </S.CategorySelectContainer>
       <S.StackSelectContainer>
-        <InputHeader
-          text={'기술 스택'}
-          isDetail={true}
+        <TitleBar
+          label={'기술 스택'}
           description="스택은 최대 5개까지 선택할 수 있어요."
           limit={5}
           count={stack.length}

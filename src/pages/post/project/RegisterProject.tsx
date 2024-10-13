@@ -5,7 +5,7 @@ import { Editor } from '@/features/post/ui/editor/Editor';
 import { Position } from '@/features/post/ui/positionManage/PositionWithCount';
 import { ProjectPeriod } from '@/features/post/ui/projectPeriod';
 import * as S from '@/pages/post/project/RegisterProject.style';
-import { Button, InputHeader, TextField } from '@/shared/ui';
+import { Button, TitleBar, TextField } from '@/shared/ui';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 
 const CAREER = [
@@ -101,30 +101,21 @@ const RegisterProject = () => {
         <span>프로젝트에 대해 상세하게 작성해주세요.</span>
       </S.Header>
       <S.TitleInput>
-        <InputHeader
-          text="프로젝트명"
-          isDetail={true}
-          count={title.length}
-          limit={50}
-          isCountable={true}
-        />
+        <TitleBar label="프로젝트명" count={title.length} limit={50} />
         <TextField size="lg" value={title} onChange={handleTitleChange} placeholder={''} />
       </S.TitleInput>
       <S.EditorContainer>
-        <InputHeader
-          text="프로젝트 소개"
-          isDetail={true}
-          description="프로젝트 소개를 어떤식으로 적으면 좋을지 설명을 적어줍니다."
+        <TitleBar
+          label="프로젝트 소개"
+          description="프로젝트에 대한 상세한 설명을 적어주세요."
           count={getContentLength(content) + 1}
           limit={500}
-          isCountable={true}
         />
         <Editor value={content} onChange={handleContentChange} />
       </S.EditorContainer>
       <S.CategorySelectContainer>
-        <InputHeader
-          text={'선호 카테고리'}
-          isDetail={true}
+        <TitleBar
+          label={'선호 카테고리'}
           description="카테고리는 최대 3개까지 선택할 수 있어요."
           limit={3}
           count={category.length}
@@ -138,9 +129,8 @@ const RegisterProject = () => {
         />
       </S.CategorySelectContainer>
       <S.StackSelectContainer>
-        <InputHeader
-          text={'기술 스택'}
-          isDetail={true}
+        <TitleBar
+          label={'기술 스택'}
           description="스택은 최대 5개까지 선택할 수 있어요."
           limit={5}
           count={stack.length}
@@ -154,7 +144,7 @@ const RegisterProject = () => {
         />
       </S.StackSelectContainer>
       <S.ProjectPeriodContainer>
-        <InputHeader text="프로젝트 진행기간" />
+        <TitleBar label="프로젝트 진행기간" />
         <ProjectPeriod
           startDate={startDate}
           endDate={endDate}
@@ -163,11 +153,11 @@ const RegisterProject = () => {
         />
       </S.ProjectPeriodContainer>
       <S.DeadlineCalendarContainer>
-        <InputHeader text="모집 마감일" />
+        <TitleBar label="모집 마감일" />
         <DeadlineCalendar selectedDate={deadline} setSelectedDate={setDeadline} />
       </S.DeadlineCalendarContainer>
       <S.PositionContainer>
-        <InputHeader text="포지션" />
+        <TitleBar label="포지션" />
         <PositionWithCount
           positions={positions}
           setPositions={handleSetPositions}
@@ -176,7 +166,7 @@ const RegisterProject = () => {
         />
       </S.PositionContainer>
       <S.TotalContainer>
-        <InputHeader text="총인원" isDetail={false} />
+        <TitleBar label="총인원" />
         <S.TotalBox>
           <S.TotalNumber>{totalCount}</S.TotalNumber>
           <span>명</span>
