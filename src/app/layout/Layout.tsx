@@ -3,7 +3,7 @@ import { Footer } from '@/app/layout/Footer';
 import { Header } from '@/app/layout/Header';
 import { Container, GridWrapper } from '@/app/layout/layout.style';
 
-export const Layout = () => {
+export const DashboardLayout = () => {
   return (
     <>
       <Header />
