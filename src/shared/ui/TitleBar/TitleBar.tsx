@@ -32,7 +32,7 @@ const TitleBar = ({
             </>
           )}
         </S.Text>
-        {limit && count && (
+        {limit && (
           <S.Count>
             {count} / {limit}
           </S.Count>
