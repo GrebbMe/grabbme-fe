@@ -1,4 +1,4 @@
-import * as S from '@/shared/ui/titleBar_temp/TitleBar.style';
+import * as S from '@/shared/ui/titleBar/TitleBar.style';
 
 export type TitleBarSize = 'sm' | 'lg';
 
