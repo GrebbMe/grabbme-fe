@@ -4,7 +4,7 @@ export const Container = styled.div`
   min-height: calc(100% - 27.3rem);
 `;
 
-export const Wrapper = styled.div`
+export const GridWrapper = styled.div`
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(12, 8rem);
@@ -21,6 +21,7 @@ export const Wrapper = styled.div`
     grid-template-columns: repeat(4, 1fr);
     gap: 1.6rem;
     margin: 1.6rem;
+    border: 1px solid red;
   }
 `;
 
