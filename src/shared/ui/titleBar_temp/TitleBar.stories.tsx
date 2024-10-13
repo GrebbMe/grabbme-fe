@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { Select, SelectListItem } from '@/shared/ui/select/Select';
 import TextField from '@/shared/ui/textfield/TextField';
-import TitleBar, { TitleBarProps } from '@/shared/ui/TitleBar/TitleBar';
+import TitleBar, { TitleBarProps } from '@/shared/ui/titleBar_temp/TitleBar';
 
 const SELECT_ITEM = [
   { id: 1, label: '1-2년차' },

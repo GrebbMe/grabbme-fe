@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import type { TitleBarSize } from '@/shared/ui/TitleBar/TitleBar';
+import type { TitleBarSize } from '@/shared/ui/titleBar_temp/TitleBar';
 
 export const Header = styled.div<{ $size: TitleBarSize }>`
   display: flex;
