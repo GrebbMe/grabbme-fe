@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { SelectList } from '@/shared/ui';
-import { SelectListItem, SelectListProps } from '@/shared/ui/select/SelectList';
+import { Select } from '@/shared/ui';
+import { SelectListItem, SelectListProps } from '@/shared/ui/select/Select';
 
 const meta: Meta<SelectListProps> = {
   title: 'shared/Select',
-  component: SelectList,
+  component: Select,
   argTypes: {
     items: {
       control: 'object',
@@ -28,9 +28,9 @@ type Story = StoryObj<SelectListProps>;
 export const Default: Story = {
   args: {
     items: [
-      { value: '1', label: '1-2년차' },
-      { value: '2', label: '3-5년차' },
-      { value: '3', label: '5-7년차' },
+      { id: 1, label: '1-2년차' },
+      { id: 2, label: '3-5년차' },
+      { id: 3, label: '5-7년차' },
     ],
     size: 'lg',
     placeholder: '선택',
@@ -41,16 +41,16 @@ export const Default: Story = {
       setSelected(item);
     };
 
-    return <SelectList {...args} selected={selected} onChangeSelected={handleItemClick} />;
+    return <Select {...args} selected={selected} onChangeSelected={handleItemClick} />;
   },
 };
 
 export const All: Story = {
   args: {
     items: [
-      { value: '1', label: '1-2년차' },
-      { value: '2', label: '3-5년차' },
-      { value: '3', label: '5-7년차' },
+      { id: 1, label: '1-2년차' },
+      { id: 2, label: '3-5년차' },
+      { id: 3, label: '5-7년차' },
     ],
     size: 'md',
     placeholder: '선택',
@@ -72,21 +72,21 @@ export const All: Story = {
 
     return (
       <>
-        <SelectList
+        <Select
           {...args}
           size={'sm'}
           selected={smallSelected}
           onChangeSelected={handleSmallSelect}
         />
         <br />
-        <SelectList
+        <Select
           {...args}
           size={'md'}
           selected={mediumSelected}
           onChangeSelected={handleMediumSelect}
         />
         <br />
-        <SelectList
+        <Select
           {...args}
           size={'lg'}
           selected={LargeSelected}

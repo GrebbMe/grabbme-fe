@@ -6,7 +6,8 @@ export const DropdownContainer = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
 `;
 
 export const DropdownHeader = styled.div<{ isOpen: boolean }>`
-  padding: 1.6rem;
+  height: 4.8rem;
+  padding: 0 1.6rem;
   border: 0.1rem solid ${({ theme }) => theme.color.GRAY_30};
   background: #fff;
   cursor: pointer;
@@ -22,6 +23,7 @@ export const DropdownHeader = styled.div<{ isOpen: boolean }>`
 
 export const Placeholder = styled.span`
   color: ${({ theme }) => theme.color.GRAY_50};
+  ${({ theme }) => theme.typo.CAPTION_14};
 `;
 
 export const DropdownListContainer = styled.div`
