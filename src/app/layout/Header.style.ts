@@ -63,13 +63,11 @@ export const GridWrapper = styled.div`
     grid-template-columns: repeat(6, 1fr);
     gap: 2.4rem;
     margin: 2.4rem;
-    border: 1px solid blue;
   }
 
   ${({ theme }) => theme.device.MOBILE} {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.6rem;
     margin: 1.6rem;
-    border: 1px solid red;
   }
 `;
