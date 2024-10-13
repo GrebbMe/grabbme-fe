@@ -16,3 +16,16 @@ export const Layout = () => {
     </>
   );
 };
+
+export const MainLayout = () => {
+  return (
+    <>
+      <Header />
+      <Container>
+        <GridWrapper>
+          <Outlet />
+        </GridWrapper>
+      </Container>
+    </>
+  );
+};
