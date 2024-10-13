@@ -93,13 +93,15 @@ const PositionWithCount = ({
             selected={{ id: position.id, label: position.label }}
             onChangeSelected={(item) => handleUpdatePositions(position.id, item)}
           />
-          <S.MinusButton type="button" onClick={() => handleDecrementCount(position.id)}>
-            <IcMinus />
-          </S.MinusButton>
-          <span>{position.count}</span>
-          <S.PlusButton type="button" onClick={() => handleIncrementCount(position.id)}>
-            <IcPlus />
-          </S.PlusButton>
+          <S.CountControlBox>
+            <S.MinusButton type="button" onClick={() => handleDecrementCount(position.id)}>
+              <IcMinus />
+            </S.MinusButton>
+            <S.Count>{position.count}</S.Count>
+            <S.PlusButton type="button" onClick={() => handleIncrementCount(position.id)}>
+              <IcPlus onClick={() => handleIncrementCount(position.id)} />
+            </S.PlusButton>
+          </S.CountControlBox>
           <S.TrashButton type="button" onClick={() => handleRemovePosition(position.id)}>
             <IcTrash />
           </S.TrashButton>

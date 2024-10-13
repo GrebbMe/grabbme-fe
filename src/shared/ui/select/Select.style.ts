@@ -3,6 +3,9 @@ import { styled } from 'styled-components';
 export const DropdownContainer = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
   width: ${({ size }) => (size === 'sm' ? '28.8rem' : size === 'md' ? '49.6rem' : '80.8rem')};
   position: relative;
+  ${({ theme }) => theme.device.MOBILE} {
+    width: 100%;
+  }
 `;
 
 export const DropdownHeader = styled.div<{ $isOpen: boolean }>`
@@ -19,11 +22,20 @@ export const DropdownHeader = styled.div<{ $isOpen: boolean }>`
   border-bottom-width: ${({ $isOpen }) => $isOpen && '0.05rem'};
   ${({ theme }) => theme.typo.CAPTION_14};
   color: ${({ theme }) => theme.color.BLACK_80};
+
+  ${({ theme }) => theme.device.MOBILE} {
+    height: 4.2rem;
+    ${({ theme }) => theme.typo.CAPTION_12};
+  }
 `;
 
 export const Placeholder = styled.span`
   color: ${({ theme }) => theme.color.GRAY_50};
   ${({ theme }) => theme.typo.CAPTION_14};
+
+  ${({ theme }) => theme.device.MOBILE} {
+    ${({ theme }) => theme.typo.CAPTION_12};
+  }
 `;
 
 export const DropdownListContainer = styled.div`
@@ -50,4 +62,10 @@ export const DropdownListItem = styled.div<{ $isSelected: boolean }>`
   color: ${({ $isSelected, theme }) =>
     $isSelected ? theme.color.BLACK_100 : theme.color.BLACK_80};
   ${({ $isSelected, theme }) => ($isSelected ? theme.typo.SUBTITLE_14 : theme.typo.CAPTION_14)};
+
+  ${({ theme }) => theme.device.MOBILE} {
+    height: 4.2rem;
+    ${({ theme }) => theme.typo.CAPTION_12};
+  }
+  }
 `;

@@ -22,6 +22,11 @@ export const Container = styled.div`
     left: 0;
     z-index: 100;
   }
+
+  ${({ theme }) => theme.device.MOBILE} {
+    width: 100%;
+    ${({ theme }) => theme.typo.CAPTION_12};
+  }
 `;
 export const ItemInput = styled.div<{ $isOpen: boolean }>`
   ${({ theme }) => theme.typo.CAPTION_14};
@@ -32,17 +37,27 @@ export const ItemInput = styled.div<{ $isOpen: boolean }>`
   display: flex;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.color.WHITE};
-
   border-radius: ${({ $isOpen }) => ($isOpen ? '0.8rem 0.8rem 0 0' : '0.8rem')};
   border: 0.1rem solid
     ${({ theme, $isOpen }) => ($isOpen ? theme.color.BLUE_50 : theme.color.GRAY_30)};
   border-bottom-width: ${({ $isOpen }) => ($isOpen ? '0.05rem' : '0.1rem')};
   width: 100%;
   padding: 0 1.6rem;
+
+  ${({ theme }) => theme.device.MOBILE} {
+    height: auto;
+    min-height: 4.2rem;
+    ${({ theme }) => theme.typo.CAPTION_12};
+  }
 `;
 export const InputButtonBox = styled.div`
   display: flex;
   gap: 0.8rem;
+
+  ${({ theme }) => theme.device.MOBILE} {
+    flex-wrap: wrap;
+    padding: 0.6rem 0;
+  }
 `;
 export const IconWrapper = styled.div`
   cursor: pointer;

@@ -65,4 +65,8 @@ export const EditorWrapper = styled.div`
     color: ${({ theme }) => theme.color.GRAY_50};
     font-style: normal;
   }
+
+  ${({ theme }) => theme.device.MOBILE} {
+    width: 100%;
+  }
 `;

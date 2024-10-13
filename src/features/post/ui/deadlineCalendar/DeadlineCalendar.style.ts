@@ -10,6 +10,11 @@ const DatePickerContainer = styled.div`
   border-radius: 0.8rem;
   width: 28.8rem;
   height: 4.8rem;
+
+  ${({ theme }) => theme.device.MOBILE} {
+    width: 100%;
+    height: 4.2rem;
+  }
 `;
 
 const StyledDatePicker = styled(DatePicker)`

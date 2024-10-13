@@ -5,12 +5,13 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1.6rem;
+`;
 
-  > span {
-    ${({ theme }) => theme.typo.SUBTITLE_20};
-    color: ${({ theme }) => theme.color.BLACK_80};
-    margin: 0 1.1rem;
-  }
+export const CountControlBox = styled.div`
+  margin-left: 2.4rem;
+  width: 8rem;
+  display: flex;
+  align-items: center;v
 `;
 
 export const PlusButton = styled.button`
@@ -25,6 +26,20 @@ export const MinusButton = styled.button`
   background-color: transparent;
   border: transparent;
   cursor: pointer;
+  padding: 0;
+`;
+export const Count = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  ${({ theme }) => theme.typo.SUBTITLE_20};
+  color: ${({ theme }) => theme.color.BLACK_80};
+
+  ${({ theme }) => theme.device.MOBILE} {
+    ${({ theme }) => theme.typo.BODY_SEMIBOLD};
+    color: ${({ theme }) => theme.color.BLACK_80};
+  }
 `;
 export const TrashButton = styled.button`
   margin-left: 1.6rem;
@@ -48,4 +63,7 @@ export const AddPositionButton = styled.button`
     height: 1.4rem;
     stroke: ${({ theme }) => theme.color.GRAY_50};
   }
+
+  ${({ theme }) => theme.device.MOBILE} {
+  margin-left: 0;
 `;
