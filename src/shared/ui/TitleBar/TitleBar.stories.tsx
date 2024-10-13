@@ -39,7 +39,6 @@ const meta: Meta<typeof TitleBar> = {
   argTypes: {
     label: { control: 'text' },
     description: { control: 'text' },
-    isDetail: { control: 'boolean' },
     limit: { control: 'number' },
     size: { control: 'select', options: ['sm', 'lg'] },
   },
@@ -59,7 +58,6 @@ export const Default = Template.bind({});
 Default.args = {
   label: '제목',
   description: '설명',
-  isDetail: true,
   limit: 10,
   size: 'lg',
 };
@@ -74,9 +72,9 @@ export const All = () => {
 
   return (
     <>
-      <TitleBar label="개발 경력" isDetail={false} size="lg" />
+      <TitleBar label="개발 경력" size="lg" />
       <br />
-      <TitleBar label="개발 경력" isDetail={true} size="lg" />
+      <TitleBar label="개발 경력" size="lg" />
       <Select
         items={SELECT_ITEM}
         size={'lg'}
@@ -89,7 +87,6 @@ export const All = () => {
       <TitleBar
         label="기술스택"
         description="기술스택을 최대 5개 선택하세요."
-        isDetail={true}
         limit={5}
         count={selectedItems.length}
         size="lg"
@@ -106,7 +103,6 @@ export const All = () => {
         label="제목"
         description="글 작성하세요."
         limit={50}
-        isDetail={true}
         count={value.length}
         size="lg"
       />

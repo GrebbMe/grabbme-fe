@@ -7,30 +7,17 @@ export interface TitleBarProps {
   description?: string;
   limit?: number;
   count?: number;
-  isDetail: boolean;
   size: TitleBarSize;
 }
 
-const TitleBar = ({
-  label,
-  description,
-  limit,
-  count,
-  isDetail = true,
-
-  size = 'lg',
-}: TitleBarProps) => {
+const TitleBar = ({ label, description, limit, count, size = 'lg' }: TitleBarProps) => {
   return (
     <>
       <S.Header $size={size}>
         <S.Text>
           {label}
-          {isDetail && (
-            <>
-              <S.StarWrapper>*</S.StarWrapper>
-              <S.Description>{description}</S.Description>
-            </>
-          )}
+          <S.StarWrapper>*</S.StarWrapper>
+          {description && <S.Description>{description}</S.Description>}
         </S.Text>
         {limit && (
           <S.Count>
