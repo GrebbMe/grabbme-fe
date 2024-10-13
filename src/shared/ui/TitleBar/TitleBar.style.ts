@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
-import type { InputHeaderSize } from '@/shared/ui/inputHeader/InputHeader';
+import type { TitleBarSize } from '@/shared/ui/TitleBar/TitleBar';
 
-export const Header = styled.div<{ $size: InputHeaderSize }>`
+export const Header = styled.div<{ $size: TitleBarSize }>`
   display: flex;
   justify-content: space-between;
   align-items: center;

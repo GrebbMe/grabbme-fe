@@ -1,9 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
-import InputHeader, { InputHeaderProps } from '@/shared/ui/inputHeader/InputHeader';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { Select, SelectListItem } from '@/shared/ui/select/Select';
 import TextField from '@/shared/ui/textfield/TextField';
+import TitleBar, { TitleBarProps } from '@/shared/ui/TitleBar/TitleBar';
 
 const SELECT_ITEM = [
   { id: 1, label: '1-2년차' },
@@ -30,17 +30,16 @@ const MULTI_SELECT = [
   { id: 17, item: 'GraphQL' },
 ];
 
-const meta: Meta<typeof InputHeader> = {
-  title: 'shared/InputHeader',
-  component: InputHeader,
+const meta: Meta<typeof TitleBar> = {
+  title: 'component/shared/TitleBar',
+  component: TitleBar,
   parameters: {
     layout: 'centered',
   },
   argTypes: {
-    text: { control: 'text' },
+    label: { control: 'text' },
     description: { control: 'text' },
     isDetail: { control: 'boolean' },
-    isCountable: { control: 'boolean' },
     limit: { control: 'number' },
     size: { control: 'select', options: ['sm', 'lg'] },
   },
@@ -48,20 +47,19 @@ const meta: Meta<typeof InputHeader> = {
 
 export default meta;
 
-const Template: StoryFn<InputHeaderProps> = (args) => {
+const Template: StoryFn<TitleBarProps> = (args) => {
   return (
     <div style={{ width: '80.8rem' }}>
-      <InputHeader {...args} />
+      <TitleBar {...args} />
     </div>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  text: '제목',
+  label: '제목',
   description: '설명',
   isDetail: true,
-  isCountable: true,
   limit: 10,
   size: 'lg',
 };
@@ -76,9 +74,9 @@ export const All = () => {
 
   return (
     <>
-      <InputHeader text="개발 경력" isCountable={false} isDetail={false} />
+      <TitleBar label="개발 경력" isDetail={false} size="lg" />
       <br />
-      <InputHeader text="개발 경력" isCountable={false} />
+      <TitleBar label="개발 경력" isDetail={true} size="lg" />
       <Select
         items={SELECT_ITEM}
         size={'lg'}
@@ -88,13 +86,13 @@ export const All = () => {
       />
 
       <br />
-      <InputHeader
-        text="기술스택"
+      <TitleBar
+        label="기술스택"
         description="기술스택을 최대 5개 선택하세요."
         isDetail={true}
-        isCountable={true}
         limit={5}
         count={selectedItems.length}
+        size="lg"
       />
       <MultiSelect
         placeholder="선택"
@@ -104,12 +102,13 @@ export const All = () => {
         selectLimit={5}
       />
       <br />
-      <InputHeader
-        text="제목"
+      <TitleBar
+        label="제목"
         description="글 작성하세요."
-        isCountable={true}
         limit={50}
+        isDetail={true}
         count={value.length}
+        size="lg"
       />
       <TextField
         value={value}

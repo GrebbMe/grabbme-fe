@@ -1,31 +1,30 @@
-import * as S from '@/shared/ui/inputHeader/InputHeader.style';
+import * as S from '@/shared/ui/TitleBar/TitleBar.style';
 
-export type InputHeaderSize = 'sm' | 'lg';
+export type TitleBarSize = 'sm' | 'lg';
 
-export interface InputHeaderProps {
-  text: string;
+export interface TitleBarProps {
+  label: string;
   description?: string;
   limit?: number;
   count?: number;
-  isDetail?: boolean;
-  isCountable?: boolean;
-  size?: InputHeaderSize;
+  isDetail: boolean;
+  size: TitleBarSize;
 }
 
-const InputHeader = ({
-  text,
+const TitleBar = ({
+  label,
   description,
   limit,
   count,
   isDetail = true,
-  isCountable,
+
   size = 'lg',
-}: InputHeaderProps) => {
+}: TitleBarProps) => {
   return (
     <>
       <S.Header $size={size}>
         <S.Text>
-          {text}
+          {label}
           {isDetail && (
             <>
               <S.StarWrapper>*</S.StarWrapper>
@@ -33,7 +32,7 @@ const InputHeader = ({
             </>
           )}
         </S.Text>
-        {isCountable && (
+        {limit && count && (
           <S.Count>
             {count} / {limit}
           </S.Count>
@@ -43,4 +42,4 @@ const InputHeader = ({
   );
 };
 
-export default InputHeader;
+export default TitleBar;
