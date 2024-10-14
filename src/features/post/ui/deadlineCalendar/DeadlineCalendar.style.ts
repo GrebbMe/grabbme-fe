@@ -43,7 +43,7 @@ const DatePickerLayout = styled.div`
 
   .react-datepicker-popper {
     position: absolute;
-    left:-1.6rem  !important;
+    left: -1.6rem !important;
     top: 1.6rem !important;
 
     .react-datepicker__triangle {
@@ -143,7 +143,7 @@ const DatePickerLayout = styled.div`
 
             &.react-datepicker__day--selected {
               background-color: ${({ theme }) => theme.color.PRIMARY_BLUE} !important;
-              width: 3.2rem;import { theme } from '../../../../app/styles/theme';
+              width: 3.2rem;
 
               border-radius: 50%;
               color: ${({ theme }) => theme.color.WHITE};
