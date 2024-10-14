@@ -10,6 +10,7 @@ const DatePickerContainer = styled.div`
   border-radius: 0.8rem;
   width: 28.8rem;
   height: 4.8rem;
+  background-color: ${({ theme }) => theme.color.WHITE};
 `;
 
 const StyledDatePicker = styled(DatePicker)`
@@ -142,7 +143,8 @@ const DatePickerLayout = styled.div`
 
             &.react-datepicker__day--selected {
               background-color: ${({ theme }) => theme.color.PRIMARY_BLUE} !important;
-              width: 3.2rem;
+              width: 3.2rem;import { theme } from '../../../../app/styles/theme';
+
               border-radius: 50%;
               color: ${({ theme }) => theme.color.WHITE};
               pointer-events: none;
