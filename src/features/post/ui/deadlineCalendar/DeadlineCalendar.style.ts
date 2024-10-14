@@ -43,7 +43,7 @@ const DatePickerLayout = styled.div`
   .react-datepicker-popper {
     position: absolute;
     left: 1.2rem !important;
-    top: 1rem !important;
+    top: 1.6rem !important;
 
     .react-datepicker__triangle {
       display: none;
