@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   AgreementContainerStyle,
   AgreementWrapperStyle,
@@ -22,7 +23,6 @@ import { Button, SelectList } from '@/shared/ui';
 import InputHeader from '@/shared/ui/inputHeader/InputHeader';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { SelectListItem } from '@/shared/ui/select/SelectList';
-import { useNavigate } from 'react-router-dom';
 
 //! 임시 선언 (추후 백엔드 API 연결)
 const POSITION_LIST = [
@@ -154,10 +154,10 @@ export const SignUp = () => {
       const userDataForBE = {
         email,
         nickname,
-        position_category_id: selectedJobPosition,
-        carrer_category_id: selectedCareerYear,
-        stack_category_id: selectedTechStackList,
-        project_category_id: selectedCategoryList,
+        position_category_id: parseInt(selectedJobPosition.value),
+        carrer_category_id: parseInt(selectedCareerYear.value),
+        stack_category_id: selectedTechStackList.map(({ id }) => id),
+        project_category_id: selectedCategoryList.map(({ id }) => id),
       };
 
       axios
