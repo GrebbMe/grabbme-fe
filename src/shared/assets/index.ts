@@ -17,3 +17,4 @@ export { default as IcPhoto } from '@/shared/assets/svg/IcPhoto.svg?react';
 export { default as IcSend } from '@/shared/assets/svg/IcSend.svg?react';
 export { default as IcSmallChat } from '@/shared/assets/svg/IcSmallChat.svg?react';
 export { default as IcView } from '@/shared/assets/svg/IcView.svg?react';
+export { default as IcSearch } from '@/shared/assets/svg/IcSearch.svg?react';
