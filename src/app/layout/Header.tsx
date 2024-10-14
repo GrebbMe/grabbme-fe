@@ -20,8 +20,8 @@ export const Header = () => {
         <S.Logo to="#">
           <img src={logo} alt="Logo" />
         </S.Logo>
-        <S.ProjectNavigator to="#">프로젝트</S.ProjectNavigator>
-        <S.GrabbZoneNavigator to="#">그랩존</S.GrabbZoneNavigator>
+        <S.ProjectNavigator to="/project">프로젝트</S.ProjectNavigator>
+        <S.GrabbZoneNavigator to="/grabbzone">그랩존</S.GrabbZoneNavigator>
         {isLoggedIn ? (
           <S.ProfileBox>
             {profileImage ? <img src={profileImage} /> : <ProfileIcon />}
