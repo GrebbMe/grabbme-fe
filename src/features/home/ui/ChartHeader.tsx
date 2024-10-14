@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   ChartHeaderContainer,
   DateContainer,
@@ -8,19 +9,34 @@ import {
 } from './chartHeader.style';
 import { IcArrowNext, IcArrowPrev } from '@/shared/assets/svg/index';
 
-const ChartHeader = () => {
+interface Props {
+  title: string;
+  description: string;
+}
+
+const ChartHeader = ({ title, description }: Props) => {
+  const [yearMonthDate, setYearMonthDate] = useState(new Date());
+
+  const handleDate = (flag: number) => {
+    const newDate = new Date(yearMonthDate);
+    newDate.setMonth(newDate.getMonth() + flag);
+    setYearMonthDate(newDate);
+  };
+
   return (
     <ChartHeaderContainer>
       <div className="title-container">
-        <HeaderTitle>최근 인기 스택</HeaderTitle>
-        <HeaderDescription>
-          GrabbMe에서 가장 많이 지원하는 인기있는 개발 스택을 확인해보세요.
-        </HeaderDescription>
+        <HeaderTitle>{title}</HeaderTitle>
+        <HeaderDescription>{description}</HeaderDescription>
       </div>
       <DateContainer>
-        <IcArrow src={IcArrowPrev.toString()} alt="prev arrow icon" />
-        <YearMonth>2024년 10월</YearMonth>
-        <IcArrow src={IcArrowNext.toString()} alt="next arrow icon" />
+        <IcArrow
+          src={IcArrowPrev.toString()}
+          alt="prev arrow icon"
+          onClick={() => handleDate(-1)}
+        />
+        <YearMonth>{`${yearMonthDate.getFullYear()}년 ${yearMonthDate.getMonth() + 1}월`}</YearMonth>
+        <IcArrow src={IcArrowNext.toString()} alt="next arrow icon" onClick={() => handleDate(1)} />
       </DateContainer>
     </ChartHeaderContainer>
   );

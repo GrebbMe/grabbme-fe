@@ -37,6 +37,7 @@ export const DateContainer = styled.div`
 export const IcArrow = styled.img`
   width: 2.4rem;
   height: 2.4rem;
+  cursor: pointer;
 `;
 
 export const YearMonth = styled.h2`
