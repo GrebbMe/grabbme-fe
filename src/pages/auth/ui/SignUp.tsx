@@ -22,6 +22,7 @@ import { Button, SelectList } from '@/shared/ui';
 import InputHeader from '@/shared/ui/inputHeader/InputHeader';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { SelectListItem } from '@/shared/ui/select/SelectList';
+import { useNavigate } from 'react-router-dom';
 
 //! 임시 선언 (추후 백엔드 API 연결)
 const POSITION_LIST = [
@@ -97,6 +98,7 @@ export const SignUp = () => {
     privateInfo: false,
   });
   const { showModal } = useModal();
+  const navigate = useNavigate();
 
   const handleCheckboxChange = (checkItem: string) => {
     if (checkItem === 'termOfService') {
@@ -165,6 +167,7 @@ export const SignUp = () => {
           // 브라우저 쿠키에 access 토큰, refresh 토큰 저장
           document.cookie = `accessToken=${accessToken}; path=/; max-age=3600; secure; SameSite=Lax;`;
           document.cookie = `refreshToken=${refreshToken}; path=/; max-age=${7 * 24 * 60 * 60}; secure; SameSite=Lax;`;
+          navigate('/');
         })
         .catch((err) => console.log(err));
     } else {
