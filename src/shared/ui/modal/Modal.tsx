@@ -21,8 +21,12 @@ export const Modal = () => {
           <S.ButtonWrapper type={type}>
             {type === 'confirm' ? (
               <>
-                <Button onClick={() => closeModal()}>취소</Button>
+                <Button variant="primary" size="sm" onClick={() => closeModal()}>
+                  취소
+                </Button>
                 <Button
+                  variant="primary"
+                  size="sm"
                   onClick={() => {
                     onConfirm?.();
                     closeModal();
@@ -32,7 +36,9 @@ export const Modal = () => {
                 </Button>
               </>
             ) : (
-              <S.AlertButton onClick={() => closeModal()}>확인</S.AlertButton>
+              <Button variant="primary" size="lg" onClick={() => closeModal()}>
+                확인
+              </Button>
             )}
           </S.ButtonWrapper>
         </S.ModalContainer>
