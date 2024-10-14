@@ -1,4 +1,3 @@
-import { FC, SVGProps } from 'react';
 import * as S from './stackBadge.style';
 
 export interface StackBadgeProps {
