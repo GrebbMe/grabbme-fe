@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { Button } from '@/shared/ui';
+import IcGithubFilld from '@/shared/assets/svg/IcGithubFilled.svg?react';
 
 export const SocialLogin = () => {
   const CLIENT_ID: string = import.meta.env.VITE_GITHUB_LOGIN_CLIENT_ID;
@@ -12,5 +13,9 @@ export const SocialLogin = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <Button onClick={authroizeGithubLogin}>로그인</Button>;
+  return (
+    <Button icon={<IcGithubFilld />} onClick={authroizeGithubLogin}>
+      로그인
+    </Button>
+  );
 };
