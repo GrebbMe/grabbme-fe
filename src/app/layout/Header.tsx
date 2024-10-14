@@ -31,9 +31,7 @@ export const Header = () => {
             <span>{USER_NAME} 님</span>
           </S.ProfileBox>
         ) : (
-          <S.LoginBox>
-            <Button onClick={handleLoginClick}>로그인</Button>
-          </S.LoginBox>
+          <S.LoginBox></S.LoginBox>
         )}
       </S.GridWrapper>
     </S.HeaderContainer>
