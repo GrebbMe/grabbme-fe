@@ -3,7 +3,7 @@ import { useModal } from '@/shared/hooks/useModal';
 import { Modal } from '@/shared/ui/modal/Modal';
 
 export default {
-  title: 'shared/Modal',
+  title: 'components/shared/Modal',
   component: Modal,
   argTypes: {
     content: { control: 'text' },

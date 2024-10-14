@@ -4,7 +4,7 @@ import TextField from '@/shared/ui/textfield/TextField';
 import { TextFieldProps } from '@/shared/ui/textfield/TextField';
 
 export default {
-  title: 'shared/Textfield',
+  title: 'components/shared/Textfield',
   component: TextField,
   argTypes: {
     value: { control: 'text' },
