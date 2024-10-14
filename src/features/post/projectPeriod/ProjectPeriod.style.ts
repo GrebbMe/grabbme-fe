@@ -9,6 +9,12 @@ const Container = styled.div`
   align-items: center;
   width: 27.9rem;
   user-select: none;
+
+  ${({ theme }) => theme.device.MOBILE} {
+    width: 100%;
+    gap: 0.6rem;
+    ${({ theme }) => theme.typo.CAPTION_12};
+  }
 `;
 
 const InputBox = styled.div`
@@ -25,6 +31,11 @@ const InputBox = styled.div`
   svg {
     width: 2.4rem;
     height: 2.4rem;
+  }
+
+  ${({ theme }) => theme.device.MOBILE} {
+    width: 100%;
+    height: 4.2rem;
   }
 `;
 
