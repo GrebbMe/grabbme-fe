@@ -1,7 +1,7 @@
 import { addYears, format, subYears } from 'date-fns';
 import { useState } from 'react';
 import { PeriodModal } from './PeriodModal';
-import { Container, InputBox } from '@/features/post/projectPeriod/ProjectPeriod.style';
+import { Container, InputBox } from '@/features/post/ui/projectPeriod/ProjectPeriod.style';
 import { IcCalendar } from '@/shared/assets/icon/IcCalendar';
 
 export interface ProjectPeriodProps {

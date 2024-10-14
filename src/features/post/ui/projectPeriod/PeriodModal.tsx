@@ -7,8 +7,8 @@ import {
   MonthButton,
   MonthGrid,
   YearStyle,
-} from '@/features/post/projectPeriod/PeriodModal.style';
-import { ActiveInputType } from '@/features/post/projectPeriod/ProjectPeriod';
+} from '@/features/post/ui/projectPeriod/PeriodModal.style';
+import { ActiveInputType } from '@/features/post/ui/projectPeriod/ProjectPeriod';
 import { IcArrowLeft } from '@/shared/assets/icon/IcArrowLeft';
 import { IcArrowRight } from '@/shared/assets/icon/IcArrowRight';
 import { MONTHS } from '@/shared/consts/months';
@@ -79,13 +79,12 @@ export const PeriodModal = ({
         })}
       </MonthGrid>
       <ModalActions>
-        <Button state={'default'} content={'취소'} size={'7.6rem'} onClick={onCancel} />
-        <Button
-          state={'default'}
-          content={'적용'}
-          size={'7.6rem'}
-          onClick={() => onAccept(activeInput)}
-        />
+        <Button variant="primary" size="sm" onClick={onCancel}>
+          취소
+        </Button>
+        <Button variant="primary" size="sm" onClick={() => onAccept(activeInput)}>
+          적용
+        </Button>
       </ModalActions>
     </Modal>
   );
