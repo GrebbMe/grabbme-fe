@@ -8,6 +8,7 @@ export const Layout = () => {
     <>
       <Header />
       <Container>
+        <div></div>
         <GridWrapper>
           <Outlet />
         </GridWrapper>

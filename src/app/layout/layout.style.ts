@@ -20,7 +20,7 @@ export const GridWrapper = styled.div`
   ${({ theme }) => theme.device.MOBILE} {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.6rem;
-    margin: 4.444%;
+    margin: 1.6rem;
   }
 `;
 
@@ -40,6 +40,6 @@ export const GridContainer = styled.div`
   ${({ theme }) => theme.device.MOBILE} {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2.4rem;
-    margin: 4.444%;
+    margin: 1.6rem;
   }
 `;
