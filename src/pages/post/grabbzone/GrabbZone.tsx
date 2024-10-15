@@ -1,7 +1,6 @@
-import React from 'react';
 import { styled } from 'styled-components';
-import SearchBar from '@/shared/ui/searchBar/SearchBar';
-import StackList from '@/shared/ui/stackList/StackList';
+import SearchBar from '@/features/search/ui/searchBar/SearchBar';
+import StackList from '@/features/search/ui/stackSearch/StackSearch';
 
 export const Container = styled.div`
   display: flex;
