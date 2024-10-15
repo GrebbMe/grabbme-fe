@@ -32,6 +32,7 @@ export const TagContainer = styled.div<StatusTagProps>`
   border-radius: 2rem;
   gap: 0.4rem;
   min-width: 6.4rem;
+  flex-shrink: 0;
   background-color: ${({ theme, status }) =>
     theme.color[statusColors[status]?.background || statusColors.default.background]};
 `;
