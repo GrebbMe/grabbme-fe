@@ -10,6 +10,7 @@ const DatePickerContainer = styled.div`
   border-radius: 0.8rem;
   width: 28.8rem;
   height: 4.8rem;
+  background-color: ${({ theme }) => theme.color.WHITE};
 `;
 
 const StyledDatePicker = styled(DatePicker)`
@@ -42,8 +43,8 @@ const DatePickerLayout = styled.div`
 
   .react-datepicker-popper {
     position: absolute;
-    left: 1.2rem !important;
-    top: 1rem !important;
+    left: -1.6rem !important;
+    top: 1.6rem !important;
 
     .react-datepicker__triangle {
       display: none;
@@ -143,6 +144,7 @@ const DatePickerLayout = styled.div`
             &.react-datepicker__day--selected {
               background-color: ${({ theme }) => theme.color.PRIMARY_BLUE} !important;
               width: 3.2rem;
+
               border-radius: 50%;
               color: ${({ theme }) => theme.color.WHITE};
               pointer-events: none;
