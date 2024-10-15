@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as S from './topFiveStacks.style';
-import { fetchData } from '@/features/home/api/top5Stack';
+import { fetchData } from '@/features/home/api/top5Stack.api';
 import { StackData } from '@/features/home/model/top5Stack.model';
 
 const TopFiveStacks = () => {
