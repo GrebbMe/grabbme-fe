@@ -23,6 +23,7 @@ import { Button, SelectList } from '@/shared/ui';
 import InputHeader from '@/shared/ui/inputHeader/InputHeader';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { SelectListItem } from '@/shared/ui/select/SelectList';
+import { areAllChecked } from '@/shared/util';
 
 //! 임시 선언 (추후 백엔드 API 연결)
 const POSITION_LIST = [
@@ -66,10 +67,6 @@ const STACK = [
   { id: 17, item: 'GraphQL' },
 ];
 
-const areAllTrue = (obj: CheckList): boolean => {
-  return Object.values(obj).every((value) => value === true);
-};
-
 interface User {
   email: string;
   nickname: string;
@@ -79,7 +76,7 @@ interface User {
   selectedCategoryList: SelectItem[];
 }
 
-interface CheckList {
+export interface CheckList {
   termOfService: boolean;
   privateInfo: boolean;
 }
@@ -134,7 +131,7 @@ export const SignUp = () => {
       selectedTechStackList?.length &&
       selectedCategoryList?.length
     ) {
-      if (!areAllTrue(isCheckedList)) {
+      if (!areAllChecked(isCheckedList)) {
         showModal({
           content: `모든 이용약관에 동의해주세요.`,
           type: 'alert',
