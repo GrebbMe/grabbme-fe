@@ -3,16 +3,19 @@ import { ThemeProvider } from 'styled-components';
 import { theme, GlobalStyle } from '@/app/styles';
 import { Toast, Modal } from '@/shared';
 import '@/index.css';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Story />
-        <Toast />
-        <Modal />
-      </ThemeProvider>
+      <MemoryRouter>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Story />
+          <Toast />
+          <Modal />
+        </ThemeProvider>
+      </MemoryRouter>
     ),
   ],
   parameters: {
