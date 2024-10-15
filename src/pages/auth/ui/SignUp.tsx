@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { registerUser } from '@/pages/auth/api';
 import {
   AgreementContainerStyle,
   AgreementWrapperStyle,
@@ -121,7 +122,7 @@ export const SignUp = () => {
   };
 
   //! 회원가입 버튼 클릭
-  const handleSignupClick = () => {
+  const handleSignupClick = async () => {
     const url = new URL(window.location.href);
     const email = url.searchParams.get('email');
     const nickname = url.searchParams.get('nickname');
@@ -160,16 +161,15 @@ export const SignUp = () => {
         project_category_id: selectedCategoryList.map(({ id }) => id),
       };
 
-      axios
-        .post('/user', userDataForBE)
-        .then((res) => {
-          const { accessToken, refreshToken } = res.data;
-          // 브라우저 쿠키에 access 토큰, refresh 토큰 저장
-          document.cookie = `accessToken=${accessToken}; path=/; max-age=3600; secure; SameSite=Lax;`;
-          document.cookie = `refreshToken=${refreshToken}; path=/; max-age=${7 * 24 * 60 * 60}; secure; SameSite=Lax;`;
-          navigate('/');
-        })
-        .catch((err) => console.log(err));
+      try {
+        await registerUser(userDataForBE);
+        navigate('/');
+      } catch (err) {
+        showModal({
+          content: '회원가입 중 오류가 발생했습니다.',
+          type: 'alert',
+        });
+      }
     } else {
       showModal({
         content: `선택하지 않은 내용이 있어요. \n모든 내용을 선택해주세요.`,
