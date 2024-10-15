@@ -82,8 +82,7 @@ export interface CheckList {
 }
 
 export const SignUp = () => {
-  const { jobPosition, careerYear, techStackList, categoryList } = useFetchCategories();
-  console.log(jobPosition, careerYear, techStackList, categoryList);
+  // const { jobPosition, careerYear, techStackList, categoryList } = useFetchCategories();
 
   const [user, setUser] = useState<User | null>(null);
   const [selectedJobPosition, setSelectedJobPosition] = useState<SelectListItem | null>(null);
