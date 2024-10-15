@@ -8,12 +8,12 @@ const TopFiveStacks = () => {
   const [topFiveData, setTopFiveData] = useState<StackData[] | undefined>();
 
   useEffect((): void => {
-    const fetchHandler = async (): Promise<void> => {
+    const asyncFn = async (): Promise<void> => {
       const data: StackData[] | undefined = await fetchData();
       setTopFiveData(data);
     };
 
-    fetchHandler().catch((err) => console.error(err));
+    asyncFn().catch((err) => console.error(err));
   }, []);
 
   return (
