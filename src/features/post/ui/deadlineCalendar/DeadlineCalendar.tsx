@@ -48,6 +48,7 @@ export const DeadlineCalendar = ({ selectedDate, setSelectedDate }: DeadlineCale
             placeholderText="선택"
             minDate={new Date()}
             shouldCloseOnSelect={false}
+            popperPlacement="bottom-start"
             calendarContainer={(props: any) => (
               <CustomCalendarContainer
                 {...props}

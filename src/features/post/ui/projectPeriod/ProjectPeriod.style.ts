@@ -27,7 +27,7 @@ const InputBox = styled.div`
   border-radius: 0.8rem;
   border: 0.1rem solid #ddd;
   cursor: pointer;
-
+  background-color: ${({ theme }) => theme.color.WHITE};
   svg {
     width: 2.4rem;
     height: 2.4rem;
