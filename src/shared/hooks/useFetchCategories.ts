@@ -28,6 +28,8 @@ interface CategoryData {
   careerYear: SelectListItem[] | null;
   techStackList: SelectItem[] | null;
   categoryList: SelectItem[] | null;
+  isLoading: boolean;
+  error: string | null;
 }
 
 export const useFetchCategories = (): CategoryData => {
@@ -36,10 +38,20 @@ export const useFetchCategories = (): CategoryData => {
   const [techStackList, setTechStackList] = useState<SelectItem[] | null>(null);
   const [categoryList, setCategoryList] = useState<SelectItem[] | null>(null);
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
-    axios
-      .get('/public-data/position-categories')
-      .then((positionRes) => {
+    const fetchAllCategories = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const [positionRes, careerRes, stackRes, categoryRes] = await Promise.all([
+          axios.get('/public-data/position-categories'),
+          axios.get('/public-data/carrer-categories'),
+          axios.get('/public-data/stack-categories'),
+          axios.get('/public-data/project-categories'),
+        ]);
         setJobPosition(
           positionRes.data.map(
             (item: PositionCategory): SelectListItem => ({
@@ -48,12 +60,6 @@ export const useFetchCategories = (): CategoryData => {
             }),
           ),
         );
-      })
-      .catch((err) => console.log(err));
-
-    axios
-      .get('/public-data/carrer-categories')
-      .then((careerRes) => {
         setCareerYear(
           careerRes.data.map(
             (item: CareerCategory): SelectListItem => ({
@@ -62,12 +68,6 @@ export const useFetchCategories = (): CategoryData => {
             }),
           ),
         );
-      })
-      .catch((err) => console.log(err));
-
-    axios
-      .get('/public-data/stack-categories')
-      .then((stackRes) => {
         setTechStackList(
           stackRes.data.map(
             (item: StackCategory): SelectItem => ({
@@ -76,12 +76,6 @@ export const useFetchCategories = (): CategoryData => {
             }),
           ),
         );
-      })
-      .catch((err) => console.log(err));
-
-    axios
-      .get('/public-data/project-categories')
-      .then((categoryRes) => {
         setCategoryList(
           categoryRes.data.map(
             (item: ProjectCategory): SelectItem => ({
@@ -90,9 +84,16 @@ export const useFetchCategories = (): CategoryData => {
             }),
           ),
         );
-      })
-      .catch((err) => console.log(err));
+      } catch (error) {
+        setError('데이터를 불러오는 중 오류가 발생했습니다.');
+        console.error('Error fetching categories:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    fetchAllCategories();
   }, []);
 
-  return { jobPosition, careerYear, techStackList, categoryList };
+  return { jobPosition, careerYear, techStackList, categoryList, isLoading, error };
 };
