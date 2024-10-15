@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
 import { SelectItem } from '@/shared/ui/select/MultiSelect';
 import { SelectListItem } from '@/shared/ui/select/SelectList';
 

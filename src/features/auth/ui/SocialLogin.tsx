@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { Button } from '@/shared/ui';
 import IcGithubFilld from '@/shared/assets/svg/IcGithubFilled.svg?react';
+import { Button } from '@/shared/ui';
 
 export const SocialLogin = () => {
   const CLIENT_ID: string = import.meta.env.VITE_GITHUB_LOGIN_CLIENT_ID;
