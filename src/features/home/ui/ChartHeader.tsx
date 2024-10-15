@@ -30,13 +30,9 @@ const ChartHeader = ({ title, description }: Props) => {
         <HeaderDescription>{description}</HeaderDescription>
       </div>
       <DateContainer>
-        <IcArrow
-          src={IcArrowPrev.toString()}
-          alt="prev arrow icon"
-          onClick={() => handleDate(-1)}
-        />
+        <IcArrow src={`${IcArrowPrev}`} alt="prev arrow icon" onClick={() => handleDate(-1)} />
         <YearMonth>{`${yearMonthDate.getFullYear()}년 ${yearMonthDate.getMonth() + 1}월`}</YearMonth>
-        <IcArrow src={IcArrowNext.toString()} alt="next arrow icon" onClick={() => handleDate(1)} />
+        <IcArrow src={`${IcArrowNext}`} alt="next arrow icon" onClick={() => handleDate(1)} />
       </DateContainer>
     </ChartHeaderContainer>
   );
