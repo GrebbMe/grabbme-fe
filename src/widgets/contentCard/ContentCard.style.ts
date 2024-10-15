@@ -67,7 +67,6 @@ export const ContentBox = styled.p<{ type: ContentCardType }>`
   color: ${({ theme }) => theme.color.BLACK_80};
   width: 20rem;
   overflow: hidden;
-  text-overflow: ellipsis;
   height: ${({ type }) => {
     if (type === 'A') return '5.1rem';
     if (type === 'B') return '5.1rem';

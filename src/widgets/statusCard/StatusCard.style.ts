@@ -48,7 +48,6 @@ export const ContentBox = styled.p`
   ${({ theme }) => theme.typo.CAPTION_12};
   color: ${({ theme }) => theme.color.BLACK_80};
   overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 export const ButtonWrapper = styled.div<{ hasStatus: boolean }>`
