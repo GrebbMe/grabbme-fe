@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { styled } from 'styled-components';
 import {
   IcNodejs,
   IcReact,
@@ -14,11 +12,7 @@ import {
   IcKotlin,
 } from '@/shared/assets/svg/stack/index';
 import { StackBadge } from '@/shared/ui/stackBadge';
-
-export const Container = styled.div`
-  display: flex;
-  gap: 2.4rem;
-`;
+import { Container } from '@/shared/ui/stackList/StackList.style';
 
 const stacks = [
   { img: `${IcReact}`, name: 'React' },
@@ -34,7 +28,6 @@ const stacks = [
 ];
 
 const StackList = () => {
-  const [query, setQuery] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
 
