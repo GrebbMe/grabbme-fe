@@ -9,9 +9,9 @@ export const Header = () => {
   const [profileImage, setProfileImage] = useState('');
   const [userName, setUserName] = useState('');
 
-  useEffect(() => {
-    //! 쿠키의 accessToken이 유효한지 확인 후, 로그인 상태 설정
-  }, []);
+  //! 쿠키의 accessToken이 유효한지 확인 후, 로그인 상태 설정
+  // useEffect(() => {
+  // }, []);
 
   const handleLoginClick = () => {
     setIsLoggedIn(true);
