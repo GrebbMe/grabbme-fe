@@ -9,7 +9,7 @@ export const useStackSearch = () => {
     if (currentPath === '/') {
       navigate(`/project?stack=${stack}`);
     } else {
-      navigate(`${currentPath}?&stack=${stack}`);
+      navigate(`${currentPath}?stack=${stack}`);
     }
   };
 
