@@ -83,6 +83,9 @@ export interface CheckList {
 }
 
 export const SignUp = () => {
+  const url = new URL(window.location.href);
+  const email = url.searchParams.get('email');
+  const nickname = url.searchParams.get('nickname');
   // const { jobPosition, careerYear, techStackList, categoryList } = useFetchCategories();
 
   const [user, setUser] = useState<User | null>(null);
@@ -123,10 +126,6 @@ export const SignUp = () => {
 
   //! 회원가입 버튼 클릭
   const handleSignupClick = async () => {
-    const url = new URL(window.location.href);
-    const email = url.searchParams.get('email');
-    const nickname = url.searchParams.get('nickname');
-
     if (
       email &&
       nickname &&
@@ -185,20 +184,20 @@ export const SignUp = () => {
         <span className="title">회원가입</span>
       </Header>
       <NickNameContainer>
-        <InputHeader text={'닉네임'} isDetail={false} />
-        <TextFieldStyle>{'nickname'}</TextFieldStyle>
+        <InputHeader text="닉네임" isDetail={false} />
+        <TextFieldStyle>{nickname ?? 'nickname'}</TextFieldStyle>
       </NickNameContainer>
       <EmailContainer>
-        <InputHeader text={'깃허브 이메일'} isDetail={false} />
-        <TextFieldStyle>{'nickname'}</TextFieldStyle>
+        <InputHeader text="깃허브 이메일" isDetail={false} />
+        <TextFieldStyle>{email ?? 'email'}</TextFieldStyle>
       </EmailContainer>
       <PositionContainer>
-        <InputHeader text={'희망 직군'} />
+        <InputHeader text="희망 직군" />
         <SelectList
           //! 하드 코딩 : POSITION_LIST
           //! 백엔드 API : jobPosition
           items={POSITION_LIST}
-          size={'lg'}
+          size="lg"
           placeholder="선택"
           selected={selectedJobPosition}
           onChangeSelected={setSelectedJobPosition}
@@ -206,7 +205,7 @@ export const SignUp = () => {
       </PositionContainer>
       <StackContainer>
         <InputHeader
-          text={'기술 스택'}
+          text="기술 스택"
           limit={5}
           count={selectedTechStackList?.length ?? 0}
           isCountable={true}
@@ -218,12 +217,12 @@ export const SignUp = () => {
           selectedItems={selectedTechStackList ?? []}
           onClickSelectedItems={setSelectedTechStackList}
           selectLimit={5}
-          placeholder={'선택'}
+          placeholder="선택"
         />
       </StackContainer>
       <CategoryContainer>
         <InputHeader
-          text={'선호 카테고리'}
+          text="선호 카테고리"
           limit={3}
           count={selectedCategoryList?.length ?? 0}
           isCountable={true}
@@ -235,16 +234,16 @@ export const SignUp = () => {
           selectedItems={selectedCategoryList ?? []}
           onClickSelectedItems={setSelectedCategoryList}
           selectLimit={3}
-          placeholder={'선택'}
+          placeholder="선택"
         />
       </CategoryContainer>
       <CareerContainer>
-        <InputHeader text={'개발 경력'} />
+        <InputHeader text="개발 경력" />
         <SelectList
           //! 하드 코딩 : CAREER_YEAR_LIST
           //! 백엔드 API : careerYear
           items={CAREER_YEAR_LIST}
-          size={'lg'}
+          size="lg"
           placeholder="선택"
           selected={selectedCareerYear}
           onChangeSelected={setSelectedCareerYear}
