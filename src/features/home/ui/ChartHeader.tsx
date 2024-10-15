@@ -18,7 +18,7 @@ const ChartHeader = ({ title, description }: Props) => {
   const [yearMonthDate, setYearMonthDate] = useState(new Date());
 
   const handleDate = (flag: number) => {
-    const newDate = new Date(yearMonthDate);
+    const newDate: Date = new Date(yearMonthDate);
     newDate.setMonth(newDate.getMonth() + flag);
     setYearMonthDate(newDate);
   };
