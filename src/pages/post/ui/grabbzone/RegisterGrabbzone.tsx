@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import { PositionWithCount } from '@/features/post';
-import { DeadlineCalendar } from '@/features/post/ui/deadlineCalendar';
 import { Editor } from '@/features/post/ui/editor/Editor';
-import { Position } from '@/features/post/ui/positionManage/PositionWithCount';
-import { ProjectPeriod } from '@/features/post/ui/projectPeriod';
-import * as S from '@/pages/post/project/RegisterProject.style';
-import { Button, TitleBar, TextField } from '@/shared/ui';
+import * as S from '@/pages/post/ui/grabbzone/RegisterGrabbzone.style';
+import { TextField, Button, TitleBar, Select } from '@/shared/ui';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
+import { SelectListItem } from '@/shared/ui/select/Select';
 
 const CAREER = [
   { id: 1, label: '1-2년차' },
@@ -54,16 +51,13 @@ const STACK = [
   { id: 17, item: 'GraphQL' },
 ];
 
-const RegisterProject = () => {
+const RegisterGrabbzone = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [category, setCategory] = useState<SelectItem[]>([]);
   const [stack, setStack] = useState<SelectItem[]>([]);
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
-  const [deadline, setDeadline] = useState<Date | null>(new Date());
-  const [positions, setPositions] = useState<Position[]>([{ id: -1, label: '', count: 1 }]);
-  const [totalCount, setTotalCount] = useState(1);
+  const [job, setJob] = useState<SelectListItem | null>(null);
+  const [career, setCareer] = useState<SelectListItem | null>(null);
 
   const handleTitleChange = (e: string) => {
     setTitle(e);
@@ -80,39 +74,46 @@ const RegisterProject = () => {
     setStack(items);
   };
 
-  const handleSetPositions = (newPositions: Position[]) => {
-    setPositions(newPositions);
-  };
-
-  const handleSetTotalCount = (newTotalCount: number) => {
-    setTotalCount(newTotalCount);
-  };
-
   const getContentLength = (htmlString: string): number => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, 'text/html');
+    console.log(doc.body.textContent?.length);
     return doc.body.textContent?.length || 0;
   };
 
   return (
     <>
       <S.Header>
-        <span className="title">프로젝트 모집 게시글</span>
-        <span>프로젝트에 대해 상세하게 작성해주세요.</span>
+        <span className="title">그랩존 등록 게시글</span>
+        <span>나의 차별점을 작성해보세요!</span>
       </S.Header>
       <S.TitleInput>
-        <TitleBar label="프로젝트명" count={title.length} limit={50} />
+        <TitleBar size="lg" label="게시글 제목" count={title.length} limit={50} />
         <TextField size="lg" value={title} onChange={handleTitleChange} placeholder={''} />
       </S.TitleInput>
       <S.EditorContainer>
         <TitleBar
-          label="프로젝트 소개"
-          description="프로젝트에 대한 상세한 설명을 적어주세요."
-          count={getContentLength(content) + 1}
+          label="자기 소개"
+          description="나의 차별점을 작성해보세요."
+          count={getContentLength(content)}
           limit={500}
         />
         <Editor value={content} onChange={handleContentChange} />
       </S.EditorContainer>
+      <S.JobContainer>
+        <TitleBar size="lg" label="희망 직군" />
+        <Select items={JOB} placeholder="선택" size="sm" selected={job} onChangeSelected={setJob} />
+      </S.JobContainer>
+      <S.CareerContainer>
+        <TitleBar label="개발 경력" />
+        <Select
+          items={CAREER}
+          placeholder="선택"
+          size={'sm'}
+          selected={career}
+          onChangeSelected={setCareer}
+        />
+      </S.CareerContainer>
       <S.CategorySelectContainer>
         <TitleBar
           label={'선호 카테고리'}
@@ -143,35 +144,6 @@ const RegisterProject = () => {
           placeholder="기술 스택을 선택해주세요."
         />
       </S.StackSelectContainer>
-      <S.ProjectPeriodContainer>
-        <TitleBar label="프로젝트 진행기간" />
-        <ProjectPeriod
-          startDate={startDate}
-          endDate={endDate}
-          setStartDate={setStartDate}
-          setEndDate={setEndDate}
-        />
-      </S.ProjectPeriodContainer>
-      <S.DeadlineCalendarContainer>
-        <TitleBar label="모집 마감일" />
-        <DeadlineCalendar selectedDate={deadline} setSelectedDate={setDeadline} />
-      </S.DeadlineCalendarContainer>
-      <S.PositionContainer>
-        <TitleBar label="포지션" />
-        <PositionWithCount
-          positions={positions}
-          setPositions={handleSetPositions}
-          totalCount={totalCount}
-          setTotalCount={handleSetTotalCount}
-        />
-      </S.PositionContainer>
-      <S.TotalContainer>
-        <TitleBar label="총인원" />
-        <S.TotalBox>
-          <S.TotalNumber>{totalCount}</S.TotalNumber>
-          <span>명</span>
-        </S.TotalBox>
-      </S.TotalContainer>
       <S.ButtonContainer>
         <S.ButtonWrapper>
           <Button>취소</Button>
@@ -182,4 +154,4 @@ const RegisterProject = () => {
   );
 };
 
-export default RegisterProject;
+export default RegisterGrabbzone;

@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from '@/app/layout';
 import { GithubLogin, SignUp } from '@/pages/auth/ui';
-import RegisterGrabbzone from '@/pages/post/grabbzone/RegisterGrabbzone';
-import RegisterProject from '@/pages/post/project/RegisterProject';
+import RegisterGrabbzone from '@/pages/post/ui/grabbzone/RegisterGrabbzone';
+import RegisterProject from '@/pages/post/ui/project/RegisterProject';
 import { routerPath } from '@/shared';
 
 export const router = createBrowserRouter([

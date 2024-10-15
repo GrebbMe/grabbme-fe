@@ -42,7 +42,7 @@ export const Editor = ({ value, onChange }: EditorProps) => {
 
   return (
     <EditorWrapper>
-      <ReactQuill ref={quillRef} value={value} onChange={onChange} modules={modules} />
+      <ReactQuill theme="snow" ref={quillRef} value={value} onChange={onChange} modules={modules} />
     </EditorWrapper>
   );
 };
