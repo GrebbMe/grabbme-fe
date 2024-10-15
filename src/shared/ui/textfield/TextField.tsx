@@ -22,6 +22,14 @@ const TextField = ({ value, onChange, size, placeholder }: TextFieldProps) => {
 
   return (
     <S.Container size={size}>
+      <S.Header>
+        <S.Label>
+          게시글 제목<S.StarWrapper>*</S.StarWrapper>
+        </S.Label>
+        <S.CharCount>
+          {value.length} / {MAX_LENGTH}
+        </S.CharCount>
+      </S.Header>
       <S.Input
         type="text"
         value={value}

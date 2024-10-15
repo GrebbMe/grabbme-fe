@@ -2,12 +2,12 @@ import { useRef, useState } from 'react';
 import ArrowDown from '@/shared/assets/svg/IcArrowDown.svg?react';
 import ArrowUp from '@/shared/assets/svg/IcArrowUp.svg?react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
-import * as S from '@/shared/ui/select/Select.style';
+import * as S from '@/shared/ui/select/selectList.style';
 
 type SelectListSize = 'sm' | 'md' | 'lg';
 
 export interface SelectListItem {
-  id: number;
+  value: string;
   label: string;
 }
 
@@ -19,7 +19,7 @@ export interface SelectListProps {
   onChangeSelected: (item: SelectListItem) => void;
 }
 
-export const Select = ({
+export const SelectList = ({
   items,
   size,
   placeholder,
@@ -44,15 +44,15 @@ export const Select = ({
     <S.DropdownContainer ref={containerRef} size={size}>
       <S.DropdownHeader onClick={toggleDropdown} isOpen={isOpen}>
         {selected ? selected.label : <S.Placeholder>{placeholder}</S.Placeholder>}
-        {isOpen ? <ArrowDown /> : <ArrowUp />}
+        {isOpen ? <ArrowUp /> : <ArrowDown />}
       </S.DropdownHeader>
       {isOpen && (
         <S.DropdownListContainer>
           {items.map((item) => (
             <S.DropdownListItem
-              key={item.id}
+              key={item.value}
               onClick={() => handleItemClick(item)}
-              isSelected={selected ? item.id === selected.id : false}
+              isSelected={selected ? item.value === selected.value : false}
             >
               {item.label}
             </S.DropdownListItem>

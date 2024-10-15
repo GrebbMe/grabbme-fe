@@ -27,5 +27,5 @@
     },
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", ".storybook"]
+  "include": ["src"]
 }

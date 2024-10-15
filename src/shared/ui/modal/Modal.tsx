@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick';
 import { useModalStore } from '@/shared/stores/modalStore';
-import { Button } from '@/shared/ui';
+import { Button } from '@/shared/ui/button/Button';
 import * as S from '@/shared/ui/modal/Modal.style';
 
 export const Modal = () => {
@@ -21,12 +21,8 @@ export const Modal = () => {
           <S.ButtonWrapper type={type}>
             {type === 'confirm' ? (
               <>
-                <Button variant="primary" size="sm" onClick={() => closeModal()}>
-                  취소
-                </Button>
+                <Button onClick={() => closeModal()}>취소</Button>
                 <Button
-                  variant="primary"
-                  size="sm"
                   onClick={() => {
                     onConfirm?.();
                     closeModal();
@@ -36,9 +32,7 @@ export const Modal = () => {
                 </Button>
               </>
             ) : (
-              <Button variant="primary" size="lg" onClick={() => closeModal()}>
-                확인
-              </Button>
+              <S.AlertButton onClick={() => closeModal()}>확인</S.AlertButton>
             )}
           </S.ButtonWrapper>
         </S.ModalContainer>

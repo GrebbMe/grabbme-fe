@@ -7,7 +7,6 @@ export const color = {
   GRAY_50: '#8a8888',
   GRAY_30: '#D9D9D9',
   BLUE_50: '#8E98A9',
-  BLUE_50_25: 'rgba(142, 152, 169, 0.25)',
   BLUE_30: '#EDF0F5',
   BLUE_10: '#FAFBFD',
 };
