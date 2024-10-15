@@ -6,16 +6,30 @@ import { StoryContainer, SectionContainer, RowContainer } from '@/shared/ui/stor
 const meta: Meta<typeof CountLabel> = {
   title: 'components/shared/CountLabel',
   component: CountLabel,
-  argTypes: {
-    icon: {
-      control: false,
-    },
-    count: {
-      control: { type: 'number' },
-    },
+  args: {
+    count: 54,
+    hasBorder: true,
+    icon: <IcBookmarkSmall />,
   },
   parameters: {
     layout: 'centered',
+  },
+  argTypes: {
+    count: {
+      control: { type: 'number' },
+    },
+    hasBorder: {
+      control: { type: 'boolean' },
+    },
+    icon: {
+      control: 'select',
+      options: ['bookmark', 'chat', 'view'],
+      mapping: {
+        bookmark: <IcBookmarkSmall />,
+        chat: <IcChatSmall />,
+        view: <IcViewSmall />,
+      },
+    },
   },
 };
 
@@ -24,8 +38,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    icon: <IcBookmarkSmall />,
-    count: 54,
+    icon: 'bookmark',
   },
 };
 
@@ -35,9 +48,9 @@ export const All: Story = {
       <SectionContainer>
         <h3>아이콘 + 개수</h3>
         <RowContainer>
-          <CountLabel icon={<IcViewSmall />} count={100} />
-          <CountLabel icon={<IcBookmarkSmall />} count={54} />
-          <CountLabel icon={<IcChatSmall />} count={13} />
+          <CountLabel icon={<IcViewSmall />} count={100} hasBorder={true} />
+          <CountLabel icon={<IcBookmarkSmall />} count={54} hasBorder={false} />
+          <CountLabel icon={<IcChatSmall />} count={13} hasBorder={true} />
         </RowContainer>
       </SectionContainer>
     </StoryContainer>
