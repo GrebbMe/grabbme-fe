@@ -96,7 +96,7 @@ export const SignUp = () => {
   const { showModal } = useModal();
   const navigate = useNavigate();
 
-  const handleCheckboxChange = (checkItem: string) => {
+  const handleCheckboxChange = (checkItem: 'termOfService' | 'privateInfo' | 'checkAll') => {
     if (checkItem === 'termOfService') {
       setIsCheckedList({ ...isCheckedList, termOfService: !isCheckedList.termOfService });
     } else if (checkItem === 'privateInfo') {
