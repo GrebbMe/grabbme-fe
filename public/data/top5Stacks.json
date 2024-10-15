@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "stackName": "React",
+    "peopleCount": "254명"
+  },
+  {
+    "id": 2,
+    "stackName": "Kotlin",
+    "peopleCount": "228명"
+  },
+  {
+    "id": 3,
+    "stackName": "Swift",
+    "peopleCount": "200명"
+  },
+  {
+    "id": 4,
+    "stackName": "Spring",
+    "peopleCount": "175명"
+  },
+  {
+    "id": 5,
+    "stackName": "Flutter",
+    "peopleCount": "169명"
+  }
+]
