@@ -11,6 +11,11 @@ const DatePickerContainer = styled.div`
   width: 28.8rem;
   height: 4.8rem;
   background-color: ${({ theme }) => theme.color.WHITE};
+
+  ${({ theme }) => theme.device.MOBILE} {
+    width: 100%;
+    height: 4.2rem;
+  }
 `;
 
 const StyledDatePicker = styled(DatePicker)`
