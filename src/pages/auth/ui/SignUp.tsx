@@ -98,11 +98,11 @@ export const SignUp = () => {
 
   const handleCheckboxChange = (checkItem: 'termOfService' | 'privateInfo' | 'checkAll') => {
     if (checkItem === 'termOfService') {
-      setIsCheckedList({ ...isCheckedList, termOfService: !isCheckedList.termOfService });
+      setIsCheckedList((prev) => ({ ...prev, termOfService: !prev.termOfService }));
       return;
     }
     if (checkItem === 'privateInfo') {
-      setIsCheckedList({ ...isCheckedList, privateInfo: !isCheckedList.privateInfo });
+      setIsCheckedList((prev) => ({ ...prev, privateInfo: !prev.privateInfo }));
       return;
     }
     if (checkItem === 'checkAll') {
