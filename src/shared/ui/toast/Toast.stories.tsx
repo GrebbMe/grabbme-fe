@@ -3,7 +3,7 @@ import { useToast } from '@/shared/hooks/useToast';
 import { ToastMessage, ToastSize } from '@/shared/stores/toastStore';
 import { Toast } from '@/shared/ui/toast/Toast';
 export default {
-  title: 'shared/Toast',
+  title: 'components/shared/Toast',
   component: Toast,
   argTypes: {
     content: { control: 'text' },

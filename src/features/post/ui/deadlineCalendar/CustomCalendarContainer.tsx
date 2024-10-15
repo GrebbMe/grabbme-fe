@@ -38,8 +38,12 @@ export const CustomCalendarContainer = ({
     <div className={className}>
       {children}
       <ButtonBoxStyle>
-        <Button onClick={handleCancel}>취소</Button>
-        <Button onClick={handleAccept}>적용</Button>
+        <Button onClick={handleCancel} variant={'primary'} size={'sm'}>
+          취소
+        </Button>
+        <Button onClick={handleAccept} variant={'primary'} size={'sm'}>
+          적용
+        </Button>
       </ButtonBoxStyle>
     </div>
   );

@@ -1,5 +1,5 @@
 import CloseIcon from '@/shared/assets/svg/IcClose.svg?react';
-import { StyledButton } from '@/shared/ui/button/RemoveButton.style';
+import { StyledButton } from '@/shared/ui/select/RemoveButton.style';
 
 interface RemoveButtonProps {
   children: string;

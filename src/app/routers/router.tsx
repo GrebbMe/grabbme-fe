@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { DashboardLayout, MainLayout } from '@/app/layout';
-import { GithubLogin, SignUp } from '@/pages/auth/ui';
+import { GithubLogin } from '@/pages/auth/ui';
 import { MyProfile, MyPosts, MyProjects, MyBookmarks } from '@/pages/mypage';
+import { SignUp } from '@/pages/auth';
 import { routerPath } from '@/shared';
 
 export const router = createBrowserRouter([
@@ -9,10 +10,6 @@ export const router = createBrowserRouter([
     path: '/',
     element: <DashboardLayout />,
     children: [
-      {
-        path: routerPath.LOGIN,
-        element: <GithubLogin />,
-      },
       {
         path: routerPath.SIGNUP,
         element: <SignUp />,

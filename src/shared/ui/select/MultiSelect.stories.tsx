@@ -23,7 +23,7 @@ const example = [
 ];
 
 const meta: Meta<typeof MultiSelect> = {
-  title: 'shared/MultiSelect',
+  title: 'components/shared/MultiSelect',
   component: MultiSelect,
   parameters: {
     layout: 'centered',

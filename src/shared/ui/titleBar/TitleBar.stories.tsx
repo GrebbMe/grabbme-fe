@@ -31,7 +31,7 @@ const MULTI_SELECT = [
 ];
 
 const meta: Meta<typeof TitleBar> = {
-  title: 'component/shared/TitleBar',
+  title: 'components/shared/TitleBar',
   component: TitleBar,
   parameters: {
     layout: 'centered',
