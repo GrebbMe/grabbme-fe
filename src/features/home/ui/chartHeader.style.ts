@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { typo } from '@/app/styles';
 
 export const ChartHeaderContainer = styled.div`
   width: 79.2rem;
@@ -17,12 +16,12 @@ export const ChartHeaderInnerDiv = styled.div`
 `;
 
 export const HeaderTitle = styled.h1`
-  ${typo.BODY_SEMIBOLD};
+  ${({ theme }) => theme.typo.BODY_SEMIBOLD};
   color: ${({ theme }) => theme.color.BLACK_100};
 `;
 
 export const HeaderDescription = styled.p`
-  ${typo.CAPTION_12};
+  ${({ theme }) => theme.typo.CAPTION_12};
   color: ${({ theme }) => theme.color.GRAY_50};
 `;
 
@@ -41,6 +40,6 @@ export const IcArrow = styled.img`
 `;
 
 export const YearMonth = styled.h2`
-  ${typo.SUBTITLE_14};
+  ${({ theme }) => theme.typo.SUBTITLE_14};
   color: ${({ theme }) => theme.color.BLACK_100};
 `;
