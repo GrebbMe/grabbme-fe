@@ -1,12 +1,12 @@
 import * as S from './StatusTag.style';
-import { statusLabels } from '@/features/myPage/consts/statusLabels.ts';
+import { statusLabelMap } from '@/features/myPage/consts/statusLabelMap.ts';
 
 export interface StatusTagProps {
-  status: keyof typeof statusLabels;
+  status: keyof typeof statusLabelMap;
 }
 
 const StatusTag = ({ status }: StatusTagProps) => {
-  const label = statusLabels[status];
+  const label = statusLabelMap[status];
 
   return (
     <S.TagContainer status={status}>
