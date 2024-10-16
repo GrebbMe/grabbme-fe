@@ -1,3 +1,4 @@
+import { addMonths, format, subMonths } from 'date-fns';
 import { useState } from 'react';
 import {
   ChartHeaderContainer,
@@ -15,11 +16,11 @@ interface Props {
 }
 
 const ChartHeader = ({ title, description }: Props) => {
-  const [yearMonthDate, setYearMonthDate] = useState(new Date());
+  const [yearMonthDate, setYearMonthDate] = useState<Date>(new Date());
 
-  const handleDate = (flag: number) => {
-    const newDate: Date = new Date(yearMonthDate);
-    newDate.setMonth(newDate.getMonth() + flag);
+  const handleDateChange = (flag: number) => {
+    const newDate: Date =
+      flag > 0 ? addMonths(yearMonthDate, flag) : subMonths(yearMonthDate, -flag);
     setYearMonthDate(newDate);
   };
 
@@ -30,9 +31,13 @@ const ChartHeader = ({ title, description }: Props) => {
         <HeaderDescription>{description}</HeaderDescription>
       </div>
       <DateContainer>
-        <IcArrow src={`${IcArrowPrev}`} alt="prev arrow icon" onClick={() => handleDate(-1)} />
-        <YearMonth>{`${yearMonthDate.getFullYear()}년 ${yearMonthDate.getMonth() + 1}월`}</YearMonth>
-        <IcArrow src={`${IcArrowNext}`} alt="next arrow icon" onClick={() => handleDate(1)} />
+        <IcArrow
+          src={`${IcArrowPrev}`}
+          alt="prev arrow icon"
+          onClick={() => handleDateChange(-1)}
+        />
+        <YearMonth>{`${format(yearMonthDate, 'yyyy년 MM월')}`}</YearMonth>
+        <IcArrow src={`${IcArrowNext}`} alt="next arrow icon" onClick={() => handleDateChange(1)} />
       </DateContainer>
     </ChartHeaderContainer>
   );
