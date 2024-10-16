@@ -27,7 +27,6 @@ export const Default: Story = {
     title: '사용자가 작성한 글 제목 10자만',
     lastMessage: '아직 안 읽은 최근에 보낸 채팅 10자만',
     time: '오전 11:30',
-    profileImageUrl: '/default-profile.png',
     isRead: false,
   },
 };
