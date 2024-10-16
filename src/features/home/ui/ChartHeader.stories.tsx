@@ -9,7 +9,7 @@ const meta: Meta<typeof ChartHeader> = {
   },
   argTypes: {
     title: { type: 'string' },
-    description: { typo: 'string' },
+    description: { type: 'string' },
   },
 };
 
