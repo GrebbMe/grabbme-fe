@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './Sidebar.style';
-import { sidebarItems } from '@/features/myPage/consts/sidebarItems.ts';
+import { routerPath } from '@/shared';
+
+const sidebarItems = [
+  { label: '내 프로필', path: routerPath.MY_PROFILE },
+  { label: '작성글', path: routerPath.MY_POSTS },
+  { label: '북마크', path: routerPath.MY_BOOKMARKS },
+  { label: '신청 프로젝트', path: routerPath.MY_PROJECTS },
+];
 
 export interface SidebarItemProps {
   isActive: boolean;
