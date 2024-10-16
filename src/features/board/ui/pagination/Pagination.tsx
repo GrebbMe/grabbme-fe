@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { IcPrev, IcNext } from '@/features/board/assets';
+import { useState } from 'react';
+import React from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { IcNext, IcPrev } from '@/features/board/assets';
 import * as S from '@/features/board/ui/pagination/Pagination.style';
 
 interface PaginationProps {
@@ -8,13 +9,24 @@ interface PaginationProps {
 }
 
 const Pagination = ({ totalPages }: PaginationProps) => {
-  const location = useLocation();
   const [startPage, setStartPage] = useState(1);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  console.log(location);
-  const currentPage = Number(searchParams.get('page'));
+  const currentPage = Number(searchParams.get('page')) || 1;
+  const search = searchParams.get('search');
+  const stack = searchParams.get('stack');
+
+  const createQueryParams = (page: number) => {
+    if (search) {
+      return `?search=${search}&page=${page}`;
+    }
+    if (stack) {
+      return `?stack=${stack}&page=${page}`;
+    }
+    return `?page=${page}`;
+  };
+
   const handleScrollToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -46,7 +58,7 @@ const Pagination = ({ totalPages }: PaginationProps) => {
             {startPage + count <= totalPages && (
               <S.PageLink
                 $isCurrent={currentPage === startPage + count}
-                to={`?page=${startPage + count}`}
+                to={createQueryParams(startPage + count)}
                 onClick={() => handleScrollToTop()}
               >
                 {startPage + count}
