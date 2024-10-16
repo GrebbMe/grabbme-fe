@@ -1,5 +1,5 @@
 import * as S from './StatusTag.style';
-import { statusLabelMap } from '@/features/myPage/consts/statusLabelMap.ts';
+import { statusLabelMap } from '@/entities/myPage/consts/statusLabelMap';
 
 type Status = keyof typeof statusLabelMap;
 

@@ -3,7 +3,7 @@ import StatusTag from './StatusTag';
 import { StoryContainer, SectionContainer, RowContainer } from '@/shared/ui/storybook/story.style';
 
 const meta: Meta<typeof StatusTag> = {
-  title: 'components/features/StatusTag',
+  title: 'components/entities/StatusTag',
   component: StatusTag,
   argTypes: {
     status: {
