@@ -31,9 +31,9 @@ const ChatMessage = ({ message, time, type, profileImageUrl }: ChatMessageProps)
       {type === 'sent' && (
         <>
           <S.TimeLabel>{time}</S.TimeLabel>
-          <S.Bubble type={type}>
+          <S.ChatBubble type={type}>
             <S.TextLabel>{message}</S.TextLabel>
-          </S.Bubble>
+          </S.ChatBubble>
         </>
       )}
     </S.MessageContainer>
