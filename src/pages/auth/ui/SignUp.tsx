@@ -113,7 +113,7 @@ export const SignUp = () => {
         email,
         nickname,
         position_category_id: selectedJobPosition.id,
-        carrer_category_id: selectedCareerYear.id,
+        career_category_id: selectedCareerYear.id,
         stack_category_id: selectedTechStackList.map(({ id }) => id),
         project_category_id: selectedCategoryList.map(({ id }) => id),
       };
@@ -123,7 +123,7 @@ export const SignUp = () => {
         navigate('/');
       } catch (err) {
         showModal({
-          content: '회원가입 중 오류가 발생했습니다.',
+          content: `회원가입 중 오류가 발생했습니다.`,
           type: 'alert',
         });
       }
