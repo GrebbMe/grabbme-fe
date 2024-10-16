@@ -10,7 +10,7 @@ interface StatusCardProps {
 }
 
 const StatusCard = ({ title, content, status }: StatusCardProps) => {
-  const activateButton = status === 'pending' || status === undefined;
+  const showActivateButton = status === 'pending' || status === undefined;
 
   return (
     <S.CardContainer>
@@ -21,7 +21,7 @@ const StatusCard = ({ title, content, status }: StatusCardProps) => {
         </S.ContentWrapper>
         <S.ButtonWrapper hasStatus={!!status}>
           {status && <StatusTag status={status} />}
-          {activateButton && <S.CancelButton>신청 취소</S.CancelButton>}
+          {showActivateButton && <S.CancelButton>신청 취소</S.CancelButton>}
         </S.ButtonWrapper>
       </S.CardWrapper>
     </S.CardContainer>
