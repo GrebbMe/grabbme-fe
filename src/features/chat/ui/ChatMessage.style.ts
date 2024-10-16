@@ -43,13 +43,17 @@ export const ChatBubble = styled.div<{ type: 'received' | 'sent' }>`
   color: ${({ theme }) => theme.color.BLACK_100};
   text-align: left;
   position: relative;
+  white-space: normal;
   word-wrap: break-word;
-  white-space: pre-wrap;
 `;
 
 export const TextLabel = styled.p`
   margin: 0;
   ${({ theme }) => theme.typo.CAPTION_12};
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
+  display: inline;
 `;
 
 export const TimeLabel = styled.span`
