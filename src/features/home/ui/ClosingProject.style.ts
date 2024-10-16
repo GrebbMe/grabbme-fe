@@ -13,6 +13,7 @@ export const ProjectContainer = styled.div`
 
   &:hover {
     border-color: ${({ theme }) => theme.color.BLUE_50};
+    box-shadow: 0rem 0.2rem 1.6rem 0.2rem ${({ theme }) => theme.color.BLUE_50_25};
   }
 `;
 
