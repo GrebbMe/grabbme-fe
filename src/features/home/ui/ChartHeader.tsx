@@ -18,9 +18,13 @@ interface Props {
 const ChartHeader = ({ title, description }: Props) => {
   const [yearMonthDate, setYearMonthDate] = useState<Date>(new Date());
 
-  const handleDateChange = (flag: number) => {
-    const newDate: Date =
-      flag > 0 ? addMonths(yearMonthDate, flag) : subMonths(yearMonthDate, -flag);
+  const handleAddMonth = (): void => {
+    const newDate: Date = addMonths(yearMonthDate, 1);
+    setYearMonthDate(newDate);
+  };
+
+  const handleSubMonth = (): void => {
+    const newDate: Date = subMonths(yearMonthDate, 1);
     setYearMonthDate(newDate);
   };
 
@@ -31,13 +35,9 @@ const ChartHeader = ({ title, description }: Props) => {
         <HeaderDescription>{description}</HeaderDescription>
       </div>
       <DateContainer>
-        <IcArrow
-          src={`${IcArrowPrev}`}
-          alt="prev arrow icon"
-          onClick={() => handleDateChange(-1)}
-        />
+        <IcArrow src={`${IcArrowPrev}`} alt="prev arrow icon" onClick={handleSubMonth} />
         <YearMonth>{`${format(yearMonthDate, 'yyyy년 MM월')}`}</YearMonth>
-        <IcArrow src={`${IcArrowNext}`} alt="next arrow icon" onClick={() => handleDateChange(1)} />
+        <IcArrow src={`${IcArrowNext}`} alt="next arrow icon" onClick={handleAddMonth} />
       </DateContainer>
     </ChartHeaderContainer>
   );
