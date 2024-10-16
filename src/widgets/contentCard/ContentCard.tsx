@@ -5,16 +5,27 @@ import { CountLabel } from '@/shared/ui';
 
 export type ContentCardType = 'GrabbzoneCard' | 'RecruitCard' | 'MyProjectCard';
 
-interface ContentCardProps {
+interface GrabbzoneCardProps {
+  type: 'GrabbzoneCard';
+  name: string;
+  role: string;
+}
+
+interface RecruitCardProps {
+  type: 'RecruitCard';
+}
+
+interface MyProjectCardProps {
+  type: 'MyProjectCard';
+}
+
+type ContentCardProps = {
   title: string;
   content: string;
   viewCount: number;
   bookmarkCount: number;
   commentCount: number;
-  name?: string;
-  role?: string;
-  type: ContentCardType;
-}
+} & (GrabbzoneCardProps | RecruitCardProps | MyProjectCardProps);
 
 const ContentCard = ({
   title,
@@ -33,7 +44,7 @@ const ContentCard = ({
       <S.CardWrapper>
         <S.TitleWrapper>
           <S.TitleBox>{title}</S.TitleBox>
-          {type === 'GrabbzoneCard' && name && role && (
+          {type === 'GrabbzoneCard' && (
             <S.InfoWrapper>
               <S.InfoBox>{name}</S.InfoBox>
               <S.DotBox>•</S.DotBox>
