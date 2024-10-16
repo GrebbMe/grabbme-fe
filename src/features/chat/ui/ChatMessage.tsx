@@ -1,5 +1,4 @@
 import * as S from './ChatMessage.style';
-import { ChatBubble } from './ChatMessage.style';
 import { IcDefaultProfile } from '@/shared/assets';
 
 interface ChatMessageProps {
