@@ -41,12 +41,13 @@ export const Placeholder = styled.span`
 export const DropdownListContainer = styled.div`
   position: absolute;
   width: 100%;
+  height: 24.1rem;
   border: 0.1rem solid ${({ theme }) => theme.color.BLUE_50};
   border-top: 0rem solid transparent;
   background: #fff;
   z-index: 1000;
   border-radius: 0 0 0.8rem 0.8rem;
-  overflow: hidden;
+  overflow-y: auto;
 `;
 
 export const DropdownListItem = styled.div<{ $isSelected: boolean }>`
