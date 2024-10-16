@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { DashboardLayout, MainLayout } from '@/app/layout';
-import { GithubLogin } from '@/pages/auth/ui';
-import { MyProfile, MyPosts, MyProjects, MyBookmarks } from '@/pages/mypage';
 import { SignUp } from '@/pages/auth';
+import { MyProfile, MyPosts, MyProjects, MyBookmarks } from '@/pages/mypage';
 import { routerPath } from '@/shared';
 
 export const router = createBrowserRouter([
