@@ -17,54 +17,13 @@ import {
   StackContainer,
   TextFieldStyle,
 } from '@/pages/auth/ui/SignUp.style';
+import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { useModal } from '@/shared/hooks/useModal';
 import { Button } from '@/shared/ui';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { Select, SelectListItem } from '@/shared/ui/select/Select';
 import TitleBar from '@/shared/ui/titleBar/TitleBar';
 import { areAllChecked } from '@/shared/util';
-
-//! 임시 선언 (추후 백엔드 API 연결)
-const POSITION_LIST = [
-  { id: 1, label: '프론트엔드' },
-  { id: 2, label: '백엔드' },
-  { id: 3, label: 'DevOps' },
-];
-
-const CAREER_YEAR_LIST = [
-  { id: 1, label: '1-2년차' },
-  { id: 2, label: '3-5년차' },
-  { id: 3, label: '5-7년차' },
-];
-
-const CATEGORY = [
-  { id: 1, item: '웹 개발' },
-  { id: 2, item: '앱 개발' },
-  { id: 3, item: '데이터 엔지니어링/사이언스' },
-  { id: 4, item: '인공지능/머신러닝' },
-  { id: 5, item: '클라우드 컴퓨팅' },
-  { id: 6, item: '기타' },
-];
-
-const STACK = [
-  { id: 1, item: 'Svelte' },
-  { id: 2, item: 'Bootstrap' },
-  { id: 3, item: 'NestJs' },
-  { id: 4, item: 'Express' },
-  { id: 5, item: 'Django' },
-  { id: 6, item: 'Spring Boot' },
-  { id: 7, item: 'Laravel' },
-  { id: 8, item: 'Fast API' },
-  { id: 9, item: 'Flask' },
-  { id: 10, item: 'Node.js' },
-  { id: 11, item: 'MySQL' },
-  { id: 12, item: 'PostgreSQL' },
-  { id: 13, item: 'Docker' },
-  { id: 14, item: 'Ruby on Rails' },
-  { id: 15, item: 'ElasticSearch' },
-  { id: 16, item: 'Terraform' },
-  { id: 17, item: 'GraphQL' },
-];
 
 interface User {
   email: string;
@@ -84,7 +43,8 @@ export const SignUp = () => {
   const url = new URL(window.location.href);
   const email = url.searchParams.get('email');
   const nickname = url.searchParams.get('nickname');
-  // const { jobPosition, careerYear, techStackList, categoryList } = useFetchCategories();
+
+  const { jobPosition, careerYear, techStackList, categoryList } = useFetchCategories();
 
   const [user, setUser] = useState<User | null>(null);
   const [selectedJobPosition, setSelectedJobPosition] = useState<SelectListItem | null>(null);
@@ -192,9 +152,7 @@ export const SignUp = () => {
       <PositionContainer>
         <TitleBar label="희망 직군" />
         <Select
-          //! 하드 코딩 : POSITION_LIST
-          //! 백엔드 API : jobPosition
-          items={POSITION_LIST}
+          items={jobPosition}
           size="lg"
           placeholder="선택"
           selected={selectedJobPosition}
@@ -204,9 +162,7 @@ export const SignUp = () => {
       <StackContainer>
         <TitleBar label="기술 스택" limit={5} count={selectedTechStackList?.length ?? 0} />
         <MultiSelect
-          //! 하드 코딩 : STACK
-          //! 백엔드 API : teahStackList
-          items={STACK}
+          items={techStackList}
           selectedItems={selectedTechStackList ?? []}
           onClickSelectedItems={setSelectedTechStackList}
           selectLimit={5}
@@ -216,9 +172,7 @@ export const SignUp = () => {
       <CategoryContainer>
         <TitleBar label="선호 카테고리" limit={3} count={selectedCategoryList?.length ?? 0} />
         <MultiSelect
-          //! 하드 코딩 : CATEGORY
-          //! 백엔드 API : categoryList
-          items={CATEGORY}
+          items={categoryList}
           selectedItems={selectedCategoryList ?? []}
           onClickSelectedItems={setSelectedCategoryList}
           selectLimit={3}
@@ -228,9 +182,7 @@ export const SignUp = () => {
       <CareerContainer>
         <TitleBar label="개발 경력" />
         <Select
-          //! 하드 코딩 : CAREER_YEAR_LIST
-          //! 백엔드 API : careerYear
-          items={CAREER_YEAR_LIST}
+          items={careerYear}
           size="lg"
           placeholder="선택"
           selected={selectedCareerYear}
