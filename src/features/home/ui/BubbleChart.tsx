@@ -82,7 +82,7 @@ const BubbleChart: React.FC = () => {
             .attr('fill', '#000')
             .text(d.cnt)
             .attr('x', d.x || 0)
-            .attr('y', (d.y || 0) + 8) // cnt 위치를 위로 조정
+            .attr('y', (d.y || 0) + 8) // cnt 위치 조정
             .style('font-family', 'Pretendard, sans-serif')
             .style('font-weight', '500')
             .style('font-size', '1rem')
@@ -108,7 +108,7 @@ const BubbleChart: React.FC = () => {
           // stack 텍스트 원래 위치로 복원
           d3.selectAll<SVGTextElement, Bubble>('text.stack')
             .filter((textData: Bubble) => textData.id === d.id)
-            .attr('y', d.y || 0); // stack 텍스트를 원래 위치로 이동
+            .attr('y', d.y || 0);
         }
       });
 
