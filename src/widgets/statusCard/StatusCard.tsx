@@ -1,11 +1,12 @@
 import React from 'react';
 import * as S from './StatusCard.style';
 import { StatusTag } from '@/features/myPage';
+import { StatusType } from '@/shared/types/status';
 
 interface StatusCardProps {
   title: string;
   content: string;
-  status?: 'rejected' | 'accepted' | 'pending' | undefined;
+  status?: StatusType | undefined;
 }
 
 const StatusCard = ({ title, content, status }: StatusCardProps) => {
