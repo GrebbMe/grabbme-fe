@@ -4,26 +4,27 @@ import * as S from './Sidebar.style';
 import { routerPath } from '@/shared';
 
 const sidebarItems = [
-  { label: '내 프로필', path: routerPath.MY_PROFILE },
-  { label: '작성글', path: routerPath.MY_POSTS },
-  { label: '북마크', path: routerPath.MY_BOOKMARKS },
-  { label: '신청 프로젝트', path: routerPath.MY_PROJECTS },
+  { id: 'myProfile', label: '내 프로필', path: routerPath.MY_PROFILE },
+  { id: 'myPosts', label: '작성글', path: routerPath.MY_POSTS },
+  { id: 'myBookmarks', label: '북마크', path: routerPath.MY_BOOKMARKS },
+  { id: 'myProjects', label: '신청 프로젝트', path: routerPath.MY_PROJECTS },
 ];
 
 export interface SidebarItemProps {
   isActive: boolean;
 }
 interface SidebarItem {
+  id: string;
   label: string;
   path: string;
 }
 
 const Sidebar = () => {
-  const [activeItem, setActiveItem] = useState<string>('내 프로필');
+  const [activeLabelId, setactiveLabelId] = useState<string>('myProfile');
   const navigate = useNavigate();
 
   const handleItemClick = (item: SidebarItem) => {
-    setActiveItem(item.label);
+    setactiveLabelId(item.id);
     navigate(item.path);
   };
 
@@ -31,11 +32,11 @@ const Sidebar = () => {
     <S.SidebarContainer>
       {sidebarItems.map((item) => (
         <S.SidebarItem
-          key={item.label}
-          isActive={activeItem === item.label}
+          key={item.id}
+          isActive={activeLabelId === item.id}
           onClick={() => handleItemClick(item)}
         >
-          {item.label}
+          {item.id}
         </S.SidebarItem>
       ))}
     </S.SidebarContainer>
