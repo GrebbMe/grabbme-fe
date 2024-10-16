@@ -68,11 +68,11 @@ export const ContentBox = styled.p<{ type: ContentCardType }>`
   width: 20rem;
   overflow: hidden;
   height: ${({ type }) => {
-    if (type === 'A') return '5.1rem';
-    if (type === 'B') return '5.1rem';
-    if (type === 'C') return '6.8rem';
+    if (type === 'GrabbzoneCard') return '5.1rem';
+    if (type === 'RecruitCard') return '5.1rem';
+    if (type === 'MyProjectCard') return '6.8rem';
   }};
-  margin-bottom: ${({ type }) => (type === 'B' ? '0.8rem' : '0')};
+  margin-bottom: ${({ type }) => (type === 'RecruitCard' ? '0.8rem' : '0')};
 `;
 
 export const CountWrapper = styled.div`
