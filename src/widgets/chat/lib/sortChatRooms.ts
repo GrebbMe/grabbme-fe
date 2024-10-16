@@ -1,4 +1,4 @@
-import type { ChatRoom } from '@/entities/chat/ui/ChatRoomList';
+import type { ChatRoom } from '@/widgets/chat/ui/ChatRoomList.tsx';
 
 export const sortChatRooms = (rooms: ChatRoom[]): ChatRoom[] => {
   return rooms.sort((a, b) => {

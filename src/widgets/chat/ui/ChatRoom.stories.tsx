@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ChatRoom from './ChatRoom';
-import { StoryContainer, SectionContainer } from '@/shared/ui/storybook/story.style';
+import ChatRoom from './ChatRoom.tsx';
+import { StoryContainer, SectionContainer } from '@/shared/ui/storybook/story.style.ts';
 
 const meta: Meta<typeof ChatRoom> = {
   title: 'components/widgets/ChatRoom',

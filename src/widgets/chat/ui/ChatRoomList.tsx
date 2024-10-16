@@ -1,6 +1,6 @@
 import * as S from './ChatRoomList.style.ts';
-import { sortChatRooms } from '@/entities/chat/lib/sortChatRooms.ts';
 import { ChatPreview } from '@/features/chat';
+import { sortChatRooms } from '@/widgets/chat/lib/sortChatRooms.ts';
 
 export interface ChatRoom {
   nickname: string;

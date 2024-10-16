@@ -1,6 +1,6 @@
 import React from 'react';
-import * as S from './ChatRoom.style';
-import ChatInput from '@/features/chat/ui/ChatInput';
+import * as S from './ChatRoom.style.ts';
+import ChatInput from '@/features/chat/ui/ChatInput.tsx';
 import { IcBack } from '@/shared/assets';
 
 const ChatRoom = () => {
