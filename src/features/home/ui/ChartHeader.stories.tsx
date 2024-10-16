@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import ChartHeader from './ChartHeader';
 
 const meta: Meta<typeof ChartHeader> = {
-  title: 'component/home/ChartHeader',
+  title: 'component/features/ChartHeader',
   component: ChartHeader,
   parameters: {
     layout: 'centered',
