@@ -55,7 +55,6 @@ export const All: Story = {
           <StatusCard
             title="프로젝트 제목을 15자 이내 작성"
             content="프로젝트 소개글을 작성하세요. 프로젝트 소개글을 작성하여 프로젝트의 세부 내용을 설명합니다."
-            status={undefined}
           />
         </RowContainer>
       </SectionContainer>
