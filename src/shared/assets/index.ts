@@ -16,5 +16,6 @@ export { default as IcLoginGithub } from '@/shared/assets/svg/IcLoginGithub.svg?
 export { default as IcPhoto } from '@/shared/assets/svg/IcPhoto.svg?react';
 export { default as IcSend } from '@/shared/assets/svg/IcSend.svg?react';
 export { default as IcSendActive } from '@/shared/assets/svg/IcSendActive.svg?react';
+export { default as IcDefaultProfile } from '@/shared/assets/svg/IcDefaultProfile.svg?react';
 export { default as IcSmallChat } from '@/shared/assets/svg/IcSmallChat.svg?react';
 export { default as IcView } from '@/shared/assets/svg/IcView.svg?react';
