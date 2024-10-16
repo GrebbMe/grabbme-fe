@@ -1,5 +1,5 @@
 import PlusIcon from '@/shared/assets/svg/IcPlus.svg?react';
-import { StyledButton } from '@/shared/ui/button/AddButton.style';
+import { StyledButton } from '@/shared/ui/select/AddButton.style';
 
 interface AddButtonProps {
   children: string;
