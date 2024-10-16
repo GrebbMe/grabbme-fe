@@ -36,7 +36,7 @@ const Sidebar = () => {
           isActive={activeLabelId === item.id}
           onClick={() => handleItemClick(item)}
         >
-          {item.id}
+          {item.label}
         </S.SidebarItem>
       ))}
     </S.SidebarContainer>
