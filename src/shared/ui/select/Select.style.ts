@@ -67,5 +67,4 @@ export const DropdownListItem = styled.div<{ $isSelected: boolean }>`
     height: 4.2rem;
     ${({ theme }) => theme.typo.CAPTION_12};
   }
-  }
 `;
