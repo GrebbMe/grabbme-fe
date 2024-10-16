@@ -8,7 +8,7 @@ import {
   IcArrow,
   YearMonth,
 } from './chartHeader.style';
-import { IcArrowNext, IcArrowPrev } from '@/shared/assets/svg/index';
+import { IcArrowNext, IcArrowPrev } from '@/shared/assets/svg';
 
 interface Props {
   title: string;
