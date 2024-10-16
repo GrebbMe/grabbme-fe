@@ -8,7 +8,7 @@ import {
   HeaderTitle,
   IcArrow,
   YearMonth,
-} from './chartHeader.style';
+} from './ChartHeader.style';
 import { IcArrowNext, IcArrowPrev } from '@/shared/assets/svg';
 
 interface Props {
@@ -36,9 +36,9 @@ const ChartHeader = ({ title, description }: Props) => {
         <HeaderDescription>{description}</HeaderDescription>
       </ChartHeaderInnerDiv>
       <DateContainer>
-        <IcArrow src={`${IcArrowPrev}`} alt="prev arrow icon" onClick={handleSubMonth} />
+        <IcArrow src={`${IcArrowPrev}`} alt="prev arrow" onClick={handleSubMonth} />
         <YearMonth>{`${format(yearMonthDate, 'yyyy년 MM월')}`}</YearMonth>
-        <IcArrow src={`${IcArrowNext}`} alt="next arrow icon" onClick={handleAddMonth} />
+        <IcArrow src={`${IcArrowNext}`} alt="next arrow" onClick={handleAddMonth} />
       </DateContainer>
     </ChartHeaderContainer>
   );
