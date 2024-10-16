@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import * as S from '@/app/layout/Header.style';
+import { SocialLogin } from '@/features/auth';
 import { ProfileIcon } from '@/shared/assets';
 import logo from '@/shared/assets/image/logo.png';
-import { SocialLogin } from '@/features/auth';
 
 export const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
