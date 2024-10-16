@@ -12,7 +12,7 @@ const meta: Meta<typeof ContentCard> = {
     viewCount: 100,
     bookmarkCount: 54,
     commentCount: 13,
-    type: 'B',
+    type: 'RecruitCard',
   },
   parameters: {
     layout: 'centered',
@@ -20,7 +20,7 @@ const meta: Meta<typeof ContentCard> = {
   argTypes: {
     type: {
       control: { type: 'select' },
-      options: ['A', 'B', 'C'],
+      options: ['GrabbzoneCard', 'RecruitCard', 'MyProjectCard'],
     },
   },
 };
@@ -33,7 +33,7 @@ export const Default: Story = {
     title: '프로젝트 제목을 15자 이내 작성',
     content:
       '프로젝트 소개글을 앞 약 50자 내외로 보여줍니다. 프로젝트 소개글을 앞 약 50자 내외로 보여줍니다. 프로젝트 소개글을 앞 약 50자 내외로 보여줍니다. 길어지면 이런',
-    type: 'B',
+    type: 'RecruitCard',
   },
 };
 
@@ -41,33 +41,33 @@ export const All: Story = {
   render: () => (
     <StoryContainer>
       <SectionContainer>
-        <h3>순서대로 타입 A B C</h3>
+        <h3>순서대로 GrabbzoneCard, RecruitCard, MyProjectCard</h3>
         <RowContainer>
           <ContentCard
-            title="A타입 제목"
+            title="GrabbzoneCard 제목"
             content="인재 자기 소개글을 앞 약 30자 내외로 보여줍니다. 인재 자기 소개글을 앞 약 30자 내외로 보여줍니다. 인재 자기 길어지면"
             viewCount={100}
             bookmarkCount={54}
             commentCount={13}
             name="홍길동"
             role="프론트엔드 개발자"
-            type="A"
+            type="GrabbzoneCard"
           />
           <ContentCard
-            title="B타입 제목"
+            title="RecruitCard 제목"
             content="프로젝트 소개글을 앞 약 40자 내외로 보여줍니다. 프로젝트 소개글을 앞 약 40자 내 50자 내외로 보여줍니다. 길어지면 이런..."
             viewCount={100}
             bookmarkCount={54}
             commentCount={13}
-            type="B"
+            type="RecruitCard"
           />
           <ContentCard
-            title="C타입 제목"
+            title="MyProjectCard 제목"
             content="인재 자기 소개글을 앞 약 30자 내외로 보여줍니다. 인재 자기 소개글을 앞 약 30자 내외로 보여줍니다. 인재 자기 길어지면"
             viewCount={100}
             bookmarkCount={54}
             commentCount={13}
-            type="C"
+            type="MyProjectCard"
           />
         </RowContainer>
       </SectionContainer>
