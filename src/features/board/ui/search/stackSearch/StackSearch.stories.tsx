@@ -1,6 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { useStackSearch } from '@/features/search/hooks/useStackSearch';
-import StackSearch from '@/features/search/ui/stackSearch/StackSearch';
+import StackSearch from '@/features/board/ui/search/stackSearch/StackSearch';
 
 export default {
   title: 'components/features/StackSearch',
@@ -11,9 +10,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args) => {
-  const { handleStackSearch } = useStackSearch();
-
-  return <StackSearch onStackSearch={handleStackSearch} {...args} />;
+  return <StackSearch {...args} />;
 };
 
 export const Default = Template.bind({});

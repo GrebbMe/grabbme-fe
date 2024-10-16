@@ -1,24 +1,7 @@
-import { styled } from 'styled-components';
-import SearchBar from '@/features/search/ui/searchBar/SearchBar';
-import StackList from '@/features/search/ui/stackSearch/StackSearch';
-
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  grid-column: 1 / -1;
-`;
+import React from 'react';
 
 const GrabbZone = () => {
-  return (
-    <>
-      <Container>
-        <SearchBar />
-      </Container>
-      <Container>
-        <StackList />
-      </Container>
-    </>
-  );
+  return <div>GrabbZone</div>;
 };
 
 export default GrabbZone;

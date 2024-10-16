@@ -1,4 +1,4 @@
-import * as S from '@/features/search/ui/searchBar/SearchBar.style';
+import * as S from '@/features/board/ui/search/searchBar/SearchBar.style';
 import { IcSearch } from '@/shared/assets';
 
 interface SearchBarProps {

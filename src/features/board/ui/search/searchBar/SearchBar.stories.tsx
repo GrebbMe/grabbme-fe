@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { useSearch } from '@/features/search/hooks/useSearch';
-import SearchBar from '@/features/search/ui/searchBar/SearchBar';
+import { useSearch } from '@/features/board/hooks/useSearch';
+import SearchBar from '@/features/board/ui/search/searchBar/SearchBar';
 
 export default {
   title: 'components/features/SearchBar',
