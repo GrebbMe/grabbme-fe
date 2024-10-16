@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import BubbleChart from './BubbleChart';
 
 const meta: Meta<typeof BubbleChart> = {
-  title: 'component/home/BubbleChart',
+  title: 'component/features/BubbleChart',
   component: BubbleChart,
   parameters: {
     layout: 'centered',
