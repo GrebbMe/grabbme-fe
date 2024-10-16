@@ -91,6 +91,7 @@ const RegisterProject = () => {
   const getContentLength = (htmlString: string): number => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, 'text/html');
+    console.log(doc.body.textContent?.length);
     return doc.body.textContent?.length || 0;
   };
 
@@ -108,7 +109,7 @@ const RegisterProject = () => {
         <TitleBar
           label="프로젝트 소개"
           description="프로젝트에 대한 상세한 설명을 적어주세요."
-          count={getContentLength(content) + 1}
+          count={getContentLength(content)}
           limit={500}
         />
         <Editor value={content} onChange={handleContentChange} />
