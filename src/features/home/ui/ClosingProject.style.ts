@@ -7,11 +7,13 @@ export const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  border:
-    0.1rem,
-    solid ${({ theme }) => theme.color.GRAY_30};
+  border: 0.1rem solid ${({ theme }) => theme.color.GRAY_30};
   border-radius: 0.8rem;
   cursor: pointer;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.color.BLUE_50};
+  }
 `;
 
 export const Title = styled.h2`
@@ -54,4 +56,5 @@ export const Button = styled.button`
   ${({ theme }) => theme.typo.BODY_SEMIBOLD}
   border-radius: 0.8rem;
   cursor: pointer;
+  border: none;
 `;
