@@ -12,7 +12,7 @@ export const SidebarButton = styled.button<{ isActive: boolean }>`
   background-color: ${({ theme }) => theme.color.WHITE};
   color: ${({ isActive }) =>
     isActive ? ({ theme }) => theme.color.BLACK_100 : ({ theme }) => theme.color.GRAY_50};
-  ${typo.SUBTITLE_20};
+  ${({ theme }) => theme.typo.SUBTITLE_20};
   text-align: left;
   padding-left: 2.4rem;
   cursor: pointer;
