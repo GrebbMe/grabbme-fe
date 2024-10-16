@@ -1,5 +1,5 @@
 import * as S from './ChatRoomList.style.ts';
-import { SortChatRooms } from '@/entities/chat/lib/sortChatRooms.ts';
+import { sortChatRooms } from '@/entities/chat/lib/sortChatRooms.ts';
 import { ChatPreview } from '@/features/chat';
 
 export interface ChatRoom {
@@ -17,7 +17,7 @@ interface ChatRoomListProps {
 }
 
 const ChatRoomList = ({ rooms, newMessagesCount }: ChatRoomListProps) => {
-  const sortedRooms = SortChatRooms(rooms);
+  const sortedRooms = sortChatRooms(rooms);
 
   return (
     <S.ChatRoomContainer>
