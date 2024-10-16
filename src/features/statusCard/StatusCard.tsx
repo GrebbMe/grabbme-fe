@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './StatusCard.style';
-import { StatusTag } from '@/features/myPage';
+import { StatusTag } from '@/entities/myPage';
 import { StatusType } from '@/shared/types/status';
 
 interface StatusCardProps {

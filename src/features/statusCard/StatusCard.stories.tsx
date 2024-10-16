@@ -3,7 +3,7 @@ import StatusCard from './StatusCard';
 import { StoryContainer, SectionContainer, RowContainer } from '@/shared/ui/storybook/story.style';
 
 const meta: Meta<typeof StatusCard> = {
-  title: 'components/widgets/StatusCard',
+  title: 'components/features/StatusCard',
   component: StatusCard,
   args: {
     title: '프로젝트 제목을 15자 이내 작성',
