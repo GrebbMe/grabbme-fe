@@ -1,17 +1,20 @@
-import { Meta, StoryObj } from '@storybook/react';
-import StackList from '@/features/search/ui/stackSearch/StackSearch';
+import { Meta, StoryFn } from '@storybook/react';
+import { useStackSearch } from '@/features/search/hooks/useStackSearch';
+import StackSearch from '@/features/search/ui/stackSearch/StackSearch';
 
-const meta: Meta<typeof StackList> = {
-  title: 'components/features/StackList',
-  component: StackList,
+export default {
+  title: 'components/features/StackSearch',
+  component: StackSearch,
   parameters: {
     layout: 'centered',
   },
+} as Meta;
+
+const Template: StoryFn = (args) => {
+  const { handleStackSearch } = useStackSearch();
+
+  return <StackSearch onStackSearch={handleStackSearch} {...args} />;
 };
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
-  args: {},
-};
+export const Default = Template.bind({});
+Default.args = {};

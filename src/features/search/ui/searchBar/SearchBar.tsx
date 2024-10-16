@@ -1,16 +1,19 @@
-import { useSearch } from '@/features/search/hooks/useSearch';
 import * as S from '@/features/search/ui/searchBar/SearchBar.style';
 import { IcSearch } from '@/shared/assets';
 
-const SearchBar = () => {
-  const { query, handleQueryChange, handleSearch } = useSearch();
+interface SearchBarProps {
+  query: string;
+  onQueryChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch: (e: React.FormEvent<HTMLFormElement>) => void;
+}
 
+const SearchBar = ({ query, onQueryChange, onSearch }: SearchBarProps) => {
   return (
     <S.Container>
-      <S.FormWrapper onSubmit={handleSearch}>
+      <S.FormWrapper onSubmit={onSearch}>
         <S.SearchInput
           value={query}
-          onChange={handleQueryChange}
+          onChange={onQueryChange}
           placeholder="관심있는 스택이나 선호하는 주제를 검색해보세요."
         />
         <S.SearchButton type="submit">

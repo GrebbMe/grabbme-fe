@@ -27,9 +27,11 @@ const STACKS = [
   { img: `${IcKotlin}`, name: 'Kotlin' },
 ];
 
-const StackSearch = () => {
-  const { handleStackSearch } = useStackSearch();
+interface StackSearchProps {
+  onStackSearch: (stack: string) => void;
+}
 
+const StackSearch = ({ onStackSearch }: StackSearchProps) => {
   return (
     <Container>
       {STACKS.map((stack) => (
@@ -37,7 +39,7 @@ const StackSearch = () => {
           key={stack.name}
           stackImg={stack.img}
           stackName={stack.name}
-          onClick={() => handleStackSearch(stack.name)}
+          onClick={() => onStackSearch(stack.name)}
         />
       ))}
     </Container>
