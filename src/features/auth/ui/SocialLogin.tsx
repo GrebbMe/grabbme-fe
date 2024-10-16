@@ -3,7 +3,7 @@ import IcGithubFilld from '@/shared/assets/svg/IcGithubFilled.svg?react';
 import { Button } from '@/shared/ui';
 
 const CLIENT_ID: string = import.meta.env.VITE_GITHUB_LOGIN_CLIENT_ID;
-const REDIRECT_URI: string = 'http://localhost:5173/';
+const REDIRECT_URI: string = 'http://localhost:5173';
 
 export const SocialLogin = () => {
   const authroizeGithubLogin = useCallback((): void => {
