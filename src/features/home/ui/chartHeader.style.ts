@@ -8,12 +8,12 @@ export const ChartHeaderContainer = styled.div`
   align-items: center;
   padding-bottom: 1.6rem;
   border-bottom: 0.1rem solid ${({ theme }) => theme.color.GRAY_30};
+`;
 
-  .title-container {
-    display: flex;
-    gap: 0.8rem;
-    align-items: baseline;
-  }
+export const ChartHeaderInnerDiv = styled.div`
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
 `;
 
 export const HeaderTitle = styled.h1`

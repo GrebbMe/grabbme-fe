@@ -2,6 +2,7 @@ import { addMonths, format, subMonths } from 'date-fns';
 import { useState } from 'react';
 import {
   ChartHeaderContainer,
+  ChartHeaderInnerDiv,
   DateContainer,
   HeaderDescription,
   HeaderTitle,
@@ -30,10 +31,10 @@ const ChartHeader = ({ title, description }: Props) => {
 
   return (
     <ChartHeaderContainer>
-      <div className="title-container">
+      <ChartHeaderInnerDiv>
         <HeaderTitle>{title}</HeaderTitle>
         <HeaderDescription>{description}</HeaderDescription>
-      </div>
+      </ChartHeaderInnerDiv>
       <DateContainer>
         <IcArrow src={`${IcArrowPrev}`} alt="prev arrow icon" onClick={handleSubMonth} />
         <YearMonth>{`${format(yearMonthDate, 'yyyy년 MM월')}`}</YearMonth>
