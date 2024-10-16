@@ -9,6 +9,7 @@ import {
   IcArrow,
   YearMonth,
 } from './ChartHeader.style';
+import { handleAddMonth, handleSubMonth } from '@/features/home/lib/monthUtils';
 import { IcArrowNext, IcArrowPrev } from '@/shared/assets/svg';
 
 interface Props {
@@ -19,16 +20,6 @@ interface Props {
 const ChartHeader = ({ title, description }: Props) => {
   const [yearMonthDate, setYearMonthDate] = useState<Date>(new Date());
 
-  const handleAddMonth = (): void => {
-    const newDate: Date = addMonths(yearMonthDate, 1);
-    setYearMonthDate(newDate);
-  };
-
-  const handleSubMonth = (): void => {
-    const newDate: Date = subMonths(yearMonthDate, 1);
-    setYearMonthDate(newDate);
-  };
-
   return (
     <ChartHeaderContainer>
       <ChartHeaderInnerDiv>
@@ -36,9 +27,17 @@ const ChartHeader = ({ title, description }: Props) => {
         <HeaderDescription>{description}</HeaderDescription>
       </ChartHeaderInnerDiv>
       <DateContainer>
-        <IcArrow src={`${IcArrowPrev}`} alt="prev arrow" onClick={handleSubMonth} />
+        <IcArrow
+          src={`${IcArrowPrev}`}
+          alt="prev arrow"
+          onClick={() => setYearMonthDate(handleSubMonth(yearMonthDate))}
+        />
         <YearMonth>{`${format(yearMonthDate, 'yyyy년 MM월')}`}</YearMonth>
-        <IcArrow src={`${IcArrowNext}`} alt="next arrow" onClick={handleAddMonth} />
+        <IcArrow
+          src={`${IcArrowNext}`}
+          alt="next arrow"
+          onClick={() => setYearMonthDate(handleAddMonth(yearMonthDate))}
+        />
       </DateContainer>
     </ChartHeaderContainer>
   );
