@@ -10,6 +10,8 @@ export const ChatContainer = styled.div`
 `;
 
 export const ChatWrapper = styled.div`
+  width: 31rem;
+  height: 2.4rem;
   display: flex;
   gap: 0.8rem;
   align-items: center;
