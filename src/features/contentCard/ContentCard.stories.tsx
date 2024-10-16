@@ -3,7 +3,7 @@ import ContentCard from './ContentCard';
 import { StoryContainer, SectionContainer, RowContainer } from '@/shared/ui/storybook/story.style';
 
 const meta: Meta<typeof ContentCard> = {
-  title: 'components/widgets/ContentCard',
+  title: 'components/features/ContentCard',
   component: ContentCard,
   args: {
     title: '프로젝트 제목을 15자 이내 작성',
