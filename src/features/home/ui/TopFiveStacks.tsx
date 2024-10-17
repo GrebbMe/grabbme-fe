@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as S from './topFiveStacks.style';
 import { getTopFiveStack } from '@/features/home/api/topFiveStacks.api';
-import { StackData } from '@/features/home/model/topFiveStacks.model';
+import { StackData } from '@/features/home/model/stack.model';
 
 const TopFiveStacks = () => {
   // TODO : top5 axios get 요청 코드

@@ -1,4 +1,4 @@
-import { StackData } from '@/features/home/model/topFiveStacks.model';
+import { StackData } from '@/features/home/model/stack.model';
 
 export const getTopFiveStack = async (): Promise<StackData[] | undefined> => {
   try {
