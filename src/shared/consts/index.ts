@@ -1,1 +1,1 @@
-export { months } from '@/shared/consts/CalendarMonths';
+export { MONTHS } from '@/shared/consts/months';

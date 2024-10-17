@@ -1,1 +1,1 @@
-export { ProjectPeriod } from '@/features/post/projectPeriod/ProjectPeriod';
+export { ProjectPeriod } from '@/features/post/ui/projectPeriod/ProjectPeriod';

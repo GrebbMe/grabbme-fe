@@ -13,6 +13,7 @@ export const ModalContainer = styled.div`
   box-shadow: 0px 2px 16px 2px rgba(142, 152, 169, 0.25);
   display: flex;
   flex-direction: column;
+  z-index: 9999;
 `;
 export const Content = styled.p`
   color: ${({ theme }) => theme.color.BLACK_80};

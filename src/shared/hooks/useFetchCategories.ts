@@ -38,6 +38,7 @@ export const useFetchCategories = (): CategoryData => {
   const [careerYear, setCareerYear] = useState<SelectListItem[]>([]);
   const [techStackList, setTechStackList] = useState<SelectItem[]>([]);
   const [categoryList, setCategoryList] = useState<SelectItem[]>([]);
+
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
