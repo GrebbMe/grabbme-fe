@@ -37,7 +37,6 @@ export const All = () => (
       </RowContainer>
       <RowContainer>
         <UserProfile
-          profileImgUrl={null}
           nickname="프로필 이미지 없음"
           email="noimage@example.com"
           onLogout={() => alert('회원 탈퇴 클릭됨')}
