@@ -28,10 +28,10 @@ const BoardCard = ({
   chatCount,
   isBookmarked,
 }: BoardCard) => {
-  // const { techStackList, isLoading } = useFetchCategories();
-  const [stackNames, setStackNames] = useState<SelectItem[]>([]);
-
   //TODO : 테스트 코드 API 연동 후 삭제 필요
+  // const { techStackList, isLoading } = useFetchCategories();
+  // const [stackNames, setStackNames] = useState<SelectItem[]>([]);
+
   // useEffect(() => {
   //   if (!isLoading && techStackList.length > 0) {
   //     const convertedStacks = convertIdToStackName(stacks, techStackList);
@@ -61,8 +61,8 @@ const BoardCard = ({
         <S.Content>{content}</S.Content>
         <S.Wrapper>
           <S.StackLayout>
-            {stackNames.map((stack) => (
-              <Tag key={stack.id}>{stack.item}</Tag>
+            {stacks.map((stack) => (
+              <Tag key={stack}>{stack}</Tag>
             ))}
           </S.StackLayout>
           {isBookmarked ? (
