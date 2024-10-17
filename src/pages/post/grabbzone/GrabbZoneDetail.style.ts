@@ -46,7 +46,12 @@ export const ItemContent = styled.div`
   `};
   margin-left: 1.6rem;
 `;
-
+export const TagList = styled.div`
+  display: flex;
+  justify-items: start;
+  align-items: center;
+  gap: 0.8rem;
+`;
 export const RecruitStatusContainer = styled.div`
   grid-column: 3 / 11;
   display: flex;

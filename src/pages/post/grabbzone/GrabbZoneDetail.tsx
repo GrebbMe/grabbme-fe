@@ -14,22 +14,25 @@ import {
   ItemContent,
   ItemTitle,
   Nickname,
+  TagList,
   Title,
   TitleInfo,
   TitleWrapper,
 } from '@/pages/post/grabbzone/GrabbZoneDetail.style';
-import { IcBookmark, ProfileIcon, IcChat, IcList } from '@/shared/assets';
+import { IcBookmark, ProfileIcon, IcChatStart, IcList } from '@/shared/assets';
+import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { useModal } from '@/shared/hooks/useModal';
 import { Button } from '@/shared/ui';
+import CountBox from '@/shared/ui/countBox/CountBox';
+import { RowContainer, StoryContainer } from '@/shared/ui/storybook/story.style';
+import Tag from '@/shared/ui/tag/Tag';
 
 interface GrabbzoneDetailResponse {
   post_id: number;
   title: string;
   content: string;
-  // start_month: string;
-  // end_month: string;
   create_at: string;
-  // expired_at: string;
+  chat_cnt: number;
   view_cnt: number;
   bookmarked_cnt: number;
   //! position 없음
@@ -44,11 +47,7 @@ export const GrabbZoneDetail = () => {
   const [isAuthor, setIsAuthor] = useState<boolean>(false);
   const [nickname, setNickname] = useState<string>('user nickname');
 
-  // useFetchCategories
-
-  // const formatDate = (date: string ) => {
-  //   const newDate =
-  // }
+  const { jobPosition, careerYear, techStackList, categoryList } = useFetchCategories();
 
   const [detail, setDetail] = useState<GrabbzoneDetailResponse>({
     post_id: 0,
@@ -57,6 +56,7 @@ export const GrabbZoneDetail = () => {
     create_at: '',
     view_cnt: 0,
     bookmarked_cnt: 0,
+    chat_cnt: 0,
     career_category_id: 0,
     position_category_id: 0,
     project_category_id: [],
@@ -102,7 +102,13 @@ export const GrabbZoneDetail = () => {
             </Nickname>
             <CreatedAt>{detail.create_at}</CreatedAt>
           </HeaderWrapper>
-          <>CountBox</>
+          <StoryContainer>
+            <RowContainer>
+              <CountBox variant="view" count={detail.view_cnt} />
+              <CountBox variant="bookmark" count={detail.bookmarked_cnt} />
+              <CountBox variant="chat" count={detail.chat_cnt} />
+            </RowContainer>
+          </StoryContainer>
         </TitleInfo>
       </HeaderContainer>
       <BasicInfoContainer>
@@ -117,17 +123,21 @@ export const GrabbZoneDetail = () => {
         <InfoItem>
           <ItemTitle>카테고리</ItemTitle>
           <ItemContent>
-            {detail.project_category_id.map((id) => (
-              <>{id},</>
-            ))}
+            <TagList>
+              {detail.project_category_id.map((id) => (
+                <Tag>{categoryList.find((category) => category.id === Number(id))?.item}</Tag>
+              ))}
+            </TagList>
           </ItemContent>
         </InfoItem>
         <InfoItem>
           <ItemTitle>기술 스택</ItemTitle>
           <ItemContent>
-            {detail.stack_category_id.map((id) => (
-              <>{id},</>
-            ))}
+            <TagList>
+              {detail.stack_category_id.map((id) => (
+                <Tag>{techStackList.find((stack) => stack.id === Number(id))?.item}</Tag>
+              ))}
+            </TagList>
           </ItemContent>
         </InfoItem>
       </BasicInfoContainer>
@@ -139,7 +149,7 @@ export const GrabbZoneDetail = () => {
         <Button variant="primary" size="sm" icon={<IcBookmark />}>
           북마크
         </Button>
-        <Button variant="primary" size="sm" icon={<IcChat />}>
+        <Button variant="primary" size="sm" icon={<IcChatStart />}>
           채팅하기
         </Button>
         <Button variant="primary" size="sm" icon={<IcList />}>
