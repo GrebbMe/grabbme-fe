@@ -1,3 +1,10 @@
+import {
+  PBCount,
+  ProgressBarContainer,
+  ProgressBarStyle,
+  ProgressBarWrapper,
+} from '@/shared/ui/progressBar/ProgressBar.style';
+
 interface ProgressBarProps {
   totalCnt: number;
   acceptedCnt: number;
