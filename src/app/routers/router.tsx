@@ -1,6 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { DashboardLayout, MainLayout } from '@/app/layout';
 import { SignUp } from '@/pages/auth';
+import RegisterGrabbzone from '@/pages/post/ui/grabbzone/RegisterGrabbzone';
+import RegisterProject from '@/pages/post/ui/project/RegisterProject';
 import { MyProfile, MyPosts, MyProjects, MyBookmarks } from '@/pages/mypage';
 import { GrabbZone, GrabbZoneDetail, Project, ProjectDetail } from '@/pages/post';
 import { routerPath } from '@/shared';
@@ -14,6 +16,13 @@ export const router = createBrowserRouter([
         path: routerPath.SIGNUP,
         element: <SignUp />,
       },
+      {
+        path: routerPath.REGISTER_GRABBZONE,
+        element: <RegisterGrabbzone />,
+      },
+      {
+        path: routerPath.REGISTER_PROJECT,
+        element: <RegisterProject />,
       { path: routerPath.PROJECT, element: <Project /> },
       { path: routerPath.PROJECT_DETAIL, element: <ProjectDetail /> },
       { path: routerPath.GRABB_ZONE, element: <GrabbZone /> },
