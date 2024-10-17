@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Editor } from '@/features/post';
 import fetchMultiSelect from '@/pages/post/lib/fetchMultiSelect';
 import { getContentLength } from '@/pages/post/lib/getContentLength';
-
+import { useRegisterGrabbzone } from '@/pages/post/model/useRegisterGrabbzone';
 import * as S from '@/pages/post/ui/grabbzone/RegisterGrabbzone.style';
 import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { useModal } from '@/shared/hooks/useModal';
@@ -11,7 +11,6 @@ import { useToast } from '@/shared/hooks/useToast';
 import { TextField, Button, TitleBar, Select } from '@/shared/ui';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 import { SelectListItem } from '@/shared/ui/select/Select';
-import { useRegisterGrabbzone } from '@/pages/post/model/useRegisterGrabbzone';
 
 const RegisterGrabbzone = () => {
   const [title, setTitle] = useState('');
