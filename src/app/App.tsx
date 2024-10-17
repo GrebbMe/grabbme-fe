@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { router } from '@/app/routers';
@@ -24,6 +25,7 @@ const App = () => {
         <GlobalStyle />
         <Toast />
         <Modal />
+        <ReactQueryDevtools initialIsOpen={false} />
         <RouterProvider router={router} />
       </ThemeProvider>
     </QueryClientProvider>
