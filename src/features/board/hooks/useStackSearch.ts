@@ -4,7 +4,7 @@ export const useStackSearch = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleStackSearch = (stack: string) => {
+  const handleStackSearch = (stack: number) => {
     const currentPath = location.pathname;
     if (currentPath === '/') {
       navigate(`/project?stack=${stack}`);

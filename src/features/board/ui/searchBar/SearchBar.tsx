@@ -1,5 +1,5 @@
-import { useSearch } from '@/features/search/hooks/useSearch';
-import * as S from '@/features/search/ui/searchBar/SearchBar.style';
+import { useSearch } from '@/features/board/hooks/useSearch';
+import * as S from '@/features/board/ui/searchBar/SearchBar.style';
 import { IcSearch } from '@/shared/assets';
 
 const SearchBar = () => {

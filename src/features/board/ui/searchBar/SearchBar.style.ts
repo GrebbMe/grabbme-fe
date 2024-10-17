@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.div`
+  grid-column: 1/-1;
   box-sizing: border-box;
   box-shadow: 0rem 0.2rem 1.6rem 0.2rem ${({ theme }) => theme.color.BLUE_50_25};
   border-radius: 10rem;

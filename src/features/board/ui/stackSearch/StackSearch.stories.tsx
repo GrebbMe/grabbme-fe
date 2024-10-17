@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import SearchBar from '@/features/search/ui/searchBar/SearchBar';
+import StackList from '@/features/board/ui/stackSearch/StackSearch';
 
-const meta: Meta<typeof SearchBar> = {
-  title: 'components/features/SearchBar',
-  component: SearchBar,
+const meta: Meta<typeof StackList> = {
+  title: 'components/features/StackList',
+  component: StackList,
   parameters: {
     layout: 'centered',
   },
