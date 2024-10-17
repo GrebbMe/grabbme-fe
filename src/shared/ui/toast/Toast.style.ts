@@ -6,6 +6,7 @@ export const ToastContainer = styled.div`
   bottom: 16rem;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 9999;
 `;
 
 export const ToastMessage = styled.div<{ size: ToastSize }>`

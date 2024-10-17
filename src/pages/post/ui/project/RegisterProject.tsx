@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { PositionWithCount } from '@/features/post';
+import { Editor, PositionWithCount } from '@/features/post';
 import { DeadlineCalendar } from '@/features/post/ui/deadlineCalendar';
-import { Editor } from '@/features/post/ui/editor/Editor';
-import { Position } from '@/features/post/ui/positionManage/PositionWithCount';
+import { Position } from '@/features/post/ui/positionMange/PositionWithCount';
 import { ProjectPeriod } from '@/features/post/ui/projectPeriod';
 import { getContentLength } from '@/pages/post/lib/getContentLength';
 import * as S from '@/pages/post/ui/project/RegisterProject.style';
@@ -125,8 +124,12 @@ const RegisterProject = () => {
       </S.TotalContainer>
       <S.ButtonContainer>
         <S.ButtonWrapper>
-          <Button>취소</Button>
-          <Button>게시</Button>
+          <Button variant="primary" size="sm">
+            취소
+          </Button>
+          <Button variant="primary" size="sm">
+            게시
+          </Button>
         </S.ButtonWrapper>
       </S.ButtonContainer>
     </>
