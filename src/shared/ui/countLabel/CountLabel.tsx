@@ -9,7 +9,7 @@ export interface CountLabelProps {
 
 const CountLabel = ({ icon, count, hasBorder = true }: CountLabelProps) => {
   return (
-    <S.Container hasBorder={hasBorder}>
+    <S.Container $hasBorder={hasBorder}>
       <S.IconWrapper>{icon}</S.IconWrapper>
       <S.Text>{count}명</S.Text>
     </S.Container>

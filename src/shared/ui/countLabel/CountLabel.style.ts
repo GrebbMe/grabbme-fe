@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import type { CountLabelProps } from './CountLabel';
 
-export const Container = styled.div<{ hasBorder: CountLabelProps['hasBorder'] }>`
+export const Container = styled.div<{ $hasBorder: CountLabelProps['hasBorder'] }>`
   display: flex;
   align-items: center;
   gap: 0.4rem;
   background-color: ${({ theme }) => theme.color.BLUE_30};
-  border: ${({ hasBorder, theme }) =>
-    hasBorder ? `0.1rem solid ${theme.color.BLUE_50}` : '0.1rem solid transparent'};
+  border: ${({ $hasBorder, theme }) =>
+    $hasBorder ? `0.1rem solid ${theme.color.BLUE_50}` : '0.1rem solid transparent'};
   padding: 0.4rem 0.8rem;
   border-radius: 0.4rem;
   width: 6.4rem;

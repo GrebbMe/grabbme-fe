@@ -19,6 +19,18 @@ const queryClient = new QueryClient({
   },
 });
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 4,
+      throwOnError: true,
+    },
+    mutations: {
+      throwOnError: true,
+    },
+  },
+});
+
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
