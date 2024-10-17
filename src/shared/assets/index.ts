@@ -18,5 +18,8 @@ export { default as IcSend } from '@/shared/assets/svg/IcSend.svg?react';
 export { default as IcSendActive } from '@/shared/assets/svg/IcSendActive.svg?react';
 export { default as IcDefaultProfile } from '@/shared/assets/svg/IcDefaultProfile.svg?react';
 export { default as IcBack } from '@/shared/assets/svg/IcBack.svg?react';
+export { default as IcBookmarkSmall } from '@/shared/assets/svg/IcBookmarkSmall.svg?react';
+export { default as IcChatSmall } from '@/shared/assets/svg/IcChatSmall.svg?react';
+export { default as IcViewSmall } from '@/shared/assets/svg/IcViewSmall.svg?react';
 export { default as IcSmallChat } from '@/shared/assets/svg/IcSmallChat.svg?react';
 export { default as IcView } from '@/shared/assets/svg/IcView.svg?react';
