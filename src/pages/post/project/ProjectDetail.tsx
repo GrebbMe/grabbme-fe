@@ -21,14 +21,19 @@ import {
   RSButton,
   RSItemTitle,
   RSProgressBar,
+  TagList,
   Title,
   TitleInfo,
   TitleWrapper,
 } from '@/pages/post/project/ProjectDetail.style';
-import { IcBookmark, ProfileIcon, IcChat, IcList } from '@/shared/assets';
+import { IcBookmark, ProfileIcon, IcChatStart, IcList } from '@/shared/assets';
+import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { useModal } from '@/shared/hooks/useModal';
 import { Button } from '@/shared/ui';
+import CountBox from '@/shared/ui/countBox/CountBox';
 import { ProgressBar } from '@/shared/ui/progressBar/ProgressBar';
+import { RowContainer, StoryContainer } from '@/shared/ui/storybook/story.style';
+import Tag from '@/shared/ui/tag/Tag';
 
 //! 임시값들
 const rsItems = [
@@ -46,6 +51,7 @@ interface ProjectRecruitmentResponse {
   create_at: string;
   expired_at: string;
   view_cnt: number;
+  chat_cnt: number;
   bookmarked_cnt: number;
   project_category_id: number[];
   stack_category_id: number[];
@@ -56,7 +62,7 @@ export const ProjectDetail = () => {
   const [isAuthor, setIsAuthor] = useState<boolean>(false);
   const [nickname, setNickname] = useState<string>('user nickname');
 
-  //! useFetchCategories
+  const { jobPosition, careerYear, techStackList, categoryList } = useFetchCategories();
 
   const formatCreatedDate = (date: string): string => {
     return format(new Date(date), 'yyyy.MM.dd');
@@ -80,6 +86,7 @@ export const ProjectDetail = () => {
     expired_at: '',
     view_cnt: 0,
     bookmarked_cnt: 0,
+    chat_cnt: 0,
     project_category_id: [],
     stack_category_id: [],
   });
@@ -131,7 +138,13 @@ export const ProjectDetail = () => {
             </Nickname>
             <CreatedAt>{detail.create_at}</CreatedAt>
           </HeaderWrapper>
-          <>CountBox</>
+          <StoryContainer>
+            <RowContainer>
+              <CountBox variant="view" count={detail.view_cnt} />
+              <CountBox variant="bookmark" count={detail.bookmarked_cnt} />
+              <CountBox variant="chat" count={detail.chat_cnt} />
+            </RowContainer>
+          </StoryContainer>
         </TitleInfo>
       </HeaderContainer>
       <BasicInfoContainer>
@@ -142,17 +155,21 @@ export const ProjectDetail = () => {
         <InfoItem>
           <ItemTitle>카테고리</ItemTitle>
           <ItemContent>
-            {detail.project_category_id.map((id) => (
-              <>{id},</>
-            ))}
+            <TagList>
+              {detail.project_category_id.map((id) => (
+                <Tag>{categoryList.find((category) => category.id === Number(id))?.item}</Tag>
+              ))}
+            </TagList>
           </ItemContent>
         </InfoItem>
         <InfoItem>
           <ItemTitle>기술 스택</ItemTitle>
           <ItemContent>
-            {detail.stack_category_id.map((id) => (
-              <>{id},</>
-            ))}
+            <TagList>
+              {detail.stack_category_id.map((id) => (
+                <Tag>{techStackList.find((stack) => stack.id === Number(id))?.item}</Tag>
+              ))}
+            </TagList>
           </ItemContent>
         </InfoItem>
         <InfoItem>
@@ -194,7 +211,7 @@ export const ProjectDetail = () => {
         <Button variant="primary" size="sm" icon={<IcBookmark />}>
           북마크
         </Button>
-        <Button variant="primary" size="sm" icon={<IcChat />}>
+        <Button variant="primary" size="sm" icon={<IcChatStart />}>
           채팅하기
         </Button>
         <Button variant="primary" size="sm" icon={<IcList />}>
