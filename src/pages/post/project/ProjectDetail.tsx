@@ -97,8 +97,23 @@ export const ProjectDetail = () => {
   useEffect(() => {
     const loadBoardData = async () => {
       try {
-        const res = await axios.get(`https://grabbme.vercel.app/board/project/${id}`);
-        const { data } = res.data;
+        // const res = await axios.get(`https://grabbme.vercel.app/board/project/${id}`);
+        // const { data } = res.data;
+        const data = {
+          post_id: 109,
+          title: '댕댕이 산책시키기 위치 공유 어플 개발자를 모집합니다.',
+          content:
+            '반려견과 함께 산책하는 즐거움을 더 큰 커뮤니티로 확장하고, 반려인들이 서로 교류할 수 있는 플랫폼을 만들기 위해 댕댕이 산책 위치 공유 어플을 개발할 개발자를 모집합니다. 이 어플은 산책 중인 반려견의 실시간 위치를 공유하고, 같은 지역에 사는 반려인들이 쉽게 만나고 함께 산책할 수 있는 기회를 제공합니다. 또한, 산책 경로를 기록하고 추천하며, 반려견 주인들 간의 소통을 돕는 다양한 기능을 제공할 예정입니다.',
+          start_month: '2024-10',
+          end_month: '2024-12',
+          create_at: '2024-09-16',
+          expired_at: '2024-09-28',
+          view_cnt: 36,
+          bookmarked_cnt: 15,
+          chat_cnt: 3,
+          project_category_id: [3, 4, 8, 9],
+          stack_category_id: [1, 6],
+        };
         setDetail({
           ...data,
           create_at: formatCreatedDate(data.create_at),
@@ -106,7 +121,6 @@ export const ProjectDetail = () => {
           start_month: formatPeriodDate(data.start_month),
           end_month: formatPeriodDate(data.end_month),
         });
-        console.log(data);
       } catch (error) {
         showModal({
           content: '서버에서 게시글 정보를 불러오지 못했습니다.',
