@@ -9,7 +9,6 @@ export const Header = styled.header`
   margin-top: 8rem;
   ${({ theme }) => theme.typo.TITLE}
   color:${({ theme }) => theme.color.BLACK_100}
-  }
 `;
 
 export const SearchBox = styled.div`
@@ -25,6 +24,7 @@ export const PostListLabel = styled.div`
   display: flex;
   align-items: center;
   grid-column: 3 / span 8;
+
   ${({ theme }) => theme.typo.SUBTITLE_20};
   color: ${({ theme }) => theme.color.BLACK_100};
   justify-content: space-between;

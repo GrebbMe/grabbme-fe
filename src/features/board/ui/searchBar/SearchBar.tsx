@@ -1,9 +1,29 @@
-import { useSearch } from '@/features/board/hooks/useSearch';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as S from '@/features/board/ui/searchBar/SearchBar.style';
 import { IcSearch } from '@/shared/assets';
 
-const SearchBar = () => {
-  const { query, handleQueryChange, handleSearch } = useSearch();
+interface SearchBarProps {
+  query: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const SearchBar = ({ query, setQuery }: SearchBarProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSearch = (event: FormEvent) => {
+    event.preventDefault();
+    const currentPath = location.pathname;
+    if (currentPath === '/') {
+      navigate(`/project?search=${query.replace(/\s+/g, '+')}`);
+    } else {
+      navigate(`${currentPath}?search=${query.replace(/\s+/g, '+')}`);
+    }
+  };
+  const handleQueryChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
 
   return (
     <S.Container>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { getItemsByIds } from '@/features/board/lib/getItemsByIds';
 import * as S from '@/features/board/ui/boardCard/BoardCard.style';
 import { IcBookmark, IcViewSmall, IcBookmarkSmall, IcChatSmall } from '@/shared/assets';
+import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { Button, CountLabel, Tag } from '@/shared/ui';
-import { SelectItem } from '@/shared/ui/select/MultiSelect';
 
 export interface BoardCard {
   id: number;
@@ -14,7 +15,7 @@ export interface BoardCard {
   viewCount: number;
   bookmarkCount: number;
   chatCount: number;
-  isBookmarked: boolean;
+  isBookmarked?: boolean;
 }
 
 const BoardCard = ({
@@ -28,17 +29,15 @@ const BoardCard = ({
   chatCount,
   isBookmarked,
 }: BoardCard) => {
-  //TODO : 테스트 코드 API 연동 후 삭제 필요
-  // const { techStackList, isLoading } = useFetchCategories();
-  // const [stackNames, setStackNames] = useState<SelectItem[]>([]);
+  const { techStackList, isLoading } = useFetchCategories();
+  const [stackNames, setStackNames] = useState<string[]>([]);
 
-  // useEffect(() => {
-  //   if (!isLoading && techStackList.length > 0) {
-  //     const convertedStacks = convertIdToStackName(stacks, techStackList);
-  //     setStackNames(convertedStacks);
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isLoading]);
+  useEffect(() => {
+    if (!isLoading && techStackList.length > 0) {
+      setStackNames(getItemsByIds(stacks, techStackList));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading]);
 
   return (
     <>
@@ -61,7 +60,7 @@ const BoardCard = ({
         <S.Content>{content}</S.Content>
         <S.Wrapper>
           <S.StackLayout>
-            {stacks.map((stack) => (
+            {stackNames.map((stack) => (
               <Tag key={stack}>{stack}</Tag>
             ))}
           </S.StackLayout>
