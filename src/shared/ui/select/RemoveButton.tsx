@@ -1,4 +1,4 @@
-import CloseIcon from '@/shared/assets/svg/IcClose.svg?react';
+import IcCloseSmall from '@/shared/assets/svg/IcCloseSmall.svg?react';
 import { StyledButton } from '@/shared/ui/select/RemoveButton.style';
 
 interface RemoveButtonProps {
@@ -9,6 +9,6 @@ interface RemoveButtonProps {
 export const RemoveButton = ({ children, onClick }: RemoveButtonProps) => (
   <StyledButton onClick={onClick}>
     {children}
-    <CloseIcon />
+    <IcCloseSmall />
   </StyledButton>
 );
