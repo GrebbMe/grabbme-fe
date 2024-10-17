@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as S from './topFiveStacks.style';
-import { fetchData } from '@/features/home/api/topFiveStacks.api';
+import { getTopFiveStack } from '@/features/home/api/topFiveStacks.api';
 import { StackData } from '@/features/home/model/topFiveStacks.model';
 
 const TopFiveStacks = () => {
@@ -8,7 +8,7 @@ const TopFiveStacks = () => {
   const [topFiveData, setTopFiveData] = useState<StackData[] | undefined>();
 
   useEffect((): void => {
-    fetchData()
+    getTopFiveStack()
       .then((data) => {
         setTopFiveData(data);
       })
