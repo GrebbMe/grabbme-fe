@@ -127,7 +127,54 @@ const BubbleChart: React.FC = () => {
       .style('font-family', 'Pretendard, sans-serif')
       .style('font-weight', '500')
       .style('font-size', '1.2rem')
-      .style('fill', '#1D3152');
+      .style('fill', '#1D3152')
+      .on('mouseover', function (event, d) {
+        if (d.id <= 5) {
+          d3.select(this).style('fill', '#FFFFFF');
+
+          // stack 텍스트 색상 변경
+          d3.selectAll<SVGTextElement, Bubble>('circle')
+            .filter((textData: Bubble) => textData.id === d.id)
+            .style('fill', '#8E98A9');
+
+          // cnt 텍스트 추가
+          svg
+            .append('text')
+            .attr('class', `cnt-${d.id}`)
+            .attr('text-anchor', 'middle')
+            .attr('dominant-baseline', 'middle')
+            .attr('fill', '#000')
+            .text(d.cnt)
+            .attr('x', d.x || 0)
+            .attr('y', (d.y || 0) + 8) // cnt 위치 조정
+            .style('font-family', 'Pretendard, sans-serif')
+            .style('font-weight', '500')
+            .style('font-size', '1rem')
+            .style('fill', '#FFFFFF');
+
+          d3.selectAll<SVGTextElement, Bubble>('text.stack')
+            .filter((textData: Bubble) => textData.id === d.id)
+            .attr('y', (d.y || 0) - 6); // stack 텍스트를 원 위로 이동
+        }
+      })
+      .on('mouseout', function (event, d) {
+        if (d.id <= 5) {
+          d3.select(this).style('fill', '#1D3152');
+
+          // stack 텍스트 색상 복원
+          d3.selectAll<SVGTextElement, Bubble>('circle')
+            .filter((textData: Bubble) => textData.id === d.id)
+            .style('fill', '#EDF0F5');
+
+          // cnt 텍스트 제거
+          svg.selectAll(`.cnt-${d.id}`).remove();
+
+          // stack 텍스트 원래 위치로 복원
+          d3.selectAll<SVGTextElement, Bubble>('text.stack')
+            .filter((textData: Bubble) => textData.id === d.id)
+            .attr('y', d.y || 0);
+        }
+      });
 
     function ticked() {
       node.attr('cx', (d) => d.x || 0).attr('cy', (d) => d.y || 0);
