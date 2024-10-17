@@ -64,11 +64,11 @@ export const MultiSelect = ({
         </S.InputButtonBox>
         {isOpen ? (
           <S.IconWrapper onClick={handleIconClick}>
-            <ArrowDownIcon />
+            <ArrowUpIcon />
           </S.IconWrapper>
         ) : (
           <S.IconWrapper onClick={handleIconClick}>
-            <ArrowUpIcon />
+            <ArrowDownIcon />
           </S.IconWrapper>
         )}
       </S.ItemInput>
