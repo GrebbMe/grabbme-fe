@@ -2,7 +2,6 @@ import { useState } from 'react';
 import * as S from '@/app/layout/Header.style';
 import { ProfileIcon } from '@/shared/assets';
 import logo from '@/shared/assets/image/logo.png';
-import { Button, CountBox } from '@/shared/ui';
 
 export const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
