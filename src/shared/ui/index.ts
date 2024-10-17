@@ -2,3 +2,5 @@ export { Select } from '@/shared/ui/select/Select';
 export { RemoveButton } from '@/shared/ui/select/RemoveButton';
 export { AddButton } from '@/shared/ui/select/AddButton';
 export { default as Button } from '@/shared/ui/button/Button';
+export { default as Tag } from '@/shared/ui/tag/Tag';
+export { default as CountLabel } from '@/shared/ui/countLabel/CountLabel';
