@@ -1,6 +1,8 @@
 export const routerPath = {
   LOGIN: 'login',
   SIGNUP: 'signup',
+  PROJECT: 'project',
+  GRABB_ZONE: 'grabbzone',
   MYPAGE: 'mypage',
   MY_PROFILE: 'profile',
   MY_POSTS: 'posts',
