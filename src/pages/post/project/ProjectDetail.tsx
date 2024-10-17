@@ -97,7 +97,7 @@ export const ProjectDetail = () => {
   useEffect(() => {
     const loadBoardData = async () => {
       try {
-        const res = await axios.get(`https://grabbme.store/api/board/${id}`);
+        const res = await axios.get(`https://grabbme.vercel.app/board/project/${id}`);
         const { data } = res.data;
         setDetail({
           ...data,
