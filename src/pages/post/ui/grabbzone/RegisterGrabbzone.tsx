@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Editor } from '@/features/post';
 import fetchMultiSelect from '@/pages/post/lib/fetchMultiSelect';
 import { getContentLength } from '@/pages/post/lib/getContentLength';
-import { useRegisterGrabbzone } from '@/pages/post/model/useRegisterGrabbZone';
+import { useRegisterGrabbzone } from '@/pages/post/model/useRegisterGrabbzone';
 import * as S from '@/pages/post/ui/grabbzone/RegisterGrabbzone.style';
 import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { useModal } from '@/shared/hooks/useModal';
