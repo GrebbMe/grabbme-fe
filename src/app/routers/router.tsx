@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { DashboardLayout, MainLayout } from '@/app/layout';
 import { SignUp } from '@/pages/auth';
 import Home from '@/pages/home/ui/Home';
-import { MyProfile, MyPosts, MyProjects, MyBookmarks } from '@/pages/mypage';
+import { MyProfilePage, MyPostPage, MyProjectPage, MyBookmarkPage } from '@/pages/mypage';
 import { GrabbZone, GrabbZoneDetail, Project, ProjectDetail } from '@/pages/post';
 import RegisterGrabbzone from '@/pages/post/ui/grabbzone/RegisterGrabbzone';
 import RegisterProject from '@/pages/post/ui/project/RegisterProject';
@@ -33,27 +33,31 @@ export const router = createBrowserRouter([
       { path: routerPath.PROJECT_DETAIL, element: <ProjectDetail /> },
       { path: routerPath.GRABB_ZONE, element: <GrabbZone /> },
       { path: routerPath.GRABB_ZONE_DETAIL, element: <GrabbZoneDetail /> },
+    ],
+  },
+  {
+    path: routerPath.MYPAGE,
+    element: <MainLayout />,
+    children: [
       {
-        path: routerPath.MYPAGE,
-        element: <MainLayout />,
-        children: [
-          {
-            path: routerPath.MY_PROFILE,
-            element: <MyProfile />,
-          },
-          {
-            path: routerPath.MY_POSTS,
-            element: <MyPosts />,
-          },
-          {
-            path: routerPath.MY_BOOKMARKS,
-            element: <MyBookmarks />,
-          },
-          {
-            path: routerPath.MY_PROJECTS,
-            element: <MyProjects />,
-          },
-        ],
+        index: true,
+        element: <MyProfilePage />,
+      },
+      {
+        path: routerPath.MY_PROFILE,
+        element: <MyProfilePage />,
+      },
+      {
+        path: routerPath.MY_POSTS,
+        element: <MyPostPage />,
+      },
+      {
+        path: routerPath.MY_BOOKMARKS,
+        element: <MyBookmarkPage />,
+      },
+      {
+        path: routerPath.MY_PROJECTS,
+        element: <MyProjectPage />,
       },
     ],
   },
