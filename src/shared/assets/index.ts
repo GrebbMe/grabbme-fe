@@ -27,3 +27,4 @@ export { default as IcMinus } from '@/shared/assets/svg/IcMinus.svg?react';
 export { default as IcPlus } from '@/shared/assets/svg/IcPlusBig.svg?react';
 export { default as IcTrash } from '@/shared/assets/svg/IcTrash.svg?react';
 export { default as IcSearch } from '@/shared/assets/svg/IcSearch.svg?react';
+export { default as IcCloseSmall } from '@/shared/assets/svg/IcCloseSmall.svg?react';

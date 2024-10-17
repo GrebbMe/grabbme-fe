@@ -44,7 +44,7 @@ export const Select = ({
     <S.DropdownContainer ref={containerRef} size={size}>
       <S.DropdownHeader onClick={toggleDropdown} $isOpen={isOpen} $selectedId={selected?.id ?? 0}>
         {selected ? selected.label : <S.Placeholder>{placeholder}</S.Placeholder>}
-        {isOpen ? <ArrowDown /> : <ArrowUp />}
+        {isOpen ? <ArrowUp /> : <ArrowDown />}
       </S.DropdownHeader>
       {isOpen && (
         <S.DropdownListContainer>

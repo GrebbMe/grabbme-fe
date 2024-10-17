@@ -18,11 +18,17 @@ export const StyledButton = styled.button`
   stroke: ${({ theme }) => theme.color.BLUE_50};
   height: 2.8rem;
 
+  svg {
+    color: ${({ theme }) => theme.color.BLUE_50};
+  }
   &:hover {
     background-color: ${({ theme }) => theme.color.BLUE_30};
     border: 0.1rem solid ${({ theme }) => theme.color.PRIMARY_BLUE};
     color: ${({ theme }) => theme.color.PRIMARY_BLUE};
     stroke: ${({ theme }) => theme.color.PRIMARY_BLUE};
     height: 2.8rem;
+    svg {
+      color: ${({ theme }) => theme.color.PRIMARY_BLUE};
+    }
   }
 `;
