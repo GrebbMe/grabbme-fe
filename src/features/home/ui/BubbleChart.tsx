@@ -43,7 +43,7 @@ const BubbleChart: React.FC = () => {
     const simulation = d3
       .forceSimulation<Bubble>(data)
       .force('charge', d3.forceManyBody().strength(0))
-      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('center', d3.forceCenter(width / 2, height / 2 - 7))
       .force(
         'collision',
         d3.forceCollide<Bubble>().radius((d) => d.radius + 1.2),

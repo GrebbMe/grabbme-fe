@@ -2,12 +2,9 @@ import { useCallback } from 'react';
 import IcGithubFilld from '@/shared/assets/svg/IcGithubFilled.svg?react';
 import { Button } from '@/shared/ui';
 
-const CLIENT_ID: string = import.meta.env.VITE_GITHUB_LOGIN_CLIENT_ID;
-const REDIRECT_URI: string = 'http://localhost:5173';
-
 export const SocialLogin = () => {
   const authroizeGithubLogin = useCallback((): void => {
-    const url: string = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=read:user user:email`;
+    const url: string = `https://grabbme.store/api/auth/github`;
     window.location.href = url;
   }, []);
 

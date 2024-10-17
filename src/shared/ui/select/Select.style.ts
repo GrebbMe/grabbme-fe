@@ -8,7 +8,7 @@ export const DropdownContainer = styled.div<{ size: 'sm' | 'md' | 'lg' }>`
   }
 `;
 
-export const DropdownHeader = styled.div<{ $isOpen: boolean }>`
+export const DropdownHeader = styled.div<{ $isOpen: boolean; $selectedId: number }>`
   height: 4.8rem;
   padding: 0 1.6rem;
   border: 0.1rem solid ${({ theme }) => theme.color.GRAY_30};
@@ -21,7 +21,8 @@ export const DropdownHeader = styled.div<{ $isOpen: boolean }>`
   border-color: ${({ $isOpen, theme }) => ($isOpen ? theme.color.BLUE_50 : theme.color.GRAY_30)};
   border-bottom-width: ${({ $isOpen }) => $isOpen && '0.05rem'};
   ${({ theme }) => theme.typo.CAPTION_14};
-  color: ${({ theme }) => theme.color.BLACK_80};
+  color: ${({ theme, $selectedId }) =>
+    $selectedId < 0 ? theme.color.GRAY_50 : theme.color.BLACK_80};
 
   ${({ theme }) => theme.device.MOBILE} {
     height: 4.2rem;

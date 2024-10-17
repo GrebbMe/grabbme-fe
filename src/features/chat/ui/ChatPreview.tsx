@@ -9,6 +9,7 @@ interface ChatPreviewProps {
   time: string;
   profileImageUrl?: string;
   isRead: boolean;
+  onClick: () => void;
 }
 
 const ChatPreview = ({

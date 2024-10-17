@@ -23,6 +23,10 @@ export { default as IcChatSmall } from '@/shared/assets/svg/IcChatSmall.svg?reac
 export { default as IcViewSmall } from '@/shared/assets/svg/IcViewSmall.svg?react';
 export { default as IcSmallChat } from '@/shared/assets/svg/IcSmallChat.svg?react';
 export { default as IcView } from '@/shared/assets/svg/IcView.svg?react';
+export { default as IcMinus } from '@/shared/assets/svg/IcMinus.svg?react';
+export { default as IcPlus } from '@/shared/assets/svg/IcPlusBig.svg?react';
+export { default as IcTrash } from '@/shared/assets/svg/IcTrash.svg?react';
 export { default as IcSearch } from '@/shared/assets/svg/IcSearch.svg?react';
+export { default as IcCloseSmall } from '@/shared/assets/svg/IcCloseSmall.svg?react';
 export { default as IcArrowLeft } from '@/shared/assets/svg/IcArrowLeft.svg?react';
 export { default as IcArrowRight } from '@/shared/assets/svg/IcArrowRight.svg?react';
