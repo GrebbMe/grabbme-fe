@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { DashboardLayout, MainLayout } from '@/app/layout';
 import { SignUp } from '@/pages/auth';
+import Home from '@/pages/home/ui/Home';
 import { MyProfilePage, MyBookmarkPage, MyPostPage, MyProjectPage } from '@/pages/mypage';
 import { GrabbZone, Project } from '@/pages/post';
-import Home from '@/pages/home/ui/Home';
 import { GrabbZone, GrabbZoneDetail, Project, ProjectDetail } from '@/pages/post';
 import RegisterGrabbzone from '@/pages/post/ui/grabbzone/RegisterGrabbzone';
 import RegisterProject from '@/pages/post/ui/project/RegisterProject';
