@@ -69,7 +69,7 @@ export const GrabbZoneDetail = () => {
   useEffect(() => {
     const loadBoardData = async () => {
       try {
-        const res = await axios.get(`https://grabbme.store/api/board/${id}`);
+        const res = await axios.get(`https://grabbme.vercel.app/board/grabbzone/${id}`);
         setDetail({ ...res.data.data });
       } catch (error) {
         showModal({
