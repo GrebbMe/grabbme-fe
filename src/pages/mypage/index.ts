@@ -1,4 +1,4 @@
-export { default as MyBookmarks } from './ui/MyBookmarks';
-export { default as MyPosts } from './ui/MyPosts';
-export { default as MyProfile } from './ui/MyProfile';
-export { default as MyProjects } from './ui/MyProjects';
+export { default as MyBookmarkPage } from './ui/MyBookmarkPage.tsx';
+export { default as MyPostPage } from './ui/MyPostPage.tsx';
+export { default as MyProfilePage } from './ui/MyProfilePage.tsx';
+export { default as MyProjectPage } from './ui/MyProjectPage.tsx';
