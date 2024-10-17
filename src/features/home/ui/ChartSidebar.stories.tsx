@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ChartSidebar } from './ChartSidebar';
 
 const meta: Meta<typeof ChartSidebar> = {
-  title: 'component/home/ChartButton',
+  title: 'component/feature/ChartButton',
   component: ChartSidebar,
   parameters: {
     layout: 'centered',
