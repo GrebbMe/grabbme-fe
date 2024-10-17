@@ -3,13 +3,9 @@ import { DashboardLayout, MainLayout } from '@/app/layout';
 import { SignUp } from '@/pages/auth';
 import Home from '@/pages/home/ui/Home';
 import { MyProfile, MyPosts, MyProjects, MyBookmarks } from '@/pages/mypage';
-<<<<<<< HEAD
 import { GrabbZone, GrabbZoneDetail, Project, ProjectDetail } from '@/pages/post';
 import RegisterGrabbzone from '@/pages/post/ui/grabbzone/RegisterGrabbzone';
 import RegisterProject from '@/pages/post/ui/project/RegisterProject';
-=======
-import { GrabbZone, Project } from '@/pages/post';
->>>>>>> 557644a (merge : 병합)
 import { routerPath } from '@/shared';
 
 export const router = createBrowserRouter([
