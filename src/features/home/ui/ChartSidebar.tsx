@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { RecentStackButton, SidebarContainer, TotalApplicationsButton } from './ChartSidebar.style';
 
-export const ChartSidebar = () => {
+interface ChartSidebarProps {
+  setMenu: Dispatch<SetStateAction<'stack' | 'apply'>>;
+}
+
+export const ChartSidebar: React.FC<ChartSidebarProps> = ({ setMenu }) => {
   const [isActive, setIsActive] = useState(true);
 
   const handleClick = (buttonName: 'stack' | 'apply'): void => {
     setIsActive(buttonName === 'stack');
+    setMenu(buttonName);
   };
 
   return (

@@ -1,4 +1,5 @@
 export const routerPath = {
+  HOME: '',
   LOGIN: 'login',
   SIGNUP: 'signup',
   REGISTER_GRABBZONE: 'register/grabbzone',

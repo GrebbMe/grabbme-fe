@@ -24,6 +24,11 @@ export const GridWrapper = styled.div`
   }
 `;
 
+export const DashboardGridWrapper = styled.div`
+  margin: 0 auto;
+  column-gap: 2.4rem;
+`;
+
 export const GridContainer = styled.div`
   display: grid;
   margin: 0 auto;
