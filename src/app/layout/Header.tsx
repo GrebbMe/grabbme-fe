@@ -21,7 +21,7 @@ export const Header = () => {
   return (
     <S.HeaderContainer>
       <S.GridWrapper>
-        <S.Logo to="#">
+        <S.Logo to="/">
           <img src={logo} alt="Logo" />
         </S.Logo>
         <S.ProjectNavigator to="/project">프로젝트</S.ProjectNavigator>

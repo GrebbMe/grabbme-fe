@@ -16,7 +16,7 @@ interface CareerCategory {
 
 interface StackCategory {
   stack_category_id: number;
-  kor_name: string;
+  name: string;
 }
 
 interface ProjectCategory {
@@ -75,7 +75,7 @@ export const useFetchCategories = (): CategoryData => {
           stackRes.data.data.map(
             (item: StackCategory): SelectItem => ({
               id: item.stack_category_id,
-              item: item.kor_name,
+              item: item.name,
             }),
           ),
         );

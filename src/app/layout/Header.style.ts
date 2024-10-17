@@ -59,7 +59,7 @@ export const GridWrapper = styled.div`
   column-gap: 2.4rem;
   max-width: 122.4rem;
 
-  ${({ theme }) => theme.device.TABLET} {
+  /* ${({ theme }) => theme.device.TABLET} {
     grid-template-columns: repeat(6, 1fr);
     column-gap: 2.4rem;
     margin: 2.4rem;
@@ -69,5 +69,5 @@ export const GridWrapper = styled.div`
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.6rem;
     margin: 1.6rem;
-  }
+  } */
 `;

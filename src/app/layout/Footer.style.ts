@@ -66,7 +66,7 @@ export const FooterWrapper = styled.div`
   grid-template-columns: repeat(12, 8rem);
   column-gap: 2.4rem;
   max-width: 122.4rem;
-
+  /* 
   ${({ theme }) => theme.device.TABLET} {
     grid-template-columns: repeat(6, 1fr);
     column-gap: 2.4rem;
@@ -77,5 +77,5 @@ export const FooterWrapper = styled.div`
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1.6rem;
     margin: 1.6rem;
-  }
+  } */
 `;
