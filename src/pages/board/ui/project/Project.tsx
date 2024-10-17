@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom';
 import { BoardCardProps, Pagination, SearchBar, StackSearch } from '@/features/board/ui';
 import * as S from '@/pages/board/ui/project/Project.style';
 import { IcPost } from '@/shared/assets';
@@ -63,6 +64,7 @@ const EXAMPLE_POST_PAGE_3: BoardCardProps[] = [
 ];
 
 const Project = () => {
+  const [searchParams] = useSearchParams();
   return (
     <>
       <S.Header>관심있는 스택을 가진 그래퍼를 찾아보세요!</S.Header>

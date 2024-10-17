@@ -24,6 +24,6 @@ export const getBoardPosts = async ({ search, stack, page = 1 }: GetBoardPostsPa
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    throw error;
+    console.log('임시 에러 처리', error);
   }
 };
