@@ -2,7 +2,7 @@ import { StackData } from '@/features/home/model/topFiveStacks.model';
 
 export const getTopFiveStack = async (): Promise<StackData[] | undefined> => {
   try {
-    const response: Response = await fetch('/data/top5Stacks.json', {
+    const response: Response = await fetch('/data/topFiveStacks.json', {
       method: 'GET',
     });
 
