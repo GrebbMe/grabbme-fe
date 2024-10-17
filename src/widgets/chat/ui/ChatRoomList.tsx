@@ -1,6 +1,7 @@
 import * as S from './ChatRoomList.style.ts';
 import { ChatPreview } from '@/features/chat';
-import { sortChatRooms } from '@/widgets/chat/lib/sortChatRooms.ts';
+import { useChatNavigationStore } from '@/shared/stores/chatNavigationStore';
+import { sortChatRooms } from '@/widgets/chat/lib/sortChatRooms';
 
 export interface ChatRoom {
   nickname: string;
@@ -19,6 +20,12 @@ interface ChatRoomListProps {
 const ChatRoomList = ({ rooms, newMessagesCount }: ChatRoomListProps) => {
   const sortedRooms = sortChatRooms(rooms);
 
+  const { openChatRoom } = useChatNavigationStore();
+
+  const handleRoomClick = (roomId: string) => {
+    openChatRoom(roomId);
+  };
+
   return (
     <S.ChatRoomContainer>
       <S.ChatRoomWrapper>
@@ -36,6 +43,7 @@ const ChatRoomList = ({ rooms, newMessagesCount }: ChatRoomListProps) => {
               time={room.time}
               profileImageUrl={room.profileImageUrl}
               isRead={room.isRead}
+              onClick={() => handleRoomClick(room.title)}
             />
           ))}
         </S.ChatList>

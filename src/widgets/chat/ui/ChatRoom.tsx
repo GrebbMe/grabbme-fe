@@ -2,13 +2,20 @@ import React from 'react';
 import * as S from './ChatRoom.style.ts';
 import ChatInput from '@/features/chat/ui/ChatInput.tsx';
 import { IcBack } from '@/shared/assets';
+import { useChatNavigationStore } from '@/shared/stores/chatNavigationStore';
 
 const ChatRoom = () => {
+  const { openChatRoomList } = useChatNavigationStore();
+
+  const handleBackClick = () => {
+    openChatRoomList();
+  };
+
   return (
     <S.ChatRoomContainer>
       <S.TitleWrapper>
         <S.TitleBox>
-          <S.IconBack>
+          <S.IconBack onClick={handleBackClick}>
             <IcBack />
           </S.IconBack>
           <S.LabelBox>
