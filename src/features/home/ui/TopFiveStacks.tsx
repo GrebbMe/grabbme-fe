@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import * as S from './TopFiveStacks.style.ts';
+import * as S from './TopFiveStacks.style';
 import { getTopFiveStack } from '@/features/home/api/topFiveStacks.api';
 import { StackData } from '@/features/home/model/stack.model';
 
