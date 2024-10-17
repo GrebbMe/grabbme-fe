@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import { useState } from 'react';
-import * as S from './ChartHeader.style';
+import * as S from './ChartHeader.style.ts';
 import { handleAddMonth, handleSubMonth } from '@/features/home/lib/monthUtils';
 import { IcArrowNext, IcArrowPrev } from '@/shared/assets/svg';
 
