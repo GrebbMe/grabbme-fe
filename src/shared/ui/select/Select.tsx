@@ -42,7 +42,7 @@ export const Select = ({
 
   return (
     <S.DropdownContainer ref={containerRef} size={size}>
-      <S.DropdownHeader onClick={toggleDropdown} isOpen={isOpen}>
+      <S.DropdownHeader onClick={toggleDropdown} $isOpen={isOpen}>
         {selected ? selected.label : <S.Placeholder>{placeholder}</S.Placeholder>}
         {isOpen ? <ArrowDown /> : <ArrowUp />}
       </S.DropdownHeader>
@@ -52,7 +52,7 @@ export const Select = ({
             <S.DropdownListItem
               key={item.id}
               onClick={() => handleItemClick(item)}
-              isSelected={selected ? item.id === selected.id : false}
+              $isSelected={selected ? item.id === selected.id : false}
             >
               {item.label}
             </S.DropdownListItem>

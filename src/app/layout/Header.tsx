@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import * as S from '@/app/layout/Header.style';
+import { SocialLogin } from '@/features/auth';
 import { ProfileIcon } from '@/shared/assets';
 import logo from '@/shared/assets/image/logo.png';
-import { Button, CountBox } from '@/shared/ui';
 
 export const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,6 +13,10 @@ export const Header = () => {
   const handleLoginClick = () => {
     setIsLoggedIn(true);
   };
+
+  //! 쿠키의 accessToken이 유효한지 확인 후, 로그인 상태 설정
+  // useEffect(() => {
+  // }, []);
 
   return (
     <S.HeaderContainer>
@@ -28,7 +32,9 @@ export const Header = () => {
             <span>{userName} 님</span>
           </S.ProfileBox>
         ) : (
-          <S.LoginBox></S.LoginBox>
+          <S.LoginBox>
+            <SocialLogin />
+          </S.LoginBox>
         )}
       </S.GridWrapper>
     </S.HeaderContainer>
