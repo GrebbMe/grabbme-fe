@@ -25,6 +25,8 @@ type ContentCardProps = {
   viewCount: number;
   bookmarkCount: number;
   commentCount: number;
+  name: string;
+  role: string;
 } & (GrabbzoneCardProps | RecruitCardProps | MyProjectCardProps);
 
 const ContentCard = ({
