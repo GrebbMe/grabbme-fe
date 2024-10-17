@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as S from '@/features/board/ui/boardCard/BoardCard.style';
-import { convertIdToStackName } from '@/pages/board/model/convertIdtoStackName';
 import { IcBookmark, IcViewSmall, IcBookmarkSmall, IcChatSmall } from '@/shared/assets';
-import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { Button, CountLabel, Tag } from '@/shared/ui';
 import { SelectItem } from '@/shared/ui/select/MultiSelect';
 
@@ -30,16 +28,17 @@ const BoardCard = ({
   chatCount,
   isBookmarked,
 }: BoardCard) => {
-  const { techStackList, isLoading } = useFetchCategories();
+  // const { techStackList, isLoading } = useFetchCategories();
   const [stackNames, setStackNames] = useState<SelectItem[]>([]);
 
-  useEffect(() => {
-    if (!isLoading && techStackList.length > 0) {
-      const convertedStacks = convertIdToStackName(stacks, techStackList);
-      setStackNames(convertedStacks);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading]);
+  //TODO : 테스트 코드 API 연동 후 삭제 필요
+  // useEffect(() => {
+  //   if (!isLoading && techStackList.length > 0) {
+  //     const convertedStacks = convertIdToStackName(stacks, techStackList);
+  //     setStackNames(convertedStacks);
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isLoading]);
 
   return (
     <>
