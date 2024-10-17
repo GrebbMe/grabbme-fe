@@ -24,3 +24,5 @@ export { default as IcViewSmall } from '@/shared/assets/svg/IcViewSmall.svg?reac
 export { default as IcSmallChat } from '@/shared/assets/svg/IcSmallChat.svg?react';
 export { default as IcView } from '@/shared/assets/svg/IcView.svg?react';
 export { default as IcSearch } from '@/shared/assets/svg/IcSearch.svg?react';
+export { default as IcArrowLeft } from '@/shared/assets/svg/IcArrowLeft.svg?react';
+export { default as IcArrowRight } from '@/shared/assets/svg/IcArrowRight.svg?react';
