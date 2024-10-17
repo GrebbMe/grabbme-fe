@@ -1,5 +1,6 @@
 export const color = {
   PRIMARY_BLUE: '#1D3152',
+  LIGHT_BLUE: '#D3DEF0',
   POINT_PINK: '#F14F4F',
   LIGHT_PINK: '#F9EAEC',
   WHITE: '#FFFFFF',
