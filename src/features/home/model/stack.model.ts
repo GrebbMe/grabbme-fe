@@ -1,5 +1,5 @@
 export interface StackData {
-  id: number;
+  rank: number;
   stackName: string;
   peopleCount: string;
 }

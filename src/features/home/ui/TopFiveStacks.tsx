@@ -9,9 +9,7 @@ const TopFiveStacks = () => {
 
   useEffect((): void => {
     getTopFiveStack()
-      .then((data) => {
-        setTopFiveData(data);
-      })
+      .then(setTopFiveData)
       .catch((err) => {
         console.error(err);
       });
@@ -20,13 +18,13 @@ const TopFiveStacks = () => {
   return (
     <S.TopFiveStacksContainer>
       <S.SubTitle>TOP 5 인기 스택</S.SubTitle>
-      {topFiveData?.map((data) => (
-        <S.RankContainer>
+      {topFiveData?.map(({ rank, stackName, peopleCount }) => (
+        <S.RankContainer key={rank}>
           <div>
-            <S.Rank>{data.id}</S.Rank>
-            <S.StackName>{data.stackName}</S.StackName>
+            <S.Rank>{rank}</S.Rank>
+            <S.StackName>{stackName}</S.StackName>
           </div>
-          <S.PeopleCount>{data.peopleCount}</S.PeopleCount>
+          <S.PeopleCount>{peopleCount}</S.PeopleCount>
         </S.RankContainer>
       ))}
     </S.TopFiveStacksContainer>
