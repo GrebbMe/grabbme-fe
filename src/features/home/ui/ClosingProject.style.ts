@@ -10,6 +10,7 @@ export const ProjectContainer = styled.div`
   border: 0.1rem solid ${({ theme }) => theme.color.GRAY_30};
   border-radius: 0.8rem;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
 
   &:hover {
     border-color: ${({ theme }) => theme.color.BLUE_50};
