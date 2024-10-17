@@ -1,5 +1,6 @@
 import { IcMinus, IcPlus, IcTrash } from '@/features/post';
 import * as S from '@/features/post/ui/positionManage/PositionWithCount.style';
+import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import Select, { SelectListItem } from '@/shared/ui/select/Select';
 
 export interface Position extends SelectListItem {
@@ -13,21 +14,14 @@ interface SelectListWithCountProps {
   setTotalCount: (newTotalCount: number) => void;
 }
 
-const POSITION_LIST: SelectListItem[] = [
-  { id: 0, label: 'Option 0' },
-  { id: 1, label: 'Option 1' },
-  { id: 2, label: 'Option 2' },
-  { id: 3, label: 'Option 3' },
-  { id: 4, label: 'Option 4' },
-  { id: 5, label: 'Option 5' },
-];
-
 const PositionWithCount = ({
   positions,
   setPositions,
   totalCount,
   setTotalCount,
 }: SelectListWithCountProps) => {
+  const { jobPosition } = useFetchCategories();
+
   const handleAddPosition = () => {
     if (positions.length < 5 && totalCount < 10) {
       const newItem = { id: -Date.now(), label: '', count: 1 };
@@ -78,7 +72,7 @@ const PositionWithCount = ({
     }
   };
 
-  const availablePositions = POSITION_LIST.filter(
+  const availablePositions = jobPosition.filter(
     (item) => !positions.some((selected) => selected.id === item.id),
   );
 

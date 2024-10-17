@@ -4,55 +4,11 @@ import { DeadlineCalendar } from '@/features/post/ui/deadlineCalendar';
 import { Editor } from '@/features/post/ui/editor/Editor';
 import { Position } from '@/features/post/ui/positionManage/PositionWithCount';
 import { ProjectPeriod } from '@/features/post/ui/projectPeriod';
+import { getContentLength } from '@/pages/post/lib/getContentLength';
 import * as S from '@/pages/post/ui/project/RegisterProject.style';
+import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
 import { Button, TitleBar, TextField } from '@/shared/ui';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
-
-const CAREER = [
-  { id: 1, label: '1-2년차' },
-  { id: 2, label: '3-5년차' },
-  { id: 3, label: '5-7년차' },
-  { id: 4, label: '7년차 이상' },
-];
-
-const JOB = [
-  { id: 1, label: '프론트엔드' },
-  { id: 2, label: '백엔드' },
-  { id: 3, label: '웹 디자이너' },
-  { id: 4, label: '데이터 엔지니어' },
-  { id: 5, label: '풀스택' },
-  { id: 6, label: '기획자' },
-  { id: 7, label: '기타' },
-];
-
-const CATEGORY = [
-  { id: 1, item: '웹 개발' },
-  { id: 2, item: '앱 개발' },
-  { id: 3, item: '데이터 엔지니어링/사이언스' },
-  { id: 4, item: '인공지능/머신러닝' },
-  { id: 5, item: '클라우드 컴퓨팅' },
-  { id: 6, item: '기타' },
-];
-
-const STACK = [
-  { id: 1, item: 'Svelte' },
-  { id: 2, item: 'Bootstrap' },
-  { id: 3, item: 'NestJs' },
-  { id: 4, item: 'Express' },
-  { id: 5, item: 'Django' },
-  { id: 6, item: 'Spring Boot' },
-  { id: 7, item: 'Laravel' },
-  { id: 8, item: 'Fast API' },
-  { id: 9, item: 'Flask' },
-  { id: 10, item: 'Node.js' },
-  { id: 11, item: 'MySQL' },
-  { id: 12, item: 'PostgreSQL' },
-  { id: 13, item: 'Docker' },
-  { id: 14, item: 'Ruby on Rails' },
-  { id: 15, item: 'ElasticSearch' },
-  { id: 16, item: 'Terraform' },
-  { id: 17, item: 'GraphQL' },
-];
 
 const RegisterProject = () => {
   const [title, setTitle] = useState('');
@@ -64,6 +20,7 @@ const RegisterProject = () => {
   const [deadline, setDeadline] = useState<Date | null>(new Date());
   const [positions, setPositions] = useState<Position[]>([{ id: -1, label: '', count: 1 }]);
   const [totalCount, setTotalCount] = useState(1);
+  const { techStackList, categoryList } = useFetchCategories();
 
   const handleTitleChange = (e: string) => {
     setTitle(e);
@@ -86,13 +43,6 @@ const RegisterProject = () => {
 
   const handleSetTotalCount = (newTotalCount: number) => {
     setTotalCount(newTotalCount);
-  };
-
-  const getContentLength = (htmlString: string): number => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, 'text/html');
-    console.log(doc.body.textContent?.length);
-    return doc.body.textContent?.length || 0;
   };
 
   return (
@@ -122,7 +72,7 @@ const RegisterProject = () => {
           count={category.length}
         />
         <MultiSelect
-          items={CATEGORY}
+          items={categoryList}
           selectLimit={3}
           selectedItems={category}
           onClickSelectedItems={handleCategory}
@@ -137,7 +87,7 @@ const RegisterProject = () => {
           count={stack.length}
         />
         <MultiSelect
-          items={STACK}
+          items={techStackList}
           selectLimit={5}
           selectedItems={stack}
           onClickSelectedItems={handleStack}

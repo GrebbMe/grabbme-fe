@@ -21,8 +21,8 @@ export const Header = () => {
         <S.Logo to="#">
           <img src={logo} alt="Logo" />
         </S.Logo>
-        <S.ProjectNavigator to={routerPath.REGISTER_PROJECT}>프로젝트</S.ProjectNavigator>
-        <S.GrabbZoneNavigator to={routerPath.REGISTER_GRABBZONE}>그랩존</S.GrabbZoneNavigator>
+        <S.ProjectNavigator to={'#'}>프로젝트</S.ProjectNavigator>
+        <S.GrabbZoneNavigator to={'#'}>그랩존</S.GrabbZoneNavigator>
         {isLoggedIn ? (
           <S.ProfileBox>
             {profileImage ? <img src={profileImage} /> : <ProfileIcon />}
@@ -30,7 +30,9 @@ export const Header = () => {
           </S.ProfileBox>
         ) : (
           <S.LoginBox>
-            <Button onClick={handleLoginClick}>로그인</Button>
+            <Button variant={'sm'} onClick={handleLoginClick}>
+              로그인
+            </Button>
           </S.LoginBox>
         )}
       </S.GridWrapper>
