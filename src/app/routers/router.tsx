@@ -23,6 +23,10 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
+        index: true,
+        element: <MyProfilePage />,
+      },
+      {
         path: routerPath.MY_PROFILE,
         element: <MyProfilePage />,
       },
