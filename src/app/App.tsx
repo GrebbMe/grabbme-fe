@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { router } from '@/app/routers';
 import { GlobalStyle, theme } from '@/app/styles';
 import { Modal, Toast } from '@/shared';
+import { ChatSection } from '@/widgets/chat';
 
 const queryClient = new QueryClient({
   defaultOptions: {

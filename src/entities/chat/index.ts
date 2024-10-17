@@ -1,1 +1,1 @@
-// chat/index.ts
+export { default as FloatingButton } from './ui/FloatingButton';
