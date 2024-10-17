@@ -17,7 +17,7 @@ const RegisterProject = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [deadline, setDeadline] = useState<Date | null>(new Date());
-  const [positions, setPositions] = useState<Position[]>([{ id: -1, label: '', count: 1 }]);
+  const [positions, setPositions] = useState<Position[]>([{ id: -1, label: '선택', count: 1 }]);
   const [totalCount, setTotalCount] = useState(1);
   const { techStackList, categoryList } = useFetchCategories();
 

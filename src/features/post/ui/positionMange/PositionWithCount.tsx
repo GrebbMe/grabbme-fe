@@ -24,7 +24,7 @@ const PositionWithCount = ({
 
   const handleAddPosition = () => {
     if (positions.length < 5 && totalCount < 10) {
-      const newItem = { id: -Date.now(), label: '', count: 1 };
+      const newItem = { id: -Date.now(), label: '선택', count: 1 };
       setPositions([...positions, newItem]);
       setTotalCount(totalCount + 1);
     }
@@ -32,7 +32,7 @@ const PositionWithCount = ({
 
   const handleRemovePosition = (id: number) => {
     if (positions.length === 1) {
-      setPositions([{ id: -Date.now(), label: '', count: 1 }]);
+      setPositions([{ id: -Date.now(), label: '선택', count: 1 }]);
       setTotalCount(1);
       return;
     }
@@ -75,7 +75,7 @@ const PositionWithCount = ({
   const availablePositions = jobPosition.filter(
     (item) => !positions.some((selected) => selected.id === item.id),
   );
-
+  console.log(positions);
   return (
     <S.Container>
       {positions.map((position) => (
