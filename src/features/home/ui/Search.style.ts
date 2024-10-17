@@ -23,6 +23,7 @@ export const SearchBox = styled.div`
   border: 0.1rem solid ${({ theme }) => theme.color.BLUE_50};
   border-radius: 10rem;
   box-shadow: 0rem 0.2rem 1.6rem 0.2rem ${({ theme }) => theme.color.BLUE_50_25};
+  background-color: ${({ theme }) => theme.color.WHITE};
 `;
 
 export const InputBox = styled.input`
@@ -34,6 +35,7 @@ export const InputBox = styled.input`
   ::placeholder {
     color: ${({ theme }) => theme.color.GRAY_50};
   }
+  background-color: ${({ theme }) => theme.color.WHITE};
 `;
 
 export const Submit = styled.img`
