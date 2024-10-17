@@ -19,18 +19,22 @@ const ProfileDetail = ({ job, techStacks, categories, experience }: ProfileDetai
       <S.ProfileDetailWrapper>
         <S.SectionTitle>기술 스택</S.SectionTitle>
         <S.TagContent>
-          {techStacks.map((stack) => (
-            <ContentTag key={stack.id} label={stack.label} />
-          ))}
+          {techStacks && techStacks.length > 0 ? (
+            techStacks.map((stack) => <ContentTag key={stack.id} label={stack.label} />)
+          ) : (
+            <S.SectionContent>기술 스택 정보 없음</S.SectionContent>
+          )}
         </S.TagContent>
       </S.ProfileDetailWrapper>
 
       <S.ProfileDetailWrapper>
         <S.SectionTitle>선호 카테고리</S.SectionTitle>
         <S.TagContent>
-          {categories.map((category) => (
-            <ContentTag key={category.id} label={category.label} />
-          ))}
+          {categories && categories.length > 0 ? (
+            categories.map((category) => <ContentTag key={category.id} label={category.label} />)
+          ) : (
+            <S.SectionContent>선호 카테고리 정보 없음</S.SectionContent>
+          )}
         </S.TagContent>
       </S.ProfileDetailWrapper>
 

@@ -4,24 +4,51 @@ import { Button } from '@/shared/ui';
 import { ProfileDetail, UserProfile } from '@/widgets/user';
 
 const MyProfilePage = () => {
-  const email = 'github@github.com';
-  const nickname = '양유나';
+  const userProfile = {
+    data: {
+      email: 'una33235@github.com',
+      nickname: 'yuna',
+      stack_category_id: ['1', '2', '3', '4', '5'],
+      project_category_id: [],
+      position_category_id: {
+        position_category_id: 1,
+        name: 'Frontend Developer',
+        kor_name: '프론트엔드 개발자',
+        abbreviation: 'FE',
+      },
+      career_category_id: {
+        career_category_id: 1,
+        content: '0년차',
+      },
+    },
+  };
 
-  const job = 'UX/UI 디자이너';
-  const techStacks = [
-    { id: '1', label: 'Figma' },
-    { id: '2', label: 'Adobe XD' },
-    { id: '3', label: 'Sketch' },
+  const stackNames = [
+    { id: '1', label: 'React' },
+    { id: '2', label: 'TypeScript' },
+    { id: '3', label: 'JavaScript' },
+    { id: '4', label: 'CSS' },
+    { id: '5', label: 'HTML' },
   ];
-  const categories = [
-    { id: '1', label: '디자인' },
-    { id: '2', label: '프론트엔드' },
+
+  const projectNames = [
+    { id: '1', label: '기타' },
+    { id: '2', label: '이커머스' },
+    { id: '3', label: 'B2B' },
   ];
-  const experience = '5년';
 
   const handleLogout = () => {
     alert('회원 탈퇴가 완료되었습니다.');
   };
+
+  const job = userProfile.data.position_category_id.kor_name;
+
+  const techStacks = stackNames.length ? stackNames : [{ id: '0', label: '기술 스택 정보 없음' }];
+  const categories = projectNames.length
+    ? projectNames
+    : [{ id: '0', label: '카테고리 정보 없음' }];
+
+  const experience = userProfile.data.career_category_id.content;
 
   return (
     <>
@@ -29,7 +56,11 @@ const MyProfilePage = () => {
         <Sidebar />
       </S.SidebarContainer>
       <S.MyPageContainer>
-        <UserProfile email={email} nickname={nickname} onLogout={handleLogout} />
+        <UserProfile
+          email={userProfile.data.email}
+          nickname={userProfile.data.nickname}
+          onLogout={handleLogout}
+        />
         <S.DivideLine />
         <S.TitleWrapper>
           <S.TitleLabel>내 정보</S.TitleLabel>
