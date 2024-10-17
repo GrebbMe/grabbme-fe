@@ -4,42 +4,44 @@ import { truncateText } from '@/shared/lib/truncateText';
 
 interface ChatPreviewProps {
   nickname: string;
-  title: string;
-  lastMessage: string;
-  time: string;
-  profileImageUrl?: string;
+  name: string;
+  last_chat: string;
+  updated_at: string;
   isRead: boolean;
   onClick: () => void;
 }
 
 const ChatPreview = ({
   nickname,
-  title,
-  lastMessage,
-  time,
-  profileImageUrl,
+  name,
+  last_chat,
+  updated_at,
   isRead,
+  onClick,
 }: ChatPreviewProps) => {
   return (
-    <S.ChatPreviewContainer isRead={isRead}>
+    <S.ChatPreviewContainer onClick={onClick} isRead={isRead}>
       <S.ChatPreivewWrapepr>
-        {profileImageUrl ? (
+        {/* {profileImageUrl ? (
           <S.ProfileImage src={profileImageUrl} alt="profile" />
         ) : (
           <S.DefaultProfileIcon>
             <IcDefaultProfile />
           </S.DefaultProfileIcon>
-        )}
+        )} */}
+        <S.DefaultProfileIcon>
+          <IcDefaultProfile />
+        </S.DefaultProfileIcon>
         <S.ContentWrapper>
           <S.InfoBox>
             <S.NameLabel>{truncateText(nickname, 10)}</S.NameLabel>
             <S.Dot>•</S.Dot>
-            <S.TitleLabel>{truncateText(title, 10)}</S.TitleLabel>
+            <S.TitleLabel>{truncateText(name, 10)}</S.TitleLabel>
           </S.InfoBox>
           <S.MessageBox>
-            <S.MessageLabel>{truncateText(lastMessage, 10)}</S.MessageLabel>
+            <S.MessageLabel>{truncateText(last_chat, 10)}</S.MessageLabel>
             <S.Dot>•</S.Dot>
-            <S.TimeLabel>{time}</S.TimeLabel>
+            <S.TimeLabel>{updated_at}</S.TimeLabel>
           </S.MessageBox>
         </S.ContentWrapper>
       </S.ChatPreivewWrapepr>

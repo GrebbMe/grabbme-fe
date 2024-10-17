@@ -26,6 +26,7 @@ const App = () => {
         <GlobalStyle />
         <Toast />
         <Modal />
+        <ChatSection userId={4} />
         <ReactQueryDevtools initialIsOpen={false} />
         <RouterProvider router={router} />
       </ThemeProvider>

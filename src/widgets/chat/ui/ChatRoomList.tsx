@@ -1,24 +1,43 @@
 import * as S from './ChatRoomList.style.ts';
 import { ChatPreview } from '@/features/chat';
 import { useChatNavigationStore } from '@/shared/stores/chatNavigationStore';
-import { sortChatRooms } from '@/widgets/chat/lib/sortChatRooms';
+import { formatDate } from '@/shared/util/format.ts';
+
+export interface Data {
+  chatRoom: ChatRoom;
+  me: Me;
+  other: Others;
+}
 
 export interface ChatRoom {
+  channel_id: number;
+  users: number[];
+  name: string;
+  last_chat: string;
+  updated_at: string;
+  post_id: number;
+  post_name: string;
+  // profileImageUrl?: string;
+  // isRead: boolean;
+}
+
+export interface Me {
+  user_id: number;
   nickname: string;
-  title: string;
-  lastMessage: string;
-  time: string;
-  profileImageUrl?: string;
-  isRead: boolean;
+}
+
+export interface Others {
+  user_id: number;
+  nickname: string;
 }
 
 interface ChatRoomListProps {
-  rooms: ChatRoom[];
+  rooms: Data[];
   newMessagesCount: number;
 }
 
 const ChatRoomList = ({ rooms, newMessagesCount }: ChatRoomListProps) => {
-  const sortedRooms = sortChatRooms(rooms);
+  // const sortedRooms = sortChatRooms(rooms);
 
   const { openChatRoom } = useChatNavigationStore();
 
@@ -34,16 +53,15 @@ const ChatRoomList = ({ rooms, newMessagesCount }: ChatRoomListProps) => {
           <S.MessageLabel>{newMessagesCount}개의 새로운 메시지</S.MessageLabel>
         </S.TitleBox>
         <S.ChatList>
-          {sortedRooms.map((room) => (
+          {rooms.map((room) => (
             <ChatPreview
-              key={room.nickname}
-              nickname={room.nickname}
-              title={room.title}
-              lastMessage={room.lastMessage}
-              time={room.time}
-              profileImageUrl={room.profileImageUrl}
-              isRead={room.isRead}
-              onClick={() => handleRoomClick(room.title)}
+              key={room.chatRoom.channel_id}
+              nickname={room.other.nickname}
+              name={room.chatRoom.post_name}
+              last_chat={room.chatRoom.last_chat}
+              updated_at={formatDate(room.chatRoom.updated_at)}
+              isRead={true}
+              onClick={() => handleRoomClick(String(room.chatRoom.channel_id))}
             />
           ))}
         </S.ChatList>

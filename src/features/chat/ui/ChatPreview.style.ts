@@ -4,6 +4,7 @@ export const ChatPreviewContainer = styled.div<{ isRead: boolean }>`
   display: flex;
   padding: 1.6rem 2.4rem;
   align-items: flex-start;
+  cursor: pointer;
   gap: 0.8rem;
   background-color: ${({ theme }) => theme.color.WHITE};
   border-bottom: 0.1rem solid ${({ theme }) => theme.color.BLUE_30};

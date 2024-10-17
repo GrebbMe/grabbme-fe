@@ -4,7 +4,21 @@ import ChatInput from '@/features/chat/ui/ChatInput.tsx';
 import { IcBack } from '@/shared/assets';
 import { useChatNavigationStore } from '@/shared/stores/chatNavigationStore';
 
-const ChatRoom = () => {
+export interface ChatRoom {
+  channel_id: number;
+  users: number[];
+  name: string;
+  last_chat: string;
+  updated_at: string;
+  // profileImageUrl?: string;
+  // isRead: boolean;
+}
+
+interface ChatRoomProps {
+  chatRoom: ChatRoom;
+}
+
+const ChatRoom = ({ chatRoom }: ChatRoomProps) => {
   const { openChatRoomList } = useChatNavigationStore();
 
   const handleBackClick = () => {
@@ -19,9 +33,9 @@ const ChatRoom = () => {
             <IcBack />
           </S.IconBack>
           <S.LabelBox>
-            <S.NameLabel>닉네임 10자 이내</S.NameLabel>
+            <S.NameLabel>{String(chatRoom.users[0])}</S.NameLabel>
             <S.Dot>•</S.Dot>
-            <S.TitleLabel>사용자가 작성한 글 제목 10자만</S.TitleLabel>
+            <S.TitleLabel>{chatRoom.name}</S.TitleLabel>
           </S.LabelBox>
         </S.TitleBox>
       </S.TitleWrapper>
