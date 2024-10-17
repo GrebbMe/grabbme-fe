@@ -1,11 +1,17 @@
+import { format } from 'date-fns';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Editor, PositionWithCount } from '@/features/post';
 import { DeadlineCalendar } from '@/features/post/ui/deadlineCalendar';
 import { Position } from '@/features/post/ui/positionMange/PositionWithCount';
 import { ProjectPeriod } from '@/features/post/ui/projectPeriod';
+import fetchMultiSelect from '@/pages/post/lib/fetchMultiSelect';
+import { fetchPositionData } from '@/pages/post/lib/fetchPositionData';
 import { getContentLength } from '@/pages/post/lib/getContentLength';
+import { useRegisterProject } from '@/pages/post/model/useRegisterProject';
 import * as S from '@/pages/post/ui/project/RegisterProject.style';
 import { useFetchCategories } from '@/shared/hooks/useFetchCategories';
+import { useModal } from '@/shared/hooks/useModal';
 import { Button, TitleBar, TextField } from '@/shared/ui';
 import { MultiSelect, SelectItem } from '@/shared/ui/select/MultiSelect';
 
@@ -20,6 +26,9 @@ const RegisterProject = () => {
   const [positions, setPositions] = useState<Position[]>([{ id: -1, label: '선택', count: 1 }]);
   const [totalCount, setTotalCount] = useState(1);
   const { techStackList, categoryList } = useFetchCategories();
+
+  const { showModal } = useModal();
+  const navigate = useNavigate();
 
   const handleTitleChange = (e: string) => {
     setTitle(e);
@@ -42,6 +51,43 @@ const RegisterProject = () => {
 
   const handleSetTotalCount = (newTotalCount: number) => {
     setTotalCount(newTotalCount);
+  };
+
+  const { registerProjectMutation } = useRegisterProject();
+
+  const handleRegisterProject = () => {
+    const postData = {
+      user_id: 27,
+      title: title,
+      content: content,
+      start_month: startDate ? format(startDate, 'yyyy-MM') : null,
+      end_month: endDate ? format(endDate, 'yyyy-MM') : null,
+      project_category_id: fetchMultiSelect(category),
+      stack_category_id: fetchMultiSelect(stack),
+      expired_at: deadline ? format(deadline, 'yyyy-MM-dd') : null,
+      teamsData: fetchPositionData(positions),
+    };
+
+    const hasNull = Object.values(postData).some((value) => value === null || value === '');
+
+    if (hasNull) {
+      return showModal({ content: '필수 입력 값들을 채워주세요', type: 'alert' });
+    }
+
+    const hasNegativeId = postData.teamsData.some((position) => position.position_category_id < 0);
+
+    if (hasNegativeId) {
+      return showModal({ content: '포지션을 정리하세요', type: 'alert' });
+    }
+
+    return showModal({
+      content: '프로젝트를 등록하시겠습니가?',
+      type: 'confirm',
+      onConfirm: () => {
+        registerProjectMutation(postData);
+        navigate('/');
+      },
+    });
   };
 
   return (
@@ -127,7 +173,7 @@ const RegisterProject = () => {
           <Button variant="primary" size="sm">
             취소
           </Button>
-          <Button variant="primary" size="sm">
+          <Button variant="primary" size="sm" onClick={handleRegisterProject}>
             게시
           </Button>
         </S.ButtonWrapper>

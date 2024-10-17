@@ -62,12 +62,12 @@ export const JobContainer = styled.div`
 `;
 
 export const CareerContainer = styled.div`
-  display:flex
-  flex-direction:column;  
+  display: flex;
+  flex-direction: column;
   grid-column: 8 / span 3;
   margin-top: 3.2rem;
-  display: flex;
-  flex-direction: column;  ${({ theme }) => theme.device.MOBILE} {
+
+  ${({ theme }) => theme.device.MOBILE} {
     grid-column: 1 / -1;
     margin-top: 1.6rem;
   }

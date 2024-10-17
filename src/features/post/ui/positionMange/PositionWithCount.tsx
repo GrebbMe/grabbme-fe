@@ -75,7 +75,7 @@ const PositionWithCount = ({
   const availablePositions = jobPosition.filter(
     (item) => !positions.some((selected) => selected.id === item.id),
   );
-  console.log(positions);
+
   return (
     <S.Container>
       {positions.map((position) => (

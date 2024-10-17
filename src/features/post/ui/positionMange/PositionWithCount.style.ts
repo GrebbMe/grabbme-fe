@@ -11,7 +11,7 @@ export const CountControlBox = styled.div`
   margin-left: 2.4rem;
   width: 8rem;
   display: flex;
-  align-items: center;v
+  align-items: center;
 `;
 
 export const PlusButton = styled.button`
@@ -65,5 +65,6 @@ export const AddPositionButton = styled.button`
   }
 
   ${({ theme }) => theme.device.MOBILE} {
-  margin-left: 0;
+    margin-left: 0;
+  }
 `;

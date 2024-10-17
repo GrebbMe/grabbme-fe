@@ -15,7 +15,7 @@ export const Header = styled.header`
     color:${({ theme }) => theme.color.BLACK_100}
   }
   span {
-    display: flex;2
+    display: flex;
     flex-direction: row;
     justify-content: center;
     ${({ theme }) => theme.typo.BODY_SEMIBOLD}
